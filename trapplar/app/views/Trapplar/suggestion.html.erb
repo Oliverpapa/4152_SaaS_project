@@ -1,0 +1,62 @@
+<!--  This file is app/views/movies/search_similar.html.erb -->
+<h1>Trapplar</h1>
+<h2>Select Your Traveling Plan:</h2>
+Suggestion 1
+<table class="table table-striped col-md-12" id="suggestion1">
+  <thead>
+    <tr>
+      <th>Attraction</th>
+      <th>Stops</th>
+      <th>Rating</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @suggestions[0].each do |attraction| %>
+      <tr>
+        <td>
+          <%= attraction.name %>
+        </td>
+        <td>
+          <%= attraction.city %>
+        </td>
+        <td>
+          <%= attraction.rating %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= link_to 'Details', :class => 'btn btn-primary' %>
+
+Suggestion 2
+<table class="table table-striped col-md-12" id="suggestion2">
+  <thead>
+    <tr>
+      <th>Attraction</th>
+      <th>Stops</th>
+      <th>Rating</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @suggestions[1].each do |attraction| %>
+      <tr>
+        <td>
+          <%= attraction.name %>
+        </td>
+        <td>
+          <%= attraction.city %>
+        </td>
+        <td>
+          <%= attraction.rating %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= link_to 'Details', :class => 'btn btn-primary' %>
+
+<div class="row">
+  # TODO: generate new travel plans? 
+  # <%= link_to 'Regenerate travel plans', movie_path(@movie), :class => 'btn btn-danger col-2' %>
+  <%= link_to 'Back to search', search_path, :class => 'btn btn-primary col-2' %>
+</div>
