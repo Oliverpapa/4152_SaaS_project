@@ -9,7 +9,6 @@ Shengqi Cao,	sc5124
 Yuerong Zhang,  yz4143 
 
 
-rails generate model Attraction name:string address:string city:string state:string latitude:float longitude:float recommended_time:integ rating:float open_time:time close_time:time
 
 ## Install
 ```
