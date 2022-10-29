@@ -11,19 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20221023195940) do
+ActiveRecord::Schema.define(version: 20221029192029) do
 
-  create_table "movies", force: :cascade do |t|
-    t.string   "title"
-    t.string   "rating"
-    t.text     "description"
-    t.datetime "release_date"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "director"
+  create_table "attractions", force: :cascade do |t|
+    t.string   "name"
+    t.string   "address"
+    t.string   "city"
+    t.string   "state"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.integer  "recommended_time"
+    t.float    "rating"
+    t.time     "open_time"
+    t.time     "close_time"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
   end
 
 end
-
-# run this command to generate migration
-$ bin/rails generate model Attraction name:string address:string city:string state:string latitude:float longitude:float recommended_time:int rating:float open_time:time close_time:time

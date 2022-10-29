@@ -16,30 +16,29 @@ Background: attraction in database
 
 Scenario: search for traveling plan suggestions w/o adding stops
   Given I am on the home page
-  When I select "NY" from "State" 
-  And  I select "2" from "Number of Traveling Days"
+  When I select "NY" from "State*" 
+  And  I select "2" from "Number of Traveling Days*"
   And  I press "Search"
-  Then I should be on suggestion page
+  Then I should be on the suggestion page
   Then I should see "Suggestion 1"
   Then I should see "Suggestion 2"
 
 Scenario: clear all fields after click "Clear" btn
   Given I am on the home page
-  When I select "NY" from "State" 
-  And  I select "2" from "Number of Traveling Days"
-  And  I press "Clear"
+  When I select "NY" from "State*" 
+  And  I select "2" from "Number of Traveling Days*"
+  And  I follow "Clear"
   Then I should see "NY"
-  And I should see "0"
-  And I should be on home page
-  And I should see default stop field
+  And I should see "1"
+  And I should be on the home page
 
 Scenario: search for traveling plan suggestions with adding stops
   Given I am on the home page
-  When I select "NY" from "State" 
-  And  I select "2" from "Number of Traveling Days"
+  When I select "NY" from "State*" 
+  And  I select "2" from "Number of Traveling Days*"
   And  I select "New York" from "Stop"
   And  I press "Search"
-  Then I should be on suggestion page
+  Then I should be on the suggestion page
   Then I should see "Suggestion 1"
   Then I should see "Suggestion 2"
   Then I should see attractions in stop "New York" in all suggestions

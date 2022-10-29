@@ -17,10 +17,10 @@ When /I (un)?check the following ratings: (.*)/ do |uncheck, rating_list|
   end
 end
 
-Then /I should see attractions in stop "(.*)"/ in all suggestions/ do |city|
+Then /I should see attractions in stop "(.*)" in all suggestions/ do |city|
   # ensure that all suggestions div have at least one attraction in the designated city in suggestion view
-  find("table", id: "suggestion1").should have_content(city)
-  find("table", id: "suggestion2").should have_content(city)
+  find("#suggestion1").should have_content(city)
+  find("#suggestion2").should have_content(city)
 end
 
 Then /^the director of "(.+)" should be "(.+)"/ do |movie_name, director|

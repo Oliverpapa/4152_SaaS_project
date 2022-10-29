@@ -15,7 +15,7 @@ module NavigationHelpers
 
     when /^the home\s?page$/ then '/index'
 
-    # when /^the suggestion page$/ then suggestion_path # covered by line 34
+    when /^the suggestion page$/ then '/suggestion' # covered by line 34
 
     # when /^the details page for "(.+)"$/
     #   movie = Movie.find_by_title($1)

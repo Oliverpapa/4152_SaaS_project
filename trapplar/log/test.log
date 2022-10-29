@@ -7009,3 +7009,1261 @@ Completed 302 Found in 1ms (ActiveRecord: 0.1ms)
   [1m[36mMovie Load (0.0ms)[0m  [1mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1[0m  [["id", 4]]
   [1m[35mMovie Load (0.1ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."director" = ?  [["director", "b"]]
   [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (5.0ms)[0m  INSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "Empire State Building"], ["rating", 4.7], ["address", "20 W 34th St., New York, NY 10001"], ["city", "New York"], ["state", "NY"], ["latitude", 40.7484396], ["longitude", -73.9944193], ["recommended_time", 60], ["created_at", "2022-10-29 20:16:55.516064"], ["updated_at", "2022-10-29 20:16:55.516064"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "The Met"], ["rating", 4.8], ["address", "1000 5th Ave, New York, NY 10028"], ["city", "New York"], ["state", "NY"], ["latitude", 40.7794366], ["longitude", -74.0950799], ["recommended_time", 180], ["created_at", "2022-10-29 20:16:55.523469"], ["updated_at", "2022-10-29 20:16:55.523469"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "MoMA"], ["rating", 4.6], ["address", "11 W 53rd St, New York, NY 10019"], ["city", "New York"], ["state", "NY"], ["latitude", 40.7484714], ["longitude", -73.9944193], ["recommended_time", 180], ["created_at", "2022-10-29 20:16:55.525609"], ["updated_at", "2022-10-29 20:16:55.525609"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Statue of Liberty"], ["rating", 4.7], ["address", "Statue of Liberty, New York, NY 10004"], ["city", "New York"], ["state", "NY"], ["latitude", 40.6917572], ["longitude", -74.0429902], ["recommended_time", 180], ["created_at", "2022-10-29 20:16:55.527429"], ["updated_at", "2022-10-29 20:16:55.527429"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "Columbia University"], ["rating", 4.7], ["address", "Columbia University, New York, NY 10027"], ["city", "New York"], ["state", "NY"], ["latitude", 40.8075395], ["longitude", -73.9670574], ["recommended_time", 60], ["created_at", "2022-10-29 20:16:55.529288"], ["updated_at", "2022-10-29 20:16:55.529288"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/index" for 127.0.0.1 at 2022-10-29 20:16:55 +0000
+Processing by TravelingPlansController#search as HTML
+  [1m[35mAttraction Load (0.2ms)[0m  SELECT "attractions".* FROM "attractions"
+  Rendered traveling_plans/index.html.erb within layouts/application (7.7ms)
+  Rendered layouts/_flash.erb (5.5ms)
+Completed 200 OK in 244ms (Views: 243.1ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "Empire State Building"], ["rating", 4.7], ["address", "20 W 34th St., New York, NY 10001"], ["city", "New York"], ["state", "NY"], ["latitude", 40.7484396], ["longitude", -73.9944193], ["recommended_time", 60], ["created_at", "2022-10-29 20:16:55.813747"], ["updated_at", "2022-10-29 20:16:55.813747"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "The Met"], ["rating", 4.8], ["address", "1000 5th Ave, New York, NY 10028"], ["city", "New York"], ["state", "NY"], ["latitude", 40.7794366], ["longitude", -74.0950799], ["recommended_time", 180], ["created_at", "2022-10-29 20:16:55.816057"], ["updated_at", "2022-10-29 20:16:55.816057"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "MoMA"], ["rating", 4.6], ["address", "11 W 53rd St, New York, NY 10019"], ["city", "New York"], ["state", "NY"], ["latitude", 40.7484714], ["longitude", -73.9944193], ["recommended_time", 180], ["created_at", "2022-10-29 20:16:55.818220"], ["updated_at", "2022-10-29 20:16:55.818220"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Statue of Liberty"], ["rating", 4.7], ["address", "Statue of Liberty, New York, NY 10004"], ["city", "New York"], ["state", "NY"], ["latitude", 40.6917572], ["longitude", -74.0429902], ["recommended_time", 180], ["created_at", "2022-10-29 20:16:55.820149"], ["updated_at", "2022-10-29 20:16:55.820149"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "Columbia University"], ["rating", 4.7], ["address", "Columbia University, New York, NY 10027"], ["city", "New York"], ["state", "NY"], ["latitude", 40.8075395], ["longitude", -73.9670574], ["recommended_time", 60], ["created_at", "2022-10-29 20:16:55.822280"], ["updated_at", "2022-10-29 20:16:55.822280"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/index" for 127.0.0.1 at 2022-10-29 20:16:55 +0000
+Processing by TravelingPlansController#search as HTML
+  [1m[35mAttraction Load (0.2ms)[0m  SELECT "attractions".* FROM "attractions"
+  Rendered traveling_plans/index.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 4ms (Views: 2.6ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.6ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "Empire State Building"], ["rating", 4.7], ["address", "20 W 34th St., New York, NY 10001"], ["city", "New York"], ["state", "NY"], ["latitude", 40.7484396], ["longitude", -73.9944193], ["recommended_time", 60], ["created_at", "2022-10-29 20:16:55.840258"], ["updated_at", "2022-10-29 20:16:55.840258"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "The Met"], ["rating", 4.8], ["address", "1000 5th Ave, New York, NY 10028"], ["city", "New York"], ["state", "NY"], ["latitude", 40.7794366], ["longitude", -74.0950799], ["recommended_time", 180], ["created_at", "2022-10-29 20:16:55.842729"], ["updated_at", "2022-10-29 20:16:55.842729"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "MoMA"], ["rating", 4.6], ["address", "11 W 53rd St, New York, NY 10019"], ["city", "New York"], ["state", "NY"], ["latitude", 40.7484714], ["longitude", -73.9944193], ["recommended_time", 180], ["created_at", "2022-10-29 20:16:55.844747"], ["updated_at", "2022-10-29 20:16:55.844747"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Statue of Liberty"], ["rating", 4.7], ["address", "Statue of Liberty, New York, NY 10004"], ["city", "New York"], ["state", "NY"], ["latitude", 40.6917572], ["longitude", -74.0429902], ["recommended_time", 180], ["created_at", "2022-10-29 20:16:55.846763"], ["updated_at", "2022-10-29 20:16:55.846763"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "Columbia University"], ["rating", 4.7], ["address", "Columbia University, New York, NY 10027"], ["city", "New York"], ["state", "NY"], ["latitude", 40.8075395], ["longitude", -73.9670574], ["recommended_time", 60], ["created_at", "2022-10-29 20:16:55.848763"], ["updated_at", "2022-10-29 20:16:55.848763"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/index" for 127.0.0.1 at 2022-10-29 20:16:55 +0000
+Processing by TravelingPlansController#search as HTML
+  [1m[35mAttraction Load (0.2ms)[0m  SELECT "attractions".* FROM "attractions"
+  Rendered traveling_plans/index.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 4ms (Views: 2.6ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "Empire State Building"], ["rating", 4.7], ["address", "20 W 34th St., New York, NY 10001"], ["city", "New York"], ["state", "NY"], ["latitude", 40.7484396], ["longitude", -73.9944193], ["recommended_time", 60], ["created_at", "2022-10-29 20:18:48.818997"], ["updated_at", "2022-10-29 20:18:48.818997"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "The Met"], ["rating", 4.8], ["address", "1000 5th Ave, New York, NY 10028"], ["city", "New York"], ["state", "NY"], ["latitude", 40.7794366], ["longitude", -74.0950799], ["recommended_time", 180], ["created_at", "2022-10-29 20:18:48.822040"], ["updated_at", "2022-10-29 20:18:48.822040"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "MoMA"], ["rating", 4.6], ["address", "11 W 53rd St, New York, NY 10019"], ["city", "New York"], ["state", "NY"], ["latitude", 40.7484714], ["longitude", -73.9944193], ["recommended_time", 180], ["created_at", "2022-10-29 20:18:48.824138"], ["updated_at", "2022-10-29 20:18:48.824138"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Statue of Liberty"], ["rating", 4.7], ["address", "Statue of Liberty, New York, NY 10004"], ["city", "New York"], ["state", "NY"], ["latitude", 40.6917572], ["longitude", -74.0429902], ["recommended_time", 180], ["created_at", "2022-10-29 20:18:48.826333"], ["updated_at", "2022-10-29 20:18:48.826333"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "Columbia University"], ["rating", 4.7], ["address", "Columbia University, New York, NY 10027"], ["city", "New York"], ["state", "NY"], ["latitude", 40.8075395], ["longitude", -73.9670574], ["recommended_time", 60], ["created_at", "2022-10-29 20:18:48.828330"], ["updated_at", "2022-10-29 20:18:48.828330"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/index" for 127.0.0.1 at 2022-10-29 20:18:48 +0000
+Processing by TravelingPlansController#search as HTML
+  [1m[35mAttraction Load (0.2ms)[0m  SELECT "attractions".* FROM "attractions"
+  Rendered traveling_plans/index.html.erb within layouts/application (8.9ms)
+  Rendered layouts/_flash.erb (6.6ms)
+Completed 200 OK in 268ms (Views: 266.4ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "Empire State Building"], ["rating", 4.7], ["address", "20 W 34th St., New York, NY 10001"], ["city", "New York"], ["state", "NY"], ["latitude", 40.7484396], ["longitude", -73.9944193], ["recommended_time", 60], ["created_at", "2022-10-29 20:18:49.160411"], ["updated_at", "2022-10-29 20:18:49.160411"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "The Met"], ["rating", 4.8], ["address", "1000 5th Ave, New York, NY 10028"], ["city", "New York"], ["state", "NY"], ["latitude", 40.7794366], ["longitude", -74.0950799], ["recommended_time", 180], ["created_at", "2022-10-29 20:18:49.164827"], ["updated_at", "2022-10-29 20:18:49.164827"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "MoMA"], ["rating", 4.6], ["address", "11 W 53rd St, New York, NY 10019"], ["city", "New York"], ["state", "NY"], ["latitude", 40.7484714], ["longitude", -73.9944193], ["recommended_time", 180], ["created_at", "2022-10-29 20:18:49.169383"], ["updated_at", "2022-10-29 20:18:49.169383"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Statue of Liberty"], ["rating", 4.7], ["address", "Statue of Liberty, New York, NY 10004"], ["city", "New York"], ["state", "NY"], ["latitude", 40.6917572], ["longitude", -74.0429902], ["recommended_time", 180], ["created_at", "2022-10-29 20:18:49.173641"], ["updated_at", "2022-10-29 20:18:49.173641"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "Columbia University"], ["rating", 4.7], ["address", "Columbia University, New York, NY 10027"], ["city", "New York"], ["state", "NY"], ["latitude", 40.8075395], ["longitude", -73.9670574], ["recommended_time", 60], ["created_at", "2022-10-29 20:18:49.177284"], ["updated_at", "2022-10-29 20:18:49.177284"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/index" for 127.0.0.1 at 2022-10-29 20:18:49 +0000
+Processing by TravelingPlansController#search as HTML
+  [1m[35mAttraction Load (0.3ms)[0m  SELECT "attractions".* FROM "attractions"
+  Rendered traveling_plans/index.html.erb within layouts/application (1.6ms)
+  Rendered layouts/_flash.erb (0.3ms)
+Completed 200 OK in 6ms (Views: 4.1ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "Empire State Building"], ["rating", 4.7], ["address", "20 W 34th St., New York, NY 10001"], ["city", "New York"], ["state", "NY"], ["latitude", 40.7484396], ["longitude", -73.9944193], ["recommended_time", 60], ["created_at", "2022-10-29 20:18:49.207355"], ["updated_at", "2022-10-29 20:18:49.207355"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "The Met"], ["rating", 4.8], ["address", "1000 5th Ave, New York, NY 10028"], ["city", "New York"], ["state", "NY"], ["latitude", 40.7794366], ["longitude", -74.0950799], ["recommended_time", 180], ["created_at", "2022-10-29 20:18:49.211391"], ["updated_at", "2022-10-29 20:18:49.211391"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "MoMA"], ["rating", 4.6], ["address", "11 W 53rd St, New York, NY 10019"], ["city", "New York"], ["state", "NY"], ["latitude", 40.7484714], ["longitude", -73.9944193], ["recommended_time", 180], ["created_at", "2022-10-29 20:18:49.215381"], ["updated_at", "2022-10-29 20:18:49.215381"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Statue of Liberty"], ["rating", 4.7], ["address", "Statue of Liberty, New York, NY 10004"], ["city", "New York"], ["state", "NY"], ["latitude", 40.6917572], ["longitude", -74.0429902], ["recommended_time", 180], ["created_at", "2022-10-29 20:18:49.219240"], ["updated_at", "2022-10-29 20:18:49.219240"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "Columbia University"], ["rating", 4.7], ["address", "Columbia University, New York, NY 10027"], ["city", "New York"], ["state", "NY"], ["latitude", 40.8075395], ["longitude", -73.9670574], ["recommended_time", 60], ["created_at", "2022-10-29 20:18:49.223018"], ["updated_at", "2022-10-29 20:18:49.223018"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/index" for 127.0.0.1 at 2022-10-29 20:18:49 +0000
+Processing by TravelingPlansController#search as HTML
+  [1m[35mAttraction Load (0.3ms)[0m  SELECT "attractions".* FROM "attractions"
+  Rendered traveling_plans/index.html.erb within layouts/application (1.7ms)
+  Rendered layouts/_flash.erb (0.3ms)
+Completed 200 OK in 6ms (Views: 4.4ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "Empire State Building"], ["rating", 4.7], ["address", "20 W 34th St., New York, NY 10001"], ["city", "New York"], ["state", "NY"], ["latitude", 40.7484396], ["longitude", -73.9944193], ["recommended_time", 60], ["created_at", "2022-10-29 20:19:43.458039"], ["updated_at", "2022-10-29 20:19:43.458039"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "The Met"], ["rating", 4.8], ["address", "1000 5th Ave, New York, NY 10028"], ["city", "New York"], ["state", "NY"], ["latitude", 40.7794366], ["longitude", -74.0950799], ["recommended_time", 180], ["created_at", "2022-10-29 20:19:43.460836"], ["updated_at", "2022-10-29 20:19:43.460836"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "MoMA"], ["rating", 4.6], ["address", "11 W 53rd St, New York, NY 10019"], ["city", "New York"], ["state", "NY"], ["latitude", 40.7484714], ["longitude", -73.9944193], ["recommended_time", 180], ["created_at", "2022-10-29 20:19:43.463080"], ["updated_at", "2022-10-29 20:19:43.463080"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Statue of Liberty"], ["rating", 4.7], ["address", "Statue of Liberty, New York, NY 10004"], ["city", "New York"], ["state", "NY"], ["latitude", 40.6917572], ["longitude", -74.0429902], ["recommended_time", 180], ["created_at", "2022-10-29 20:19:43.465190"], ["updated_at", "2022-10-29 20:19:43.465190"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "Columbia University"], ["rating", 4.7], ["address", "Columbia University, New York, NY 10027"], ["city", "New York"], ["state", "NY"], ["latitude", 40.8075395], ["longitude", -73.9670574], ["recommended_time", 60], ["created_at", "2022-10-29 20:19:43.467583"], ["updated_at", "2022-10-29 20:19:43.467583"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/index" for 127.0.0.1 at 2022-10-29 20:19:43 +0000
+Processing by TravelingPlansController#search as HTML
+  [1m[35mAttraction Load (0.2ms)[0m  SELECT "attractions".* FROM "attractions"
+  Rendered traveling_plans/index.html.erb within layouts/application (7.7ms)
+  Rendered layouts/_flash.erb (5.6ms)
+Completed 200 OK in 257ms (Views: 256.1ms | ActiveRecord: 0.2ms)
+Started GET "/suggestion?utf8=%E2%9C%93&travel_plan[state]=NY&travel_plan[stop][]=&travel_plan[traveling_days]=2&commit=Search" for 127.0.0.1 at 2022-10-29 20:19:43 +0000
+Processing by TravelingPlansController#suggestion as HTML
+  Parameters: {"utf8"=>"✓", "travel_plan"=>{"state"=>"NY", "stop"=>[""], "traveling_days"=>"2"}, "commit"=>"Search"}
+  Rendered traveling_plans/suggestion.html.erb within layouts/application (1.6ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 33ms (Views: 29.3ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "Empire State Building"], ["rating", 4.7], ["address", "20 W 34th St., New York, NY 10001"], ["city", "New York"], ["state", "NY"], ["latitude", 40.7484396], ["longitude", -73.9944193], ["recommended_time", 60], ["created_at", "2022-10-29 20:19:43.796354"], ["updated_at", "2022-10-29 20:19:43.796354"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "The Met"], ["rating", 4.8], ["address", "1000 5th Ave, New York, NY 10028"], ["city", "New York"], ["state", "NY"], ["latitude", 40.7794366], ["longitude", -74.0950799], ["recommended_time", 180], ["created_at", "2022-10-29 20:19:43.798673"], ["updated_at", "2022-10-29 20:19:43.798673"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "MoMA"], ["rating", 4.6], ["address", "11 W 53rd St, New York, NY 10019"], ["city", "New York"], ["state", "NY"], ["latitude", 40.7484714], ["longitude", -73.9944193], ["recommended_time", 180], ["created_at", "2022-10-29 20:19:43.800618"], ["updated_at", "2022-10-29 20:19:43.800618"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Statue of Liberty"], ["rating", 4.7], ["address", "Statue of Liberty, New York, NY 10004"], ["city", "New York"], ["state", "NY"], ["latitude", 40.6917572], ["longitude", -74.0429902], ["recommended_time", 180], ["created_at", "2022-10-29 20:19:43.802519"], ["updated_at", "2022-10-29 20:19:43.802519"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "Columbia University"], ["rating", 4.7], ["address", "Columbia University, New York, NY 10027"], ["city", "New York"], ["state", "NY"], ["latitude", 40.8075395], ["longitude", -73.9670574], ["recommended_time", 60], ["created_at", "2022-10-29 20:19:43.804382"], ["updated_at", "2022-10-29 20:19:43.804382"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/index" for 127.0.0.1 at 2022-10-29 20:19:43 +0000
+Processing by TravelingPlansController#search as HTML
+  [1m[35mAttraction Load (0.1ms)[0m  SELECT "attractions".* FROM "attractions"
+  Rendered traveling_plans/index.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "Empire State Building"], ["rating", 4.7], ["address", "20 W 34th St., New York, NY 10001"], ["city", "New York"], ["state", "NY"], ["latitude", 40.7484396], ["longitude", -73.9944193], ["recommended_time", 60], ["created_at", "2022-10-29 20:19:43.821583"], ["updated_at", "2022-10-29 20:19:43.821583"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "The Met"], ["rating", 4.8], ["address", "1000 5th Ave, New York, NY 10028"], ["city", "New York"], ["state", "NY"], ["latitude", 40.7794366], ["longitude", -74.0950799], ["recommended_time", 180], ["created_at", "2022-10-29 20:19:43.823810"], ["updated_at", "2022-10-29 20:19:43.823810"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "MoMA"], ["rating", 4.6], ["address", "11 W 53rd St, New York, NY 10019"], ["city", "New York"], ["state", "NY"], ["latitude", 40.7484714], ["longitude", -73.9944193], ["recommended_time", 180], ["created_at", "2022-10-29 20:19:43.825769"], ["updated_at", "2022-10-29 20:19:43.825769"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Statue of Liberty"], ["rating", 4.7], ["address", "Statue of Liberty, New York, NY 10004"], ["city", "New York"], ["state", "NY"], ["latitude", 40.6917572], ["longitude", -74.0429902], ["recommended_time", 180], ["created_at", "2022-10-29 20:19:43.827725"], ["updated_at", "2022-10-29 20:19:43.827725"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "Columbia University"], ["rating", 4.7], ["address", "Columbia University, New York, NY 10027"], ["city", "New York"], ["state", "NY"], ["latitude", 40.8075395], ["longitude", -73.9670574], ["recommended_time", 60], ["created_at", "2022-10-29 20:19:43.829622"], ["updated_at", "2022-10-29 20:19:43.829622"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/index" for 127.0.0.1 at 2022-10-29 20:19:43 +0000
+Processing by TravelingPlansController#search as HTML
+  [1m[35mAttraction Load (0.1ms)[0m  SELECT "attractions".* FROM "attractions"
+  Rendered traveling_plans/index.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 4ms (Views: 2.6ms | ActiveRecord: 0.1ms)
+Started GET "/suggestion?utf8=%E2%9C%93&travel_plan[state]=NY&travel_plan[stop][]=&travel_plan[stop][]=New+York&travel_plan[traveling_days]=2&commit=Search" for 127.0.0.1 at 2022-10-29 20:19:43 +0000
+Processing by TravelingPlansController#suggestion as HTML
+  Parameters: {"utf8"=>"✓", "travel_plan"=>{"state"=>"NY", "stop"=>["", "New York"], "traveling_days"=>"2"}, "commit"=>"Search"}
+  Rendered traveling_plans/suggestion.html.erb within layouts/application (0.6ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 5ms (Views: 2.1ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "Empire State Building"], ["rating", 4.7], ["address", "20 W 34th St., New York, NY 10001"], ["city", "New York"], ["state", "NY"], ["latitude", 40.7484396], ["longitude", -73.9944193], ["recommended_time", 60], ["created_at", "2022-10-29 20:20:51.543081"], ["updated_at", "2022-10-29 20:20:51.543081"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "The Met"], ["rating", 4.8], ["address", "1000 5th Ave, New York, NY 10028"], ["city", "New York"], ["state", "NY"], ["latitude", 40.7794366], ["longitude", -74.0950799], ["recommended_time", 180], ["created_at", "2022-10-29 20:20:51.545924"], ["updated_at", "2022-10-29 20:20:51.545924"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "MoMA"], ["rating", 4.6], ["address", "11 W 53rd St, New York, NY 10019"], ["city", "New York"], ["state", "NY"], ["latitude", 40.7484714], ["longitude", -73.9944193], ["recommended_time", 180], ["created_at", "2022-10-29 20:20:51.547937"], ["updated_at", "2022-10-29 20:20:51.547937"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Statue of Liberty"], ["rating", 4.7], ["address", "Statue of Liberty, New York, NY 10004"], ["city", "New York"], ["state", "NY"], ["latitude", 40.6917572], ["longitude", -74.0429902], ["recommended_time", 180], ["created_at", "2022-10-29 20:20:51.549965"], ["updated_at", "2022-10-29 20:20:51.549965"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "Columbia University"], ["rating", 4.7], ["address", "Columbia University, New York, NY 10027"], ["city", "New York"], ["state", "NY"], ["latitude", 40.8075395], ["longitude", -73.9670574], ["recommended_time", 60], ["created_at", "2022-10-29 20:20:51.551969"], ["updated_at", "2022-10-29 20:20:51.551969"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/index" for 127.0.0.1 at 2022-10-29 20:20:51 +0000
+Processing by TravelingPlansController#search as HTML
+  [1m[35mAttraction Load (0.2ms)[0m  SELECT "attractions".* FROM "attractions"
+  Rendered traveling_plans/index.html.erb within layouts/application (7.7ms)
+  Rendered layouts/_flash.erb (6.1ms)
+Completed 200 OK in 238ms (Views: 236.6ms | ActiveRecord: 0.2ms)
+Started GET "/suggestion?utf8=%E2%9C%93&travel_plan[state]=NY&travel_plan[stop][]=&travel_plan[traveling_days]=2&commit=Search" for 127.0.0.1 at 2022-10-29 20:20:51 +0000
+Processing by TravelingPlansController#suggestion as HTML
+  Parameters: {"utf8"=>"✓", "travel_plan"=>{"state"=>"NY", "stop"=>[""], "traveling_days"=>"2"}, "commit"=>"Search"}
+  Rendered traveling_plans/suggestion.html.erb within layouts/application (1.5ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 7ms (Views: 3.7ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "Empire State Building"], ["rating", 4.7], ["address", "20 W 34th St., New York, NY 10001"], ["city", "New York"], ["state", "NY"], ["latitude", 40.7484396], ["longitude", -73.9944193], ["recommended_time", 60], ["created_at", "2022-10-29 20:20:51.844255"], ["updated_at", "2022-10-29 20:20:51.844255"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "The Met"], ["rating", 4.8], ["address", "1000 5th Ave, New York, NY 10028"], ["city", "New York"], ["state", "NY"], ["latitude", 40.7794366], ["longitude", -74.0950799], ["recommended_time", 180], ["created_at", "2022-10-29 20:20:51.846764"], ["updated_at", "2022-10-29 20:20:51.846764"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "MoMA"], ["rating", 4.6], ["address", "11 W 53rd St, New York, NY 10019"], ["city", "New York"], ["state", "NY"], ["latitude", 40.7484714], ["longitude", -73.9944193], ["recommended_time", 180], ["created_at", "2022-10-29 20:20:51.848839"], ["updated_at", "2022-10-29 20:20:51.848839"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Statue of Liberty"], ["rating", 4.7], ["address", "Statue of Liberty, New York, NY 10004"], ["city", "New York"], ["state", "NY"], ["latitude", 40.6917572], ["longitude", -74.0429902], ["recommended_time", 180], ["created_at", "2022-10-29 20:20:51.850866"], ["updated_at", "2022-10-29 20:20:51.850866"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "Columbia University"], ["rating", 4.7], ["address", "Columbia University, New York, NY 10027"], ["city", "New York"], ["state", "NY"], ["latitude", 40.8075395], ["longitude", -73.9670574], ["recommended_time", 60], ["created_at", "2022-10-29 20:20:51.852873"], ["updated_at", "2022-10-29 20:20:51.852873"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/index" for 127.0.0.1 at 2022-10-29 20:20:51 +0000
+Processing by TravelingPlansController#search as HTML
+  [1m[35mAttraction Load (0.2ms)[0m  SELECT "attractions".* FROM "attractions"
+  Rendered traveling_plans/index.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "Empire State Building"], ["rating", 4.7], ["address", "20 W 34th St., New York, NY 10001"], ["city", "New York"], ["state", "NY"], ["latitude", 40.7484396], ["longitude", -73.9944193], ["recommended_time", 60], ["created_at", "2022-10-29 20:20:51.870987"], ["updated_at", "2022-10-29 20:20:51.870987"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "The Met"], ["rating", 4.8], ["address", "1000 5th Ave, New York, NY 10028"], ["city", "New York"], ["state", "NY"], ["latitude", 40.7794366], ["longitude", -74.0950799], ["recommended_time", 180], ["created_at", "2022-10-29 20:20:51.873526"], ["updated_at", "2022-10-29 20:20:51.873526"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "MoMA"], ["rating", 4.6], ["address", "11 W 53rd St, New York, NY 10019"], ["city", "New York"], ["state", "NY"], ["latitude", 40.7484714], ["longitude", -73.9944193], ["recommended_time", 180], ["created_at", "2022-10-29 20:20:51.875595"], ["updated_at", "2022-10-29 20:20:51.875595"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Statue of Liberty"], ["rating", 4.7], ["address", "Statue of Liberty, New York, NY 10004"], ["city", "New York"], ["state", "NY"], ["latitude", 40.6917572], ["longitude", -74.0429902], ["recommended_time", 180], ["created_at", "2022-10-29 20:20:51.877598"], ["updated_at", "2022-10-29 20:20:51.877598"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "Columbia University"], ["rating", 4.7], ["address", "Columbia University, New York, NY 10027"], ["city", "New York"], ["state", "NY"], ["latitude", 40.8075395], ["longitude", -73.9670574], ["recommended_time", 60], ["created_at", "2022-10-29 20:20:51.879610"], ["updated_at", "2022-10-29 20:20:51.879610"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/index" for 127.0.0.1 at 2022-10-29 20:20:51 +0000
+Processing by TravelingPlansController#search as HTML
+  [1m[35mAttraction Load (0.2ms)[0m  SELECT "attractions".* FROM "attractions"
+  Rendered traveling_plans/index.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 4ms (Views: 2.7ms | ActiveRecord: 0.2ms)
+Started GET "/suggestion?utf8=%E2%9C%93&travel_plan[state]=NY&travel_plan[stop][]=&travel_plan[stop][]=New+York&travel_plan[traveling_days]=2&commit=Search" for 127.0.0.1 at 2022-10-29 20:20:51 +0000
+Processing by TravelingPlansController#suggestion as HTML
+  Parameters: {"utf8"=>"✓", "travel_plan"=>{"state"=>"NY", "stop"=>["", "New York"], "traveling_days"=>"2"}, "commit"=>"Search"}
+  Rendered traveling_plans/suggestion.html.erb within layouts/application (0.6ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 5ms (Views: 2.2ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "Empire State Building"], ["rating", 4.7], ["address", "20 W 34th St., New York, NY 10001"], ["city", "New York"], ["state", "NY"], ["latitude", 40.7484396], ["longitude", -73.9944193], ["recommended_time", 60], ["created_at", "2022-10-29 20:21:37.899279"], ["updated_at", "2022-10-29 20:21:37.899279"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "The Met"], ["rating", 4.8], ["address", "1000 5th Ave, New York, NY 10028"], ["city", "New York"], ["state", "NY"], ["latitude", 40.7794366], ["longitude", -74.0950799], ["recommended_time", 180], ["created_at", "2022-10-29 20:21:37.902252"], ["updated_at", "2022-10-29 20:21:37.902252"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "MoMA"], ["rating", 4.6], ["address", "11 W 53rd St, New York, NY 10019"], ["city", "New York"], ["state", "NY"], ["latitude", 40.7484714], ["longitude", -73.9944193], ["recommended_time", 180], ["created_at", "2022-10-29 20:21:37.904916"], ["updated_at", "2022-10-29 20:21:37.904916"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Statue of Liberty"], ["rating", 4.7], ["address", "Statue of Liberty, New York, NY 10004"], ["city", "New York"], ["state", "NY"], ["latitude", 40.6917572], ["longitude", -74.0429902], ["recommended_time", 180], ["created_at", "2022-10-29 20:21:37.907052"], ["updated_at", "2022-10-29 20:21:37.907052"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "Columbia University"], ["rating", 4.7], ["address", "Columbia University, New York, NY 10027"], ["city", "New York"], ["state", "NY"], ["latitude", 40.8075395], ["longitude", -73.9670574], ["recommended_time", 60], ["created_at", "2022-10-29 20:21:37.909004"], ["updated_at", "2022-10-29 20:21:37.909004"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/index" for 127.0.0.1 at 2022-10-29 20:21:37 +0000
+Processing by TravelingPlansController#search as HTML
+  [1m[35mAttraction Load (0.2ms)[0m  SELECT "attractions".* FROM "attractions"
+  Rendered traveling_plans/index.html.erb within layouts/application (7.6ms)
+  Rendered layouts/_flash.erb (5.6ms)
+Completed 200 OK in 254ms (Views: 252.4ms | ActiveRecord: 0.2ms)
+Started GET "/suggestion?utf8=%E2%9C%93&travel_plan[state]=NY&travel_plan[stop][]=&travel_plan[traveling_days]=2&commit=Search" for 127.0.0.1 at 2022-10-29 20:21:38 +0000
+Processing by TravelingPlansController#suggestion as HTML
+  Parameters: {"utf8"=>"✓", "travel_plan"=>{"state"=>"NY", "stop"=>[""], "traveling_days"=>"2"}, "commit"=>"Search"}
+  Rendered traveling_plans/suggestion.html.erb within layouts/application (1.6ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 33ms (Views: 28.6ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "Empire State Building"], ["rating", 4.7], ["address", "20 W 34th St., New York, NY 10001"], ["city", "New York"], ["state", "NY"], ["latitude", 40.7484396], ["longitude", -73.9944193], ["recommended_time", 60], ["created_at", "2022-10-29 20:21:38.233682"], ["updated_at", "2022-10-29 20:21:38.233682"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "The Met"], ["rating", 4.8], ["address", "1000 5th Ave, New York, NY 10028"], ["city", "New York"], ["state", "NY"], ["latitude", 40.7794366], ["longitude", -74.0950799], ["recommended_time", 180], ["created_at", "2022-10-29 20:21:38.235998"], ["updated_at", "2022-10-29 20:21:38.235998"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "MoMA"], ["rating", 4.6], ["address", "11 W 53rd St, New York, NY 10019"], ["city", "New York"], ["state", "NY"], ["latitude", 40.7484714], ["longitude", -73.9944193], ["recommended_time", 180], ["created_at", "2022-10-29 20:21:38.237840"], ["updated_at", "2022-10-29 20:21:38.237840"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Statue of Liberty"], ["rating", 4.7], ["address", "Statue of Liberty, New York, NY 10004"], ["city", "New York"], ["state", "NY"], ["latitude", 40.6917572], ["longitude", -74.0429902], ["recommended_time", 180], ["created_at", "2022-10-29 20:21:38.239578"], ["updated_at", "2022-10-29 20:21:38.239578"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "Columbia University"], ["rating", 4.7], ["address", "Columbia University, New York, NY 10027"], ["city", "New York"], ["state", "NY"], ["latitude", 40.8075395], ["longitude", -73.9670574], ["recommended_time", 60], ["created_at", "2022-10-29 20:21:38.241610"], ["updated_at", "2022-10-29 20:21:38.241610"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/index" for 127.0.0.1 at 2022-10-29 20:21:38 +0000
+Processing by TravelingPlansController#search as HTML
+  [1m[35mAttraction Load (0.1ms)[0m  SELECT "attractions".* FROM "attractions"
+  Rendered traveling_plans/index.html.erb within layouts/application (0.9ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.1ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "Empire State Building"], ["rating", 4.7], ["address", "20 W 34th St., New York, NY 10001"], ["city", "New York"], ["state", "NY"], ["latitude", 40.7484396], ["longitude", -73.9944193], ["recommended_time", 60], ["created_at", "2022-10-29 20:21:38.258454"], ["updated_at", "2022-10-29 20:21:38.258454"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "The Met"], ["rating", 4.8], ["address", "1000 5th Ave, New York, NY 10028"], ["city", "New York"], ["state", "NY"], ["latitude", 40.7794366], ["longitude", -74.0950799], ["recommended_time", 180], ["created_at", "2022-10-29 20:21:38.260655"], ["updated_at", "2022-10-29 20:21:38.260655"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "MoMA"], ["rating", 4.6], ["address", "11 W 53rd St, New York, NY 10019"], ["city", "New York"], ["state", "NY"], ["latitude", 40.7484714], ["longitude", -73.9944193], ["recommended_time", 180], ["created_at", "2022-10-29 20:21:38.262548"], ["updated_at", "2022-10-29 20:21:38.262548"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Statue of Liberty"], ["rating", 4.7], ["address", "Statue of Liberty, New York, NY 10004"], ["city", "New York"], ["state", "NY"], ["latitude", 40.6917572], ["longitude", -74.0429902], ["recommended_time", 180], ["created_at", "2022-10-29 20:21:38.264300"], ["updated_at", "2022-10-29 20:21:38.264300"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "Columbia University"], ["rating", 4.7], ["address", "Columbia University, New York, NY 10027"], ["city", "New York"], ["state", "NY"], ["latitude", 40.8075395], ["longitude", -73.9670574], ["recommended_time", 60], ["created_at", "2022-10-29 20:21:38.266135"], ["updated_at", "2022-10-29 20:21:38.266135"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/index" for 127.0.0.1 at 2022-10-29 20:21:38 +0000
+Processing by TravelingPlansController#search as HTML
+  [1m[35mAttraction Load (0.2ms)[0m  SELECT "attractions".* FROM "attractions"
+  Rendered traveling_plans/index.html.erb within layouts/application (1.4ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.2ms)
+Started GET "/suggestion?utf8=%E2%9C%93&travel_plan[state]=NY&travel_plan[stop][]=&travel_plan[stop][]=New+York&travel_plan[traveling_days]=2&commit=Search" for 127.0.0.1 at 2022-10-29 20:21:38 +0000
+Processing by TravelingPlansController#suggestion as HTML
+  Parameters: {"utf8"=>"✓", "travel_plan"=>{"state"=>"NY", "stop"=>["", "New York"], "traveling_days"=>"2"}, "commit"=>"Search"}
+  Rendered traveling_plans/suggestion.html.erb within layouts/application (0.6ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 5ms (Views: 2.1ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "Empire State Building"], ["rating", 4.7], ["address", "20 W 34th St., New York, NY 10001"], ["city", "New York"], ["state", "NY"], ["latitude", 40.7484396], ["longitude", -73.9944193], ["recommended_time", 60], ["created_at", "2022-10-29 20:22:42.399612"], ["updated_at", "2022-10-29 20:22:42.399612"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "The Met"], ["rating", 4.8], ["address", "1000 5th Ave, New York, NY 10028"], ["city", "New York"], ["state", "NY"], ["latitude", 40.7794366], ["longitude", -74.0950799], ["recommended_time", 180], ["created_at", "2022-10-29 20:22:42.402917"], ["updated_at", "2022-10-29 20:22:42.402917"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "MoMA"], ["rating", 4.6], ["address", "11 W 53rd St, New York, NY 10019"], ["city", "New York"], ["state", "NY"], ["latitude", 40.7484714], ["longitude", -73.9944193], ["recommended_time", 180], ["created_at", "2022-10-29 20:22:42.405207"], ["updated_at", "2022-10-29 20:22:42.405207"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Statue of Liberty"], ["rating", 4.7], ["address", "Statue of Liberty, New York, NY 10004"], ["city", "New York"], ["state", "NY"], ["latitude", 40.6917572], ["longitude", -74.0429902], ["recommended_time", 180], ["created_at", "2022-10-29 20:22:42.407302"], ["updated_at", "2022-10-29 20:22:42.407302"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "Columbia University"], ["rating", 4.7], ["address", "Columbia University, New York, NY 10027"], ["city", "New York"], ["state", "NY"], ["latitude", 40.8075395], ["longitude", -73.9670574], ["recommended_time", 60], ["created_at", "2022-10-29 20:22:42.409685"], ["updated_at", "2022-10-29 20:22:42.409685"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/index" for 127.0.0.1 at 2022-10-29 20:22:42 +0000
+Processing by TravelingPlansController#search as HTML
+  [1m[35mAttraction Load (0.2ms)[0m  SELECT "attractions".* FROM "attractions"
+  Rendered traveling_plans/index.html.erb within layouts/application (9.2ms)
+  Rendered layouts/_flash.erb (6.0ms)
+Completed 200 OK in 238ms (Views: 236.6ms | ActiveRecord: 0.2ms)
+Started GET "/suggestion?utf8=%E2%9C%93&travel_plan[state]=NY&travel_plan[stop][]=&travel_plan[traveling_days]=2&commit=Search" for 127.0.0.1 at 2022-10-29 20:22:42 +0000
+Processing by TravelingPlansController#suggestion as HTML
+  Parameters: {"utf8"=>"✓", "travel_plan"=>{"state"=>"NY", "stop"=>[""], "traveling_days"=>"2"}, "commit"=>"Search"}
+  Rendered traveling_plans/suggestion.html.erb within layouts/application (1.8ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 9ms (Views: 4.1ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "Empire State Building"], ["rating", 4.7], ["address", "20 W 34th St., New York, NY 10001"], ["city", "New York"], ["state", "NY"], ["latitude", 40.7484396], ["longitude", -73.9944193], ["recommended_time", 60], ["created_at", "2022-10-29 20:22:42.709256"], ["updated_at", "2022-10-29 20:22:42.709256"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "The Met"], ["rating", 4.8], ["address", "1000 5th Ave, New York, NY 10028"], ["city", "New York"], ["state", "NY"], ["latitude", 40.7794366], ["longitude", -74.0950799], ["recommended_time", 180], ["created_at", "2022-10-29 20:22:42.711564"], ["updated_at", "2022-10-29 20:22:42.711564"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "MoMA"], ["rating", 4.6], ["address", "11 W 53rd St, New York, NY 10019"], ["city", "New York"], ["state", "NY"], ["latitude", 40.7484714], ["longitude", -73.9944193], ["recommended_time", 180], ["created_at", "2022-10-29 20:22:42.713701"], ["updated_at", "2022-10-29 20:22:42.713701"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Statue of Liberty"], ["rating", 4.7], ["address", "Statue of Liberty, New York, NY 10004"], ["city", "New York"], ["state", "NY"], ["latitude", 40.6917572], ["longitude", -74.0429902], ["recommended_time", 180], ["created_at", "2022-10-29 20:22:42.715613"], ["updated_at", "2022-10-29 20:22:42.715613"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "Columbia University"], ["rating", 4.7], ["address", "Columbia University, New York, NY 10027"], ["city", "New York"], ["state", "NY"], ["latitude", 40.8075395], ["longitude", -73.9670574], ["recommended_time", 60], ["created_at", "2022-10-29 20:22:42.717597"], ["updated_at", "2022-10-29 20:22:42.717597"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/index" for 127.0.0.1 at 2022-10-29 20:22:42 +0000
+Processing by TravelingPlansController#search as HTML
+  [1m[35mAttraction Load (0.2ms)[0m  SELECT "attractions".* FROM "attractions"
+  Rendered traveling_plans/index.html.erb within layouts/application (1.2ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.2ms)
+  [1m[36m (0.4ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "Empire State Building"], ["rating", 4.7], ["address", "20 W 34th St., New York, NY 10001"], ["city", "New York"], ["state", "NY"], ["latitude", 40.7484396], ["longitude", -73.9944193], ["recommended_time", 60], ["created_at", "2022-10-29 20:22:42.736734"], ["updated_at", "2022-10-29 20:22:42.736734"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "The Met"], ["rating", 4.8], ["address", "1000 5th Ave, New York, NY 10028"], ["city", "New York"], ["state", "NY"], ["latitude", 40.7794366], ["longitude", -74.0950799], ["recommended_time", 180], ["created_at", "2022-10-29 20:22:42.739378"], ["updated_at", "2022-10-29 20:22:42.739378"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "MoMA"], ["rating", 4.6], ["address", "11 W 53rd St, New York, NY 10019"], ["city", "New York"], ["state", "NY"], ["latitude", 40.7484714], ["longitude", -73.9944193], ["recommended_time", 180], ["created_at", "2022-10-29 20:22:42.741617"], ["updated_at", "2022-10-29 20:22:42.741617"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Statue of Liberty"], ["rating", 4.7], ["address", "Statue of Liberty, New York, NY 10004"], ["city", "New York"], ["state", "NY"], ["latitude", 40.6917572], ["longitude", -74.0429902], ["recommended_time", 180], ["created_at", "2022-10-29 20:22:42.743781"], ["updated_at", "2022-10-29 20:22:42.743781"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "Columbia University"], ["rating", 4.7], ["address", "Columbia University, New York, NY 10027"], ["city", "New York"], ["state", "NY"], ["latitude", 40.8075395], ["longitude", -73.9670574], ["recommended_time", 60], ["created_at", "2022-10-29 20:22:42.746704"], ["updated_at", "2022-10-29 20:22:42.746704"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/index" for 127.0.0.1 at 2022-10-29 20:22:42 +0000
+Processing by TravelingPlansController#search as HTML
+  [1m[35mAttraction Load (0.1ms)[0m  SELECT "attractions".* FROM "attractions"
+  Rendered traveling_plans/index.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.1ms)
+Started GET "/suggestion?utf8=%E2%9C%93&travel_plan[state]=NY&travel_plan[stop][]=&travel_plan[stop][]=New+York&travel_plan[traveling_days]=2&commit=Search" for 127.0.0.1 at 2022-10-29 20:22:42 +0000
+Processing by TravelingPlansController#suggestion as HTML
+  Parameters: {"utf8"=>"✓", "travel_plan"=>{"state"=>"NY", "stop"=>["", "New York"], "traveling_days"=>"2"}, "commit"=>"Search"}
+  Rendered traveling_plans/suggestion.html.erb within layouts/application (0.6ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 5ms (Views: 2.5ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "Empire State Building"], ["rating", 4.7], ["address", "20 W 34th St., New York, NY 10001"], ["city", "New York"], ["state", "NY"], ["latitude", 40.7484396], ["longitude", -73.9944193], ["recommended_time", 60], ["created_at", "2022-10-29 20:24:12.831359"], ["updated_at", "2022-10-29 20:24:12.831359"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "The Met"], ["rating", 4.8], ["address", "1000 5th Ave, New York, NY 10028"], ["city", "New York"], ["state", "NY"], ["latitude", 40.7794366], ["longitude", -74.0950799], ["recommended_time", 180], ["created_at", "2022-10-29 20:24:12.834041"], ["updated_at", "2022-10-29 20:24:12.834041"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "MoMA"], ["rating", 4.6], ["address", "11 W 53rd St, New York, NY 10019"], ["city", "New York"], ["state", "NY"], ["latitude", 40.7484714], ["longitude", -73.9944193], ["recommended_time", 180], ["created_at", "2022-10-29 20:24:12.835874"], ["updated_at", "2022-10-29 20:24:12.835874"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Statue of Liberty"], ["rating", 4.7], ["address", "Statue of Liberty, New York, NY 10004"], ["city", "New York"], ["state", "NY"], ["latitude", 40.6917572], ["longitude", -74.0429902], ["recommended_time", 180], ["created_at", "2022-10-29 20:24:12.837683"], ["updated_at", "2022-10-29 20:24:12.837683"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "Columbia University"], ["rating", 4.7], ["address", "Columbia University, New York, NY 10027"], ["city", "New York"], ["state", "NY"], ["latitude", 40.8075395], ["longitude", -73.9670574], ["recommended_time", 60], ["created_at", "2022-10-29 20:24:12.839422"], ["updated_at", "2022-10-29 20:24:12.839422"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/index" for 127.0.0.1 at 2022-10-29 20:24:12 +0000
+Processing by TravelingPlansController#search as HTML
+  [1m[35mAttraction Load (0.2ms)[0m  SELECT "attractions".* FROM "attractions"
+  Rendered traveling_plans/index.html.erb within layouts/application (7.4ms)
+  Rendered layouts/_flash.erb (5.5ms)
+Completed 200 OK in 250ms (Views: 248.7ms | ActiveRecord: 0.2ms)
+Started GET "/suggestion?utf8=%E2%9C%93&travel_plan[state]=NY&travel_plan[stop][]=&travel_plan[traveling_days]=2&commit=Search" for 127.0.0.1 at 2022-10-29 20:24:13 +0000
+Processing by TravelingPlansController#suggestion as HTML
+  Parameters: {"utf8"=>"✓", "travel_plan"=>{"state"=>"NY", "stop"=>[""], "traveling_days"=>"2"}, "commit"=>"Search"}
+  Rendered traveling_plans/suggestion.html.erb within layouts/application (1.5ms)
+  Rendered layouts/_flash.erb (25.5ms)
+Completed 200 OK in 33ms (Views: 28.9ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "Empire State Building"], ["rating", 4.7], ["address", "20 W 34th St., New York, NY 10001"], ["city", "New York"], ["state", "NY"], ["latitude", 40.7484396], ["longitude", -73.9944193], ["recommended_time", 60], ["created_at", "2022-10-29 20:24:13.163759"], ["updated_at", "2022-10-29 20:24:13.163759"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "The Met"], ["rating", 4.8], ["address", "1000 5th Ave, New York, NY 10028"], ["city", "New York"], ["state", "NY"], ["latitude", 40.7794366], ["longitude", -74.0950799], ["recommended_time", 180], ["created_at", "2022-10-29 20:24:13.166485"], ["updated_at", "2022-10-29 20:24:13.166485"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "MoMA"], ["rating", 4.6], ["address", "11 W 53rd St, New York, NY 10019"], ["city", "New York"], ["state", "NY"], ["latitude", 40.7484714], ["longitude", -73.9944193], ["recommended_time", 180], ["created_at", "2022-10-29 20:24:13.168411"], ["updated_at", "2022-10-29 20:24:13.168411"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Statue of Liberty"], ["rating", 4.7], ["address", "Statue of Liberty, New York, NY 10004"], ["city", "New York"], ["state", "NY"], ["latitude", 40.6917572], ["longitude", -74.0429902], ["recommended_time", 180], ["created_at", "2022-10-29 20:24:13.170384"], ["updated_at", "2022-10-29 20:24:13.170384"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "Columbia University"], ["rating", 4.7], ["address", "Columbia University, New York, NY 10027"], ["city", "New York"], ["state", "NY"], ["latitude", 40.8075395], ["longitude", -73.9670574], ["recommended_time", 60], ["created_at", "2022-10-29 20:24:13.172323"], ["updated_at", "2022-10-29 20:24:13.172323"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/index" for 127.0.0.1 at 2022-10-29 20:24:13 +0000
+Processing by TravelingPlansController#search as HTML
+  [1m[35mAttraction Load (0.2ms)[0m  SELECT "attractions".* FROM "attractions"
+  Rendered traveling_plans/index.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 4ms (Views: 2.6ms | ActiveRecord: 0.2ms)
+Started GET "/index" for 127.0.0.1 at 2022-10-29 20:24:13 +0000
+Processing by TravelingPlansController#search as HTML
+  [1m[36mAttraction Load (0.2ms)[0m  [1mSELECT "attractions".* FROM "attractions"[0m
+  Rendered traveling_plans/index.html.erb within layouts/application (0.9ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Empire State Building"], ["rating", 4.7], ["address", "20 W 34th St., New York, NY 10001"], ["city", "New York"], ["state", "NY"], ["latitude", 40.7484396], ["longitude", -73.9944193], ["recommended_time", 60], ["created_at", "2022-10-29 20:24:13.243612"], ["updated_at", "2022-10-29 20:24:13.243612"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "The Met"], ["rating", 4.8], ["address", "1000 5th Ave, New York, NY 10028"], ["city", "New York"], ["state", "NY"], ["latitude", 40.7794366], ["longitude", -74.0950799], ["recommended_time", 180], ["created_at", "2022-10-29 20:24:13.246091"], ["updated_at", "2022-10-29 20:24:13.246091"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "MoMA"], ["rating", 4.6], ["address", "11 W 53rd St, New York, NY 10019"], ["city", "New York"], ["state", "NY"], ["latitude", 40.7484714], ["longitude", -73.9944193], ["recommended_time", 180], ["created_at", "2022-10-29 20:24:13.248340"], ["updated_at", "2022-10-29 20:24:13.248340"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "Statue of Liberty"], ["rating", 4.7], ["address", "Statue of Liberty, New York, NY 10004"], ["city", "New York"], ["state", "NY"], ["latitude", 40.6917572], ["longitude", -74.0429902], ["recommended_time", 180], ["created_at", "2022-10-29 20:24:13.250477"], ["updated_at", "2022-10-29 20:24:13.250477"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Columbia University"], ["rating", 4.7], ["address", "Columbia University, New York, NY 10027"], ["city", "New York"], ["state", "NY"], ["latitude", 40.8075395], ["longitude", -73.9670574], ["recommended_time", 60], ["created_at", "2022-10-29 20:24:13.252239"], ["updated_at", "2022-10-29 20:24:13.252239"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/index" for 127.0.0.1 at 2022-10-29 20:24:13 +0000
+Processing by TravelingPlansController#search as HTML
+  [1m[36mAttraction Load (0.1ms)[0m  [1mSELECT "attractions".* FROM "attractions"[0m
+  Rendered traveling_plans/index.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 4ms (Views: 2.6ms | ActiveRecord: 0.1ms)
+Started GET "/suggestion?utf8=%E2%9C%93&travel_plan[state]=NY&travel_plan[stop][]=&travel_plan[stop][]=New+York&travel_plan[traveling_days]=2&commit=Search" for 127.0.0.1 at 2022-10-29 20:24:13 +0000
+Processing by TravelingPlansController#suggestion as HTML
+  Parameters: {"utf8"=>"✓", "travel_plan"=>{"state"=>"NY", "stop"=>["", "New York"], "traveling_days"=>"2"}, "commit"=>"Search"}
+  Rendered traveling_plans/suggestion.html.erb within layouts/application (0.7ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 5ms (Views: 2.1ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "Empire State Building"], ["rating", 4.7], ["address", "20 W 34th St., New York, NY 10001"], ["city", "New York"], ["state", "NY"], ["latitude", 40.7484396], ["longitude", -73.9944193], ["recommended_time", 60], ["created_at", "2022-10-29 20:25:15.262548"], ["updated_at", "2022-10-29 20:25:15.262548"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "The Met"], ["rating", 4.8], ["address", "1000 5th Ave, New York, NY 10028"], ["city", "New York"], ["state", "NY"], ["latitude", 40.7794366], ["longitude", -74.0950799], ["recommended_time", 180], ["created_at", "2022-10-29 20:25:15.267004"], ["updated_at", "2022-10-29 20:25:15.267004"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "MoMA"], ["rating", 4.6], ["address", "11 W 53rd St, New York, NY 10019"], ["city", "New York"], ["state", "NY"], ["latitude", 40.7484714], ["longitude", -73.9944193], ["recommended_time", 180], ["created_at", "2022-10-29 20:25:15.269941"], ["updated_at", "2022-10-29 20:25:15.269941"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Statue of Liberty"], ["rating", 4.7], ["address", "Statue of Liberty, New York, NY 10004"], ["city", "New York"], ["state", "NY"], ["latitude", 40.6917572], ["longitude", -74.0429902], ["recommended_time", 180], ["created_at", "2022-10-29 20:25:15.273100"], ["updated_at", "2022-10-29 20:25:15.273100"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "Columbia University"], ["rating", 4.7], ["address", "Columbia University, New York, NY 10027"], ["city", "New York"], ["state", "NY"], ["latitude", 40.8075395], ["longitude", -73.9670574], ["recommended_time", 60], ["created_at", "2022-10-29 20:25:15.275916"], ["updated_at", "2022-10-29 20:25:15.275916"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/index" for 127.0.0.1 at 2022-10-29 20:25:15 +0000
+Processing by TravelingPlansController#search as HTML
+  [1m[35mAttraction Load (0.2ms)[0m  SELECT "attractions".* FROM "attractions"
+  Rendered traveling_plans/index.html.erb within layouts/application (10.3ms)
+  Rendered layouts/_flash.erb (6.2ms)
+Completed 200 OK in 284ms (Views: 282.2ms | ActiveRecord: 0.2ms)
+Started GET "/suggestion?utf8=%E2%9C%93&travel_plan[state]=NY&travel_plan[stop][]=&travel_plan[traveling_days]=2&commit=Search" for 127.0.0.1 at 2022-10-29 20:25:15 +0000
+Processing by TravelingPlansController#suggestion as HTML
+  Parameters: {"utf8"=>"✓", "travel_plan"=>{"state"=>"NY", "stop"=>[""], "traveling_days"=>"2"}, "commit"=>"Search"}
+  Rendered traveling_plans/suggestion.html.erb within layouts/application (1.5ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 8ms (Views: 3.7ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "Empire State Building"], ["rating", 4.7], ["address", "20 W 34th St., New York, NY 10001"], ["city", "New York"], ["state", "NY"], ["latitude", 40.7484396], ["longitude", -73.9944193], ["recommended_time", 60], ["created_at", "2022-10-29 20:25:15.633178"], ["updated_at", "2022-10-29 20:25:15.633178"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "The Met"], ["rating", 4.8], ["address", "1000 5th Ave, New York, NY 10028"], ["city", "New York"], ["state", "NY"], ["latitude", 40.7794366], ["longitude", -74.0950799], ["recommended_time", 180], ["created_at", "2022-10-29 20:25:15.635552"], ["updated_at", "2022-10-29 20:25:15.635552"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "MoMA"], ["rating", 4.6], ["address", "11 W 53rd St, New York, NY 10019"], ["city", "New York"], ["state", "NY"], ["latitude", 40.7484714], ["longitude", -73.9944193], ["recommended_time", 180], ["created_at", "2022-10-29 20:25:15.638034"], ["updated_at", "2022-10-29 20:25:15.638034"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Statue of Liberty"], ["rating", 4.7], ["address", "Statue of Liberty, New York, NY 10004"], ["city", "New York"], ["state", "NY"], ["latitude", 40.6917572], ["longitude", -74.0429902], ["recommended_time", 180], ["created_at", "2022-10-29 20:25:15.640084"], ["updated_at", "2022-10-29 20:25:15.640084"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "Columbia University"], ["rating", 4.7], ["address", "Columbia University, New York, NY 10027"], ["city", "New York"], ["state", "NY"], ["latitude", 40.8075395], ["longitude", -73.9670574], ["recommended_time", 60], ["created_at", "2022-10-29 20:25:15.642217"], ["updated_at", "2022-10-29 20:25:15.642217"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/index" for 127.0.0.1 at 2022-10-29 20:25:15 +0000
+Processing by TravelingPlansController#search as HTML
+  [1m[35mAttraction Load (0.2ms)[0m  SELECT "attractions".* FROM "attractions"
+  Rendered traveling_plans/index.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.2ms)
+Started GET "/index" for 127.0.0.1 at 2022-10-29 20:25:15 +0000
+Processing by TravelingPlansController#search as HTML
+  [1m[36mAttraction Load (0.2ms)[0m  [1mSELECT "attractions".* FROM "attractions"[0m
+  Rendered traveling_plans/index.html.erb within layouts/application (1.1ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Empire State Building"], ["rating", 4.7], ["address", "20 W 34th St., New York, NY 10001"], ["city", "New York"], ["state", "NY"], ["latitude", 40.7484396], ["longitude", -73.9944193], ["recommended_time", 60], ["created_at", "2022-10-29 20:25:15.672356"], ["updated_at", "2022-10-29 20:25:15.672356"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "The Met"], ["rating", 4.8], ["address", "1000 5th Ave, New York, NY 10028"], ["city", "New York"], ["state", "NY"], ["latitude", 40.7794366], ["longitude", -74.0950799], ["recommended_time", 180], ["created_at", "2022-10-29 20:25:15.675878"], ["updated_at", "2022-10-29 20:25:15.675878"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "MoMA"], ["rating", 4.6], ["address", "11 W 53rd St, New York, NY 10019"], ["city", "New York"], ["state", "NY"], ["latitude", 40.7484714], ["longitude", -73.9944193], ["recommended_time", 180], ["created_at", "2022-10-29 20:25:15.679355"], ["updated_at", "2022-10-29 20:25:15.679355"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "Statue of Liberty"], ["rating", 4.7], ["address", "Statue of Liberty, New York, NY 10004"], ["city", "New York"], ["state", "NY"], ["latitude", 40.6917572], ["longitude", -74.0429902], ["recommended_time", 180], ["created_at", "2022-10-29 20:25:15.682496"], ["updated_at", "2022-10-29 20:25:15.682496"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Columbia University"], ["rating", 4.7], ["address", "Columbia University, New York, NY 10027"], ["city", "New York"], ["state", "NY"], ["latitude", 40.8075395], ["longitude", -73.9670574], ["recommended_time", 60], ["created_at", "2022-10-29 20:25:15.685605"], ["updated_at", "2022-10-29 20:25:15.685605"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/index" for 127.0.0.1 at 2022-10-29 20:25:15 +0000
+Processing by TravelingPlansController#search as HTML
+  [1m[36mAttraction Load (0.2ms)[0m  [1mSELECT "attractions".* FROM "attractions"[0m
+  Rendered traveling_plans/index.html.erb within layouts/application (1.2ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 5ms (Views: 3.3ms | ActiveRecord: 0.2ms)
+Started GET "/suggestion?utf8=%E2%9C%93&travel_plan[state]=NY&travel_plan[stop][]=&travel_plan[stop][]=New+York&travel_plan[traveling_days]=2&commit=Search" for 127.0.0.1 at 2022-10-29 20:25:15 +0000
+Processing by TravelingPlansController#suggestion as HTML
+  Parameters: {"utf8"=>"✓", "travel_plan"=>{"state"=>"NY", "stop"=>["", "New York"], "traveling_days"=>"2"}, "commit"=>"Search"}
+  Rendered traveling_plans/suggestion.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_flash.erb (0.3ms)
+Completed 200 OK in 7ms (Views: 3.4ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "Empire State Building"], ["rating", 4.7], ["address", "20 W 34th St., New York, NY 10001"], ["city", "New York"], ["state", "NY"], ["latitude", 40.7484396], ["longitude", -73.9944193], ["recommended_time", 60], ["created_at", "2022-10-29 20:25:34.069374"], ["updated_at", "2022-10-29 20:25:34.069374"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "The Met"], ["rating", 4.8], ["address", "1000 5th Ave, New York, NY 10028"], ["city", "New York"], ["state", "NY"], ["latitude", 40.7794366], ["longitude", -74.0950799], ["recommended_time", 180], ["created_at", "2022-10-29 20:25:34.073813"], ["updated_at", "2022-10-29 20:25:34.073813"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "MoMA"], ["rating", 4.6], ["address", "11 W 53rd St, New York, NY 10019"], ["city", "New York"], ["state", "NY"], ["latitude", 40.7484714], ["longitude", -73.9944193], ["recommended_time", 180], ["created_at", "2022-10-29 20:25:34.077097"], ["updated_at", "2022-10-29 20:25:34.077097"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Statue of Liberty"], ["rating", 4.7], ["address", "Statue of Liberty, New York, NY 10004"], ["city", "New York"], ["state", "NY"], ["latitude", 40.6917572], ["longitude", -74.0429902], ["recommended_time", 180], ["created_at", "2022-10-29 20:25:34.080314"], ["updated_at", "2022-10-29 20:25:34.080314"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "Columbia University"], ["rating", 4.7], ["address", "Columbia University, New York, NY 10027"], ["city", "New York"], ["state", "NY"], ["latitude", 40.8075395], ["longitude", -73.9670574], ["recommended_time", 60], ["created_at", "2022-10-29 20:25:34.083316"], ["updated_at", "2022-10-29 20:25:34.083316"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/index" for 127.0.0.1 at 2022-10-29 20:25:34 +0000
+Processing by TravelingPlansController#search as HTML
+  [1m[35mAttraction Load (0.2ms)[0m  SELECT "attractions".* FROM "attractions"
+  Rendered traveling_plans/index.html.erb within layouts/application (9.3ms)
+  Rendered layouts/_flash.erb (5.6ms)
+Completed 200 OK in 261ms (Views: 259.3ms | ActiveRecord: 0.2ms)
+Started GET "/suggestion?utf8=%E2%9C%93&travel_plan[state]=NY&travel_plan[stop][]=&travel_plan[traveling_days]=2&commit=Search" for 127.0.0.1 at 2022-10-29 20:25:34 +0000
+Processing by TravelingPlansController#suggestion as HTML
+  Parameters: {"utf8"=>"✓", "travel_plan"=>{"state"=>"NY", "stop"=>[""], "traveling_days"=>"2"}, "commit"=>"Search"}
+  Rendered traveling_plans/suggestion.html.erb within layouts/application (1.4ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 7ms (Views: 3.6ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "Empire State Building"], ["rating", 4.7], ["address", "20 W 34th St., New York, NY 10001"], ["city", "New York"], ["state", "NY"], ["latitude", 40.7484396], ["longitude", -73.9944193], ["recommended_time", 60], ["created_at", "2022-10-29 20:25:34.421632"], ["updated_at", "2022-10-29 20:25:34.421632"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "The Met"], ["rating", 4.8], ["address", "1000 5th Ave, New York, NY 10028"], ["city", "New York"], ["state", "NY"], ["latitude", 40.7794366], ["longitude", -74.0950799], ["recommended_time", 180], ["created_at", "2022-10-29 20:25:34.424006"], ["updated_at", "2022-10-29 20:25:34.424006"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "MoMA"], ["rating", 4.6], ["address", "11 W 53rd St, New York, NY 10019"], ["city", "New York"], ["state", "NY"], ["latitude", 40.7484714], ["longitude", -73.9944193], ["recommended_time", 180], ["created_at", "2022-10-29 20:25:34.426102"], ["updated_at", "2022-10-29 20:25:34.426102"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Statue of Liberty"], ["rating", 4.7], ["address", "Statue of Liberty, New York, NY 10004"], ["city", "New York"], ["state", "NY"], ["latitude", 40.6917572], ["longitude", -74.0429902], ["recommended_time", 180], ["created_at", "2022-10-29 20:25:34.428064"], ["updated_at", "2022-10-29 20:25:34.428064"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "Columbia University"], ["rating", 4.7], ["address", "Columbia University, New York, NY 10027"], ["city", "New York"], ["state", "NY"], ["latitude", 40.8075395], ["longitude", -73.9670574], ["recommended_time", 60], ["created_at", "2022-10-29 20:25:34.430042"], ["updated_at", "2022-10-29 20:25:34.430042"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/index" for 127.0.0.1 at 2022-10-29 20:25:34 +0000
+Processing by TravelingPlansController#search as HTML
+  [1m[35mAttraction Load (0.1ms)[0m  SELECT "attractions".* FROM "attractions"
+  Rendered traveling_plans/index.html.erb within layouts/application (0.9ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.1ms)
+Started GET "/index" for 127.0.0.1 at 2022-10-29 20:25:34 +0000
+Processing by TravelingPlansController#search as HTML
+  [1m[36mAttraction Load (0.2ms)[0m  [1mSELECT "attractions".* FROM "attractions"[0m
+  Rendered traveling_plans/index.html.erb within layouts/application (0.9ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Empire State Building"], ["rating", 4.7], ["address", "20 W 34th St., New York, NY 10001"], ["city", "New York"], ["state", "NY"], ["latitude", 40.7484396], ["longitude", -73.9944193], ["recommended_time", 60], ["created_at", "2022-10-29 20:25:34.453566"], ["updated_at", "2022-10-29 20:25:34.453566"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "The Met"], ["rating", 4.8], ["address", "1000 5th Ave, New York, NY 10028"], ["city", "New York"], ["state", "NY"], ["latitude", 40.7794366], ["longitude", -74.0950799], ["recommended_time", 180], ["created_at", "2022-10-29 20:25:34.455853"], ["updated_at", "2022-10-29 20:25:34.455853"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "MoMA"], ["rating", 4.6], ["address", "11 W 53rd St, New York, NY 10019"], ["city", "New York"], ["state", "NY"], ["latitude", 40.7484714], ["longitude", -73.9944193], ["recommended_time", 180], ["created_at", "2022-10-29 20:25:34.457759"], ["updated_at", "2022-10-29 20:25:34.457759"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "Statue of Liberty"], ["rating", 4.7], ["address", "Statue of Liberty, New York, NY 10004"], ["city", "New York"], ["state", "NY"], ["latitude", 40.6917572], ["longitude", -74.0429902], ["recommended_time", 180], ["created_at", "2022-10-29 20:25:34.459528"], ["updated_at", "2022-10-29 20:25:34.459528"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Columbia University"], ["rating", 4.7], ["address", "Columbia University, New York, NY 10027"], ["city", "New York"], ["state", "NY"], ["latitude", 40.8075395], ["longitude", -73.9670574], ["recommended_time", 60], ["created_at", "2022-10-29 20:25:34.461331"], ["updated_at", "2022-10-29 20:25:34.461331"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/index" for 127.0.0.1 at 2022-10-29 20:25:34 +0000
+Processing by TravelingPlansController#search as HTML
+  [1m[36mAttraction Load (0.1ms)[0m  [1mSELECT "attractions".* FROM "attractions"[0m
+  Rendered traveling_plans/index.html.erb within layouts/application (0.9ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.1ms)
+Started GET "/suggestion?utf8=%E2%9C%93&travel_plan[state]=NY&travel_plan[stop][]=&travel_plan[stop][]=New+York&travel_plan[traveling_days]=2&commit=Search" for 127.0.0.1 at 2022-10-29 20:25:34 +0000
+Processing by TravelingPlansController#suggestion as HTML
+  Parameters: {"utf8"=>"✓", "travel_plan"=>{"state"=>"NY", "stop"=>["", "New York"], "traveling_days"=>"2"}, "commit"=>"Search"}
+  Rendered traveling_plans/suggestion.html.erb within layouts/application (0.6ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 5ms (Views: 2.1ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "Empire State Building"], ["rating", 4.7], ["address", "20 W 34th St., New York, NY 10001"], ["city", "New York"], ["state", "NY"], ["latitude", 40.7484396], ["longitude", -73.9944193], ["recommended_time", 60], ["created_at", "2022-10-29 20:27:54.964438"], ["updated_at", "2022-10-29 20:27:54.964438"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "The Met"], ["rating", 4.8], ["address", "1000 5th Ave, New York, NY 10028"], ["city", "New York"], ["state", "NY"], ["latitude", 40.7794366], ["longitude", -74.0950799], ["recommended_time", 180], ["created_at", "2022-10-29 20:27:54.967186"], ["updated_at", "2022-10-29 20:27:54.967186"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "MoMA"], ["rating", 4.6], ["address", "11 W 53rd St, New York, NY 10019"], ["city", "New York"], ["state", "NY"], ["latitude", 40.7484714], ["longitude", -73.9944193], ["recommended_time", 180], ["created_at", "2022-10-29 20:27:54.968977"], ["updated_at", "2022-10-29 20:27:54.968977"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Statue of Liberty"], ["rating", 4.7], ["address", "Statue of Liberty, New York, NY 10004"], ["city", "New York"], ["state", "NY"], ["latitude", 40.6917572], ["longitude", -74.0429902], ["recommended_time", 180], ["created_at", "2022-10-29 20:27:54.970822"], ["updated_at", "2022-10-29 20:27:54.970822"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "Columbia University"], ["rating", 4.7], ["address", "Columbia University, New York, NY 10027"], ["city", "New York"], ["state", "NY"], ["latitude", 40.8075395], ["longitude", -73.9670574], ["recommended_time", 60], ["created_at", "2022-10-29 20:27:54.972603"], ["updated_at", "2022-10-29 20:27:54.972603"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/index" for 127.0.0.1 at 2022-10-29 20:27:54 +0000
+Processing by TravelingPlansController#search as HTML
+  [1m[35mAttraction Load (0.2ms)[0m  SELECT "attractions".* FROM "attractions"
+  Rendered traveling_plans/index.html.erb within layouts/application (7.3ms)
+  Rendered layouts/_flash.erb (5.8ms)
+Completed 200 OK in 251ms (Views: 249.6ms | ActiveRecord: 0.2ms)
+Started GET "/suggestion?utf8=%E2%9C%93&travel_plan[state]=NY&travel_plan[stop][]=&travel_plan[traveling_days]=2&commit=Search" for 127.0.0.1 at 2022-10-29 20:27:55 +0000
+Processing by TravelingPlansController#suggestion as HTML
+  Parameters: {"utf8"=>"✓", "travel_plan"=>{"state"=>"NY", "stop"=>[""], "traveling_days"=>"2"}, "commit"=>"Search"}
+  Rendered traveling_plans/suggestion.html.erb within layouts/application (1.4ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 7ms (Views: 3.3ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "Empire State Building"], ["rating", 4.7], ["address", "20 W 34th St., New York, NY 10001"], ["city", "New York"], ["state", "NY"], ["latitude", 40.7484396], ["longitude", -73.9944193], ["recommended_time", 60], ["created_at", "2022-10-29 20:27:55.292666"], ["updated_at", "2022-10-29 20:27:55.292666"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "The Met"], ["rating", 4.8], ["address", "1000 5th Ave, New York, NY 10028"], ["city", "New York"], ["state", "NY"], ["latitude", 40.7794366], ["longitude", -74.0950799], ["recommended_time", 180], ["created_at", "2022-10-29 20:27:55.295104"], ["updated_at", "2022-10-29 20:27:55.295104"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "MoMA"], ["rating", 4.6], ["address", "11 W 53rd St, New York, NY 10019"], ["city", "New York"], ["state", "NY"], ["latitude", 40.7484714], ["longitude", -73.9944193], ["recommended_time", 180], ["created_at", "2022-10-29 20:27:55.296912"], ["updated_at", "2022-10-29 20:27:55.296912"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Statue of Liberty"], ["rating", 4.7], ["address", "Statue of Liberty, New York, NY 10004"], ["city", "New York"], ["state", "NY"], ["latitude", 40.6917572], ["longitude", -74.0429902], ["recommended_time", 180], ["created_at", "2022-10-29 20:27:55.298806"], ["updated_at", "2022-10-29 20:27:55.298806"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "Columbia University"], ["rating", 4.7], ["address", "Columbia University, New York, NY 10027"], ["city", "New York"], ["state", "NY"], ["latitude", 40.8075395], ["longitude", -73.9670574], ["recommended_time", 60], ["created_at", "2022-10-29 20:27:55.300628"], ["updated_at", "2022-10-29 20:27:55.300628"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/index" for 127.0.0.1 at 2022-10-29 20:27:55 +0000
+Processing by TravelingPlansController#search as HTML
+  [1m[35mAttraction Load (0.1ms)[0m  SELECT "attractions".* FROM "attractions"
+  Rendered traveling_plans/index.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 4ms (Views: 2.6ms | ActiveRecord: 0.1ms)
+Started GET "/index" for 127.0.0.1 at 2022-10-29 20:27:55 +0000
+Processing by TravelingPlansController#search as HTML
+  [1m[36mAttraction Load (0.2ms)[0m  [1mSELECT "attractions".* FROM "attractions"[0m
+  Rendered traveling_plans/index.html.erb within layouts/application (0.9ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Empire State Building"], ["rating", 4.7], ["address", "20 W 34th St., New York, NY 10001"], ["city", "New York"], ["state", "NY"], ["latitude", 40.7484396], ["longitude", -73.9944193], ["recommended_time", 60], ["created_at", "2022-10-29 20:27:55.323501"], ["updated_at", "2022-10-29 20:27:55.323501"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "The Met"], ["rating", 4.8], ["address", "1000 5th Ave, New York, NY 10028"], ["city", "New York"], ["state", "NY"], ["latitude", 40.7794366], ["longitude", -74.0950799], ["recommended_time", 180], ["created_at", "2022-10-29 20:27:55.325764"], ["updated_at", "2022-10-29 20:27:55.325764"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "MoMA"], ["rating", 4.6], ["address", "11 W 53rd St, New York, NY 10019"], ["city", "New York"], ["state", "NY"], ["latitude", 40.7484714], ["longitude", -73.9944193], ["recommended_time", 180], ["created_at", "2022-10-29 20:27:55.327568"], ["updated_at", "2022-10-29 20:27:55.327568"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "Statue of Liberty"], ["rating", 4.7], ["address", "Statue of Liberty, New York, NY 10004"], ["city", "New York"], ["state", "NY"], ["latitude", 40.6917572], ["longitude", -74.0429902], ["recommended_time", 180], ["created_at", "2022-10-29 20:27:55.329385"], ["updated_at", "2022-10-29 20:27:55.329385"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Columbia University"], ["rating", 4.7], ["address", "Columbia University, New York, NY 10027"], ["city", "New York"], ["state", "NY"], ["latitude", 40.8075395], ["longitude", -73.9670574], ["recommended_time", 60], ["created_at", "2022-10-29 20:27:55.331119"], ["updated_at", "2022-10-29 20:27:55.331119"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/index" for 127.0.0.1 at 2022-10-29 20:27:55 +0000
+Processing by TravelingPlansController#search as HTML
+  [1m[36mAttraction Load (0.1ms)[0m  [1mSELECT "attractions".* FROM "attractions"[0m
+  Rendered traveling_plans/index.html.erb within layouts/application (1.2ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 4ms (Views: 2.8ms | ActiveRecord: 0.1ms)
+Started GET "/suggestion?utf8=%E2%9C%93&travel_plan[state]=NY&travel_plan[stop][]=&travel_plan[stop][]=New+York&travel_plan[traveling_days]=2&commit=Search" for 127.0.0.1 at 2022-10-29 20:27:55 +0000
+Processing by TravelingPlansController#suggestion as HTML
+  Parameters: {"utf8"=>"✓", "travel_plan"=>{"state"=>"NY", "stop"=>["", "New York"], "traveling_days"=>"2"}, "commit"=>"Search"}
+  Rendered traveling_plans/suggestion.html.erb within layouts/application (0.6ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 5ms (Views: 2.1ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "Empire State Building"], ["rating", 4.7], ["address", "20 W 34th St., New York, NY 10001"], ["city", "New York"], ["state", "NY"], ["latitude", 40.7484396], ["longitude", -73.9944193], ["recommended_time", 60], ["created_at", "2022-10-29 20:29:57.860896"], ["updated_at", "2022-10-29 20:29:57.860896"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "The Met"], ["rating", 4.8], ["address", "1000 5th Ave, New York, NY 10028"], ["city", "New York"], ["state", "NY"], ["latitude", 40.7794366], ["longitude", -74.0950799], ["recommended_time", 180], ["created_at", "2022-10-29 20:29:57.864195"], ["updated_at", "2022-10-29 20:29:57.864195"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "MoMA"], ["rating", 4.6], ["address", "11 W 53rd St, New York, NY 10019"], ["city", "New York"], ["state", "NY"], ["latitude", 40.7484714], ["longitude", -73.9944193], ["recommended_time", 180], ["created_at", "2022-10-29 20:29:57.866898"], ["updated_at", "2022-10-29 20:29:57.866898"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Statue of Liberty"], ["rating", 4.7], ["address", "Statue of Liberty, New York, NY 10004"], ["city", "New York"], ["state", "NY"], ["latitude", 40.6917572], ["longitude", -74.0429902], ["recommended_time", 180], ["created_at", "2022-10-29 20:29:57.868884"], ["updated_at", "2022-10-29 20:29:57.868884"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "Columbia University"], ["rating", 4.7], ["address", "Columbia University, New York, NY 10027"], ["city", "New York"], ["state", "NY"], ["latitude", 40.8075395], ["longitude", -73.9670574], ["recommended_time", 60], ["created_at", "2022-10-29 20:29:57.870948"], ["updated_at", "2022-10-29 20:29:57.870948"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/index" for 127.0.0.1 at 2022-10-29 20:29:57 +0000
+Processing by TravelingPlansController#search as HTML
+  [1m[35mAttraction Load (0.2ms)[0m  SELECT "attractions".* FROM "attractions"
+  Rendered traveling_plans/index.html.erb within layouts/application (8.0ms)
+  Rendered layouts/_flash.erb (5.5ms)
+Completed 200 OK in 248ms (Views: 246.6ms | ActiveRecord: 0.2ms)
+Started GET "/suggestion?utf8=%E2%9C%93&travel_plan[state]=NY&travel_plan[stop][]=&travel_plan[traveling_days]=2&commit=Search" for 127.0.0.1 at 2022-10-29 20:29:58 +0000
+Processing by TravelingPlansController#suggestion as HTML
+  Parameters: {"utf8"=>"✓", "travel_plan"=>{"state"=>"NY", "stop"=>[""], "traveling_days"=>"2"}, "commit"=>"Search"}
+  Rendered traveling_plans/suggestion.html.erb within layouts/application (1.4ms)
+  Rendered layouts/_flash.erb (0.3ms)
+Completed 200 OK in 8ms (Views: 3.8ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "Empire State Building"], ["rating", 4.7], ["address", "20 W 34th St., New York, NY 10001"], ["city", "New York"], ["state", "NY"], ["latitude", 40.7484396], ["longitude", -73.9944193], ["recommended_time", 60], ["created_at", "2022-10-29 20:29:58.176614"], ["updated_at", "2022-10-29 20:29:58.176614"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "The Met"], ["rating", 4.8], ["address", "1000 5th Ave, New York, NY 10028"], ["city", "New York"], ["state", "NY"], ["latitude", 40.7794366], ["longitude", -74.0950799], ["recommended_time", 180], ["created_at", "2022-10-29 20:29:58.179013"], ["updated_at", "2022-10-29 20:29:58.179013"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "MoMA"], ["rating", 4.6], ["address", "11 W 53rd St, New York, NY 10019"], ["city", "New York"], ["state", "NY"], ["latitude", 40.7484714], ["longitude", -73.9944193], ["recommended_time", 180], ["created_at", "2022-10-29 20:29:58.180859"], ["updated_at", "2022-10-29 20:29:58.180859"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Statue of Liberty"], ["rating", 4.7], ["address", "Statue of Liberty, New York, NY 10004"], ["city", "New York"], ["state", "NY"], ["latitude", 40.6917572], ["longitude", -74.0429902], ["recommended_time", 180], ["created_at", "2022-10-29 20:29:58.182807"], ["updated_at", "2022-10-29 20:29:58.182807"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "Columbia University"], ["rating", 4.7], ["address", "Columbia University, New York, NY 10027"], ["city", "New York"], ["state", "NY"], ["latitude", 40.8075395], ["longitude", -73.9670574], ["recommended_time", 60], ["created_at", "2022-10-29 20:29:58.184648"], ["updated_at", "2022-10-29 20:29:58.184648"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/index" for 127.0.0.1 at 2022-10-29 20:29:58 +0000
+Processing by TravelingPlansController#search as HTML
+  [1m[35mAttraction Load (0.2ms)[0m  SELECT "attractions".* FROM "attractions"
+  Rendered traveling_plans/index.html.erb within layouts/application (1.1ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.2ms)
+Started GET "/index" for 127.0.0.1 at 2022-10-29 20:29:58 +0000
+Processing by TravelingPlansController#search as HTML
+  [1m[36mAttraction Load (0.2ms)[0m  [1mSELECT "attractions".* FROM "attractions"[0m
+  Rendered traveling_plans/index.html.erb within layouts/application (0.9ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Empire State Building"], ["rating", 4.7], ["address", "20 W 34th St., New York, NY 10001"], ["city", "New York"], ["state", "NY"], ["latitude", 40.7484396], ["longitude", -73.9944193], ["recommended_time", 60], ["created_at", "2022-10-29 20:29:58.208666"], ["updated_at", "2022-10-29 20:29:58.208666"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "The Met"], ["rating", 4.8], ["address", "1000 5th Ave, New York, NY 10028"], ["city", "New York"], ["state", "NY"], ["latitude", 40.7794366], ["longitude", -74.0950799], ["recommended_time", 180], ["created_at", "2022-10-29 20:29:58.210985"], ["updated_at", "2022-10-29 20:29:58.210985"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "MoMA"], ["rating", 4.6], ["address", "11 W 53rd St, New York, NY 10019"], ["city", "New York"], ["state", "NY"], ["latitude", 40.7484714], ["longitude", -73.9944193], ["recommended_time", 180], ["created_at", "2022-10-29 20:29:58.212885"], ["updated_at", "2022-10-29 20:29:58.212885"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "Statue of Liberty"], ["rating", 4.7], ["address", "Statue of Liberty, New York, NY 10004"], ["city", "New York"], ["state", "NY"], ["latitude", 40.6917572], ["longitude", -74.0429902], ["recommended_time", 180], ["created_at", "2022-10-29 20:29:58.214739"], ["updated_at", "2022-10-29 20:29:58.214739"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Columbia University"], ["rating", 4.7], ["address", "Columbia University, New York, NY 10027"], ["city", "New York"], ["state", "NY"], ["latitude", 40.8075395], ["longitude", -73.9670574], ["recommended_time", 60], ["created_at", "2022-10-29 20:29:58.216601"], ["updated_at", "2022-10-29 20:29:58.216601"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/index" for 127.0.0.1 at 2022-10-29 20:29:58 +0000
+Processing by TravelingPlansController#search as HTML
+  [1m[36mAttraction Load (0.1ms)[0m  [1mSELECT "attractions".* FROM "attractions"[0m
+  Rendered traveling_plans/index.html.erb within layouts/application (1.1ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 4ms (Views: 2.7ms | ActiveRecord: 0.1ms)
+Started GET "/suggestion?utf8=%E2%9C%93&travel_plan[state]=NY&travel_plan[stop][]=&travel_plan[stop][]=New+York&travel_plan[traveling_days]=2&commit=Search" for 127.0.0.1 at 2022-10-29 20:29:58 +0000
+Processing by TravelingPlansController#suggestion as HTML
+  Parameters: {"utf8"=>"✓", "travel_plan"=>{"state"=>"NY", "stop"=>["", "New York"], "traveling_days"=>"2"}, "commit"=>"Search"}
+  Rendered traveling_plans/suggestion.html.erb within layouts/application (0.6ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 5ms (Views: 2.1ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "Empire State Building"], ["rating", 4.7], ["address", "20 W 34th St., New York, NY 10001"], ["city", "New York"], ["state", "NY"], ["latitude", 40.7484396], ["longitude", -73.9944193], ["recommended_time", 60], ["created_at", "2022-10-29 20:34:09.513165"], ["updated_at", "2022-10-29 20:34:09.513165"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "The Met"], ["rating", 4.8], ["address", "1000 5th Ave, New York, NY 10028"], ["city", "New York"], ["state", "NY"], ["latitude", 40.7794366], ["longitude", -74.0950799], ["recommended_time", 180], ["created_at", "2022-10-29 20:34:09.516110"], ["updated_at", "2022-10-29 20:34:09.516110"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "MoMA"], ["rating", 4.6], ["address", "11 W 53rd St, New York, NY 10019"], ["city", "New York"], ["state", "NY"], ["latitude", 40.7484714], ["longitude", -73.9944193], ["recommended_time", 180], ["created_at", "2022-10-29 20:34:09.518091"], ["updated_at", "2022-10-29 20:34:09.518091"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Statue of Liberty"], ["rating", 4.7], ["address", "Statue of Liberty, New York, NY 10004"], ["city", "New York"], ["state", "NY"], ["latitude", 40.6917572], ["longitude", -74.0429902], ["recommended_time", 180], ["created_at", "2022-10-29 20:34:09.520053"], ["updated_at", "2022-10-29 20:34:09.520053"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "Columbia University"], ["rating", 4.7], ["address", "Columbia University, New York, NY 10027"], ["city", "New York"], ["state", "NY"], ["latitude", 40.8075395], ["longitude", -73.9670574], ["recommended_time", 60], ["created_at", "2022-10-29 20:34:09.522001"], ["updated_at", "2022-10-29 20:34:09.522001"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/index" for 127.0.0.1 at 2022-10-29 20:34:09 +0000
+Processing by TravelingPlansController#search as HTML
+  [1m[35mAttraction Load (0.2ms)[0m  SELECT "attractions".* FROM "attractions"
+  Rendered traveling_plans/index.html.erb within layouts/application (7.5ms)
+  Rendered layouts/_flash.erb (5.9ms)
+Completed 200 OK in 247ms (Views: 245.6ms | ActiveRecord: 0.2ms)
+Started GET "/suggestion?utf8=%E2%9C%93&travel_plan[state]=NY&travel_plan[stop][]=&travel_plan[traveling_days]=2&commit=Search" for 127.0.0.1 at 2022-10-29 20:34:09 +0000
+Processing by TravelingPlansController#suggestion as HTML
+  Parameters: {"utf8"=>"✓", "travel_plan"=>{"state"=>"NY", "stop"=>[""], "traveling_days"=>"2"}, "commit"=>"Search"}
+  Rendered traveling_plans/suggestion.html.erb within layouts/application (1.5ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 7ms (Views: 3.4ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "Empire State Building"], ["rating", 4.7], ["address", "20 W 34th St., New York, NY 10001"], ["city", "New York"], ["state", "NY"], ["latitude", 40.7484396], ["longitude", -73.9944193], ["recommended_time", 60], ["created_at", "2022-10-29 20:34:09.843491"], ["updated_at", "2022-10-29 20:34:09.843491"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "The Met"], ["rating", 4.8], ["address", "1000 5th Ave, New York, NY 10028"], ["city", "New York"], ["state", "NY"], ["latitude", 40.7794366], ["longitude", -74.0950799], ["recommended_time", 180], ["created_at", "2022-10-29 20:34:09.845810"], ["updated_at", "2022-10-29 20:34:09.845810"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "MoMA"], ["rating", 4.6], ["address", "11 W 53rd St, New York, NY 10019"], ["city", "New York"], ["state", "NY"], ["latitude", 40.7484714], ["longitude", -73.9944193], ["recommended_time", 180], ["created_at", "2022-10-29 20:34:09.847659"], ["updated_at", "2022-10-29 20:34:09.847659"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Statue of Liberty"], ["rating", 4.7], ["address", "Statue of Liberty, New York, NY 10004"], ["city", "New York"], ["state", "NY"], ["latitude", 40.6917572], ["longitude", -74.0429902], ["recommended_time", 180], ["created_at", "2022-10-29 20:34:09.849790"], ["updated_at", "2022-10-29 20:34:09.849790"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "Columbia University"], ["rating", 4.7], ["address", "Columbia University, New York, NY 10027"], ["city", "New York"], ["state", "NY"], ["latitude", 40.8075395], ["longitude", -73.9670574], ["recommended_time", 60], ["created_at", "2022-10-29 20:34:09.851589"], ["updated_at", "2022-10-29 20:34:09.851589"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/index" for 127.0.0.1 at 2022-10-29 20:34:09 +0000
+Processing by TravelingPlansController#search as HTML
+  [1m[35mAttraction Load (0.2ms)[0m  SELECT "attractions".* FROM "attractions"
+  Rendered traveling_plans/index.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 4ms (Views: 2.8ms | ActiveRecord: 0.2ms)
+Started GET "/index" for 127.0.0.1 at 2022-10-29 20:34:09 +0000
+Processing by TravelingPlansController#search as HTML
+  [1m[36mAttraction Load (0.2ms)[0m  [1mSELECT "attractions".* FROM "attractions"[0m
+  Rendered traveling_plans/index.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Empire State Building"], ["rating", 4.7], ["address", "20 W 34th St., New York, NY 10001"], ["city", "New York"], ["state", "NY"], ["latitude", 40.7484396], ["longitude", -73.9944193], ["recommended_time", 60], ["created_at", "2022-10-29 20:34:09.875478"], ["updated_at", "2022-10-29 20:34:09.875478"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "The Met"], ["rating", 4.8], ["address", "1000 5th Ave, New York, NY 10028"], ["city", "New York"], ["state", "NY"], ["latitude", 40.7794366], ["longitude", -74.0950799], ["recommended_time", 180], ["created_at", "2022-10-29 20:34:09.877862"], ["updated_at", "2022-10-29 20:34:09.877862"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "MoMA"], ["rating", 4.6], ["address", "11 W 53rd St, New York, NY 10019"], ["city", "New York"], ["state", "NY"], ["latitude", 40.7484714], ["longitude", -73.9944193], ["recommended_time", 180], ["created_at", "2022-10-29 20:34:09.879695"], ["updated_at", "2022-10-29 20:34:09.879695"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "Statue of Liberty"], ["rating", 4.7], ["address", "Statue of Liberty, New York, NY 10004"], ["city", "New York"], ["state", "NY"], ["latitude", 40.6917572], ["longitude", -74.0429902], ["recommended_time", 180], ["created_at", "2022-10-29 20:34:09.881735"], ["updated_at", "2022-10-29 20:34:09.881735"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Columbia University"], ["rating", 4.7], ["address", "Columbia University, New York, NY 10027"], ["city", "New York"], ["state", "NY"], ["latitude", 40.8075395], ["longitude", -73.9670574], ["recommended_time", 60], ["created_at", "2022-10-29 20:34:09.883533"], ["updated_at", "2022-10-29 20:34:09.883533"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/index" for 127.0.0.1 at 2022-10-29 20:34:09 +0000
+Processing by TravelingPlansController#search as HTML
+  [1m[36mAttraction Load (0.1ms)[0m  [1mSELECT "attractions".* FROM "attractions"[0m
+  Rendered traveling_plans/index.html.erb within layouts/application (0.9ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.1ms)
+Started GET "/suggestion?utf8=%E2%9C%93&travel_plan[state]=NY&travel_plan[stop][]=&travel_plan[stop][]=New+York&travel_plan[traveling_days]=2&commit=Search" for 127.0.0.1 at 2022-10-29 20:34:09 +0000
+Processing by TravelingPlansController#suggestion as HTML
+  Parameters: {"utf8"=>"✓", "travel_plan"=>{"state"=>"NY", "stop"=>["", "New York"], "traveling_days"=>"2"}, "commit"=>"Search"}
+  Rendered traveling_plans/suggestion.html.erb within layouts/application (0.7ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 5ms (Views: 2.3ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "Empire State Building"], ["rating", 4.7], ["address", "20 W 34th St., New York, NY 10001"], ["city", "New York"], ["state", "NY"], ["latitude", 40.7484396], ["longitude", -73.9944193], ["recommended_time", 60], ["created_at", "2022-10-29 20:35:10.998792"], ["updated_at", "2022-10-29 20:35:10.998792"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "The Met"], ["rating", 4.8], ["address", "1000 5th Ave, New York, NY 10028"], ["city", "New York"], ["state", "NY"], ["latitude", 40.7794366], ["longitude", -74.0950799], ["recommended_time", 180], ["created_at", "2022-10-29 20:35:11.001709"], ["updated_at", "2022-10-29 20:35:11.001709"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "MoMA"], ["rating", 4.6], ["address", "11 W 53rd St, New York, NY 10019"], ["city", "New York"], ["state", "NY"], ["latitude", 40.7484714], ["longitude", -73.9944193], ["recommended_time", 180], ["created_at", "2022-10-29 20:35:11.003640"], ["updated_at", "2022-10-29 20:35:11.003640"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Statue of Liberty"], ["rating", 4.7], ["address", "Statue of Liberty, New York, NY 10004"], ["city", "New York"], ["state", "NY"], ["latitude", 40.6917572], ["longitude", -74.0429902], ["recommended_time", 180], ["created_at", "2022-10-29 20:35:11.005683"], ["updated_at", "2022-10-29 20:35:11.005683"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "Columbia University"], ["rating", 4.7], ["address", "Columbia University, New York, NY 10027"], ["city", "New York"], ["state", "NY"], ["latitude", 40.8075395], ["longitude", -73.9670574], ["recommended_time", 60], ["created_at", "2022-10-29 20:35:11.008003"], ["updated_at", "2022-10-29 20:35:11.008003"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/index" for 127.0.0.1 at 2022-10-29 20:35:11 +0000
+Processing by TravelingPlansController#search as HTML
+  [1m[35mAttraction Load (0.2ms)[0m  SELECT "attractions".* FROM "attractions"
+  Rendered traveling_plans/index.html.erb within layouts/application (7.8ms)
+  Rendered layouts/_flash.erb (5.9ms)
+Completed 200 OK in 248ms (Views: 246.7ms | ActiveRecord: 0.2ms)
+Started GET "/suggestion?utf8=%E2%9C%93&travel_plan[state]=NY&travel_plan[stop][]=&travel_plan[traveling_days]=2&commit=Search" for 127.0.0.1 at 2022-10-29 20:35:11 +0000
+Processing by TravelingPlansController#suggestion as HTML
+  Parameters: {"utf8"=>"✓", "travel_plan"=>{"state"=>"NY", "stop"=>[""], "traveling_days"=>"2"}, "commit"=>"Search"}
+  Rendered traveling_plans/suggestion.html.erb within layouts/application (1.9ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 8ms (Views: 4.2ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.3ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "Empire State Building"], ["rating", 4.7], ["address", "20 W 34th St., New York, NY 10001"], ["city", "New York"], ["state", "NY"], ["latitude", 40.7484396], ["longitude", -73.9944193], ["recommended_time", 60], ["created_at", "2022-10-29 20:35:11.317125"], ["updated_at", "2022-10-29 20:35:11.317125"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "The Met"], ["rating", 4.8], ["address", "1000 5th Ave, New York, NY 10028"], ["city", "New York"], ["state", "NY"], ["latitude", 40.7794366], ["longitude", -74.0950799], ["recommended_time", 180], ["created_at", "2022-10-29 20:35:11.319469"], ["updated_at", "2022-10-29 20:35:11.319469"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "MoMA"], ["rating", 4.6], ["address", "11 W 53rd St, New York, NY 10019"], ["city", "New York"], ["state", "NY"], ["latitude", 40.7484714], ["longitude", -73.9944193], ["recommended_time", 180], ["created_at", "2022-10-29 20:35:11.321576"], ["updated_at", "2022-10-29 20:35:11.321576"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Statue of Liberty"], ["rating", 4.7], ["address", "Statue of Liberty, New York, NY 10004"], ["city", "New York"], ["state", "NY"], ["latitude", 40.6917572], ["longitude", -74.0429902], ["recommended_time", 180], ["created_at", "2022-10-29 20:35:11.323587"], ["updated_at", "2022-10-29 20:35:11.323587"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "Columbia University"], ["rating", 4.7], ["address", "Columbia University, New York, NY 10027"], ["city", "New York"], ["state", "NY"], ["latitude", 40.8075395], ["longitude", -73.9670574], ["recommended_time", 60], ["created_at", "2022-10-29 20:35:11.325721"], ["updated_at", "2022-10-29 20:35:11.325721"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/index" for 127.0.0.1 at 2022-10-29 20:35:11 +0000
+Processing by TravelingPlansController#search as HTML
+  [1m[35mAttraction Load (0.2ms)[0m  SELECT "attractions".* FROM "attractions"
+  Rendered traveling_plans/index.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 4ms (Views: 2.6ms | ActiveRecord: 0.2ms)
+Started GET "/index" for 127.0.0.1 at 2022-10-29 20:35:11 +0000
+Processing by TravelingPlansController#search as HTML
+  [1m[36mAttraction Load (0.2ms)[0m  [1mSELECT "attractions".* FROM "attractions"[0m
+  Rendered traveling_plans/index.html.erb within layouts/application (0.9ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Empire State Building"], ["rating", 4.7], ["address", "20 W 34th St., New York, NY 10001"], ["city", "New York"], ["state", "NY"], ["latitude", 40.7484396], ["longitude", -73.9944193], ["recommended_time", 60], ["created_at", "2022-10-29 20:35:11.350357"], ["updated_at", "2022-10-29 20:35:11.350357"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "The Met"], ["rating", 4.8], ["address", "1000 5th Ave, New York, NY 10028"], ["city", "New York"], ["state", "NY"], ["latitude", 40.7794366], ["longitude", -74.0950799], ["recommended_time", 180], ["created_at", "2022-10-29 20:35:11.352779"], ["updated_at", "2022-10-29 20:35:11.352779"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "MoMA"], ["rating", 4.6], ["address", "11 W 53rd St, New York, NY 10019"], ["city", "New York"], ["state", "NY"], ["latitude", 40.7484714], ["longitude", -73.9944193], ["recommended_time", 180], ["created_at", "2022-10-29 20:35:11.354763"], ["updated_at", "2022-10-29 20:35:11.354763"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "Statue of Liberty"], ["rating", 4.7], ["address", "Statue of Liberty, New York, NY 10004"], ["city", "New York"], ["state", "NY"], ["latitude", 40.6917572], ["longitude", -74.0429902], ["recommended_time", 180], ["created_at", "2022-10-29 20:35:11.357103"], ["updated_at", "2022-10-29 20:35:11.357103"]]
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Columbia University"], ["rating", 4.7], ["address", "Columbia University, New York, NY 10027"], ["city", "New York"], ["state", "NY"], ["latitude", 40.8075395], ["longitude", -73.9670574], ["recommended_time", 60], ["created_at", "2022-10-29 20:35:11.359726"], ["updated_at", "2022-10-29 20:35:11.359726"]]
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/index" for 127.0.0.1 at 2022-10-29 20:35:11 +0000
+Processing by TravelingPlansController#search as HTML
+  [1m[36mAttraction Load (0.2ms)[0m  [1mSELECT "attractions".* FROM "attractions"[0m
+  Rendered traveling_plans/index.html.erb within layouts/application (1.2ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.2ms)
+Started GET "/suggestion?utf8=%E2%9C%93&travel_plan[state]=NY&travel_plan[stop][]=&travel_plan[stop][]=New+York&travel_plan[traveling_days]=2&commit=Search" for 127.0.0.1 at 2022-10-29 20:35:11 +0000
+Processing by TravelingPlansController#suggestion as HTML
+  Parameters: {"utf8"=>"✓", "travel_plan"=>{"state"=>"NY", "stop"=>["", "New York"], "traveling_days"=>"2"}, "commit"=>"Search"}
+  Rendered traveling_plans/suggestion.html.erb within layouts/application (0.7ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 5ms (Views: 2.2ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "Empire State Building"], ["rating", 4.7], ["address", "20 W 34th St., New York, NY 10001"], ["city", "New York"], ["state", "NY"], ["latitude", 40.7484396], ["longitude", -73.9944193], ["recommended_time", 60], ["created_at", "2022-10-29 20:35:43.634502"], ["updated_at", "2022-10-29 20:35:43.634502"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "The Met"], ["rating", 4.8], ["address", "1000 5th Ave, New York, NY 10028"], ["city", "New York"], ["state", "NY"], ["latitude", 40.7794366], ["longitude", -74.0950799], ["recommended_time", 180], ["created_at", "2022-10-29 20:35:43.637416"], ["updated_at", "2022-10-29 20:35:43.637416"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "MoMA"], ["rating", 4.6], ["address", "11 W 53rd St, New York, NY 10019"], ["city", "New York"], ["state", "NY"], ["latitude", 40.7484714], ["longitude", -73.9944193], ["recommended_time", 180], ["created_at", "2022-10-29 20:35:43.639605"], ["updated_at", "2022-10-29 20:35:43.639605"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Statue of Liberty"], ["rating", 4.7], ["address", "Statue of Liberty, New York, NY 10004"], ["city", "New York"], ["state", "NY"], ["latitude", 40.6917572], ["longitude", -74.0429902], ["recommended_time", 180], ["created_at", "2022-10-29 20:35:43.641763"], ["updated_at", "2022-10-29 20:35:43.641763"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "Columbia University"], ["rating", 4.7], ["address", "Columbia University, New York, NY 10027"], ["city", "New York"], ["state", "NY"], ["latitude", 40.8075395], ["longitude", -73.9670574], ["recommended_time", 60], ["created_at", "2022-10-29 20:35:43.643878"], ["updated_at", "2022-10-29 20:35:43.643878"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/index" for 127.0.0.1 at 2022-10-29 20:35:43 +0000
+Processing by TravelingPlansController#search as HTML
+  [1m[35mAttraction Load (0.2ms)[0m  SELECT "attractions".* FROM "attractions"
+  Rendered traveling_plans/index.html.erb within layouts/application (7.8ms)
+  Rendered layouts/_flash.erb (6.2ms)
+Completed 200 OK in 258ms (Views: 257.1ms | ActiveRecord: 0.2ms)
+Started GET "/suggestion?utf8=%E2%9C%93&travel_plan[state]=NY&travel_plan[stop][]=&travel_plan[traveling_days]=2&commit=Search" for 127.0.0.1 at 2022-10-29 20:35:43 +0000
+Processing by TravelingPlansController#suggestion as HTML
+  Parameters: {"utf8"=>"✓", "travel_plan"=>{"state"=>"NY", "stop"=>[""], "traveling_days"=>"2"}, "commit"=>"Search"}
+  Rendered traveling_plans/suggestion.html.erb within layouts/application (1.8ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 35ms (Views: 30.5ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.2ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "Empire State Building"], ["rating", 4.7], ["address", "20 W 34th St., New York, NY 10001"], ["city", "New York"], ["state", "NY"], ["latitude", 40.7484396], ["longitude", -73.9944193], ["recommended_time", 60], ["created_at", "2022-10-29 20:35:43.979398"], ["updated_at", "2022-10-29 20:35:43.979398"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "The Met"], ["rating", 4.8], ["address", "1000 5th Ave, New York, NY 10028"], ["city", "New York"], ["state", "NY"], ["latitude", 40.7794366], ["longitude", -74.0950799], ["recommended_time", 180], ["created_at", "2022-10-29 20:35:43.981829"], ["updated_at", "2022-10-29 20:35:43.981829"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "MoMA"], ["rating", 4.6], ["address", "11 W 53rd St, New York, NY 10019"], ["city", "New York"], ["state", "NY"], ["latitude", 40.7484714], ["longitude", -73.9944193], ["recommended_time", 180], ["created_at", "2022-10-29 20:35:43.983970"], ["updated_at", "2022-10-29 20:35:43.983970"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Statue of Liberty"], ["rating", 4.7], ["address", "Statue of Liberty, New York, NY 10004"], ["city", "New York"], ["state", "NY"], ["latitude", 40.6917572], ["longitude", -74.0429902], ["recommended_time", 180], ["created_at", "2022-10-29 20:35:43.985990"], ["updated_at", "2022-10-29 20:35:43.985990"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "Columbia University"], ["rating", 4.7], ["address", "Columbia University, New York, NY 10027"], ["city", "New York"], ["state", "NY"], ["latitude", 40.8075395], ["longitude", -73.9670574], ["recommended_time", 60], ["created_at", "2022-10-29 20:35:43.987986"], ["updated_at", "2022-10-29 20:35:43.987986"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/index" for 127.0.0.1 at 2022-10-29 20:35:43 +0000
+Processing by TravelingPlansController#search as HTML
+  [1m[35mAttraction Load (0.2ms)[0m  SELECT "attractions".* FROM "attractions"
+  Rendered traveling_plans/index.html.erb within layouts/application (0.9ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 4ms (Views: 2.6ms | ActiveRecord: 0.2ms)
+Started GET "/index" for 127.0.0.1 at 2022-10-29 20:35:43 +0000
+Processing by TravelingPlansController#search as HTML
+  [1m[36mAttraction Load (0.2ms)[0m  [1mSELECT "attractions".* FROM "attractions"[0m
+  Rendered traveling_plans/index.html.erb within layouts/application (0.9ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.2ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Empire State Building"], ["rating", 4.7], ["address", "20 W 34th St., New York, NY 10001"], ["city", "New York"], ["state", "NY"], ["latitude", 40.7484396], ["longitude", -73.9944193], ["recommended_time", 60], ["created_at", "2022-10-29 20:35:44.011765"], ["updated_at", "2022-10-29 20:35:44.011765"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "The Met"], ["rating", 4.8], ["address", "1000 5th Ave, New York, NY 10028"], ["city", "New York"], ["state", "NY"], ["latitude", 40.7794366], ["longitude", -74.0950799], ["recommended_time", 180], ["created_at", "2022-10-29 20:35:44.015043"], ["updated_at", "2022-10-29 20:35:44.015043"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "MoMA"], ["rating", 4.6], ["address", "11 W 53rd St, New York, NY 10019"], ["city", "New York"], ["state", "NY"], ["latitude", 40.7484714], ["longitude", -73.9944193], ["recommended_time", 180], ["created_at", "2022-10-29 20:35:44.017291"], ["updated_at", "2022-10-29 20:35:44.017291"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.0ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "Statue of Liberty"], ["rating", 4.7], ["address", "Statue of Liberty, New York, NY 10004"], ["city", "New York"], ["state", "NY"], ["latitude", 40.6917572], ["longitude", -74.0429902], ["recommended_time", 180], ["created_at", "2022-10-29 20:35:44.019473"], ["updated_at", "2022-10-29 20:35:44.019473"]]
+  [1m[36m (0.0ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.0ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Columbia University"], ["rating", 4.7], ["address", "Columbia University, New York, NY 10027"], ["city", "New York"], ["state", "NY"], ["latitude", 40.8075395], ["longitude", -73.9670574], ["recommended_time", 60], ["created_at", "2022-10-29 20:35:44.021584"], ["updated_at", "2022-10-29 20:35:44.021584"]]
+  [1m[35m (0.0ms)[0m  RELEASE SAVEPOINT active_record_1
+Started GET "/index" for 127.0.0.1 at 2022-10-29 20:35:44 +0000
+Processing by TravelingPlansController#search as HTML
+  [1m[36mAttraction Load (0.1ms)[0m  [1mSELECT "attractions".* FROM "attractions"[0m
+  Rendered traveling_plans/index.html.erb within layouts/application (0.9ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.1ms)
+Started GET "/suggestion?utf8=%E2%9C%93&travel_plan[state]=NY&travel_plan[stop][]=&travel_plan[stop][]=New+York&travel_plan[traveling_days]=2&commit=Search" for 127.0.0.1 at 2022-10-29 20:35:44 +0000
+Processing by TravelingPlansController#suggestion as HTML
+  Parameters: {"utf8"=>"✓", "travel_plan"=>{"state"=>"NY", "stop"=>["", "New York"], "traveling_days"=>"2"}, "commit"=>"Search"}
+  Rendered traveling_plans/suggestion.html.erb within layouts/application (0.7ms)
+  Rendered layouts/_flash.erb (0.2ms)
+Completed 200 OK in 5ms (Views: 2.2ms | ActiveRecord: 0.0ms)
+  [1m[35m (0.3ms)[0m  rollback transaction

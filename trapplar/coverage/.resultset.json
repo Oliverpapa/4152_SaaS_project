@@ -1,77 +1,44 @@
 {
   "Cucumber Features": {
     "coverage": {
-      "/home/codio/workspace/hw-acceptance-unit-test-cycle/Trapplar/app/models/movie.rb": {
+      "/home/codio/workspace/4152_SaaS_project/trapplar/app/models/attraction.rb": {
         "lines": [
           1,
-          1,
-          2,
-          2,
-          null,
           null
         ]
       },
-      "/home/codio/workspace/hw-acceptance-unit-test-cycle/Trapplar/app/controllers/movies_controller.rb": {
+      "/home/codio/workspace/4152_SaaS_project/trapplar/app/controllers/traveling_plans_controller.rb": {
         "lines": [
           1,
           null,
           1,
-          3,
-          3,
           null,
           null,
           null,
-          1,
-          1,
+          4,
+          8,
+          4,
+          4,
           null,
           null,
-          1,
-          null,
-          null,
-          null,
-          1,
-          0,
-          0,
-          0,
-          null,
-          null,
-          1,
-          1,
-          null,
-          null,
-          1,
-          1,
-          1,
-          1,
-          1,
-          null,
-          null,
-          1,
-          0,
-          0,
-          0,
-          0,
-          null,
-          null,
-          1,
-          2,
-          2,
-          1,
           1,
           null,
           2,
+          2,
           null,
           null,
-          1,
           null,
           null,
-          1,
-          1,
+          null,
+          null,
+          null,
+          null,
+          null,
           null,
           null
         ]
       },
-      "/home/codio/workspace/hw-acceptance-unit-test-cycle/Trapplar/app/controllers/application_controller.rb": {
+      "/home/codio/workspace/4152_SaaS_project/trapplar/app/controllers/application_controller.rb": {
         "lines": [
           1,
           null,
@@ -80,24 +47,97 @@
           null
         ]
       },
-      "/home/codio/workspace/hw-acceptance-unit-test-cycle/Trapplar/app/helpers/application_helper.rb": {
+      "/home/codio/workspace/4152_SaaS_project/trapplar/app/helpers/application_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/home/codio/workspace/hw-acceptance-unit-test-cycle/Trapplar/app/helpers/movies_helper.rb": {
+      "/home/codio/workspace/4152_SaaS_project/trapplar/app/models/traveling_plan.rb": {
         "lines": [
           1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          2,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
           null,
           1,
-          0,
           null,
           null
         ]
+      },
+      "/home/codio/workspace/4152_SaaS_project/trapplar/app/controllers/attractions_controller.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ],
+        "branches": {
+        }
       }
     },
-    "timestamp": 1666764918
+    "timestamp": 1667075744
   },
   "RSpec": {
     "coverage": {
