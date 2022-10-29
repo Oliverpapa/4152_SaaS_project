@@ -1,7 +1,7 @@
 {
   "Cucumber Features": {
     "coverage": {
-      "/home/codio/workspace/hw-acceptance-unit-test-cycle/rottenpotatoes/app/models/movie.rb": {
+      "/home/codio/workspace/hw-acceptance-unit-test-cycle/Trapplar/app/models/movie.rb": {
         "lines": [
           1,
           1,
@@ -11,7 +11,7 @@
           null
         ]
       },
-      "/home/codio/workspace/hw-acceptance-unit-test-cycle/rottenpotatoes/app/controllers/movies_controller.rb": {
+      "/home/codio/workspace/hw-acceptance-unit-test-cycle/Trapplar/app/controllers/movies_controller.rb": {
         "lines": [
           1,
           null,
@@ -71,7 +71,7 @@
           null
         ]
       },
-      "/home/codio/workspace/hw-acceptance-unit-test-cycle/rottenpotatoes/app/controllers/application_controller.rb": {
+      "/home/codio/workspace/hw-acceptance-unit-test-cycle/Trapplar/app/controllers/application_controller.rb": {
         "lines": [
           1,
           null,
@@ -80,13 +80,13 @@
           null
         ]
       },
-      "/home/codio/workspace/hw-acceptance-unit-test-cycle/rottenpotatoes/app/helpers/application_helper.rb": {
+      "/home/codio/workspace/hw-acceptance-unit-test-cycle/Trapplar/app/helpers/application_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/home/codio/workspace/hw-acceptance-unit-test-cycle/rottenpotatoes/app/helpers/movies_helper.rb": {
+      "/home/codio/workspace/hw-acceptance-unit-test-cycle/Trapplar/app/helpers/movies_helper.rb": {
         "lines": [
           1,
           null,
@@ -101,13 +101,13 @@
   },
   "RSpec": {
     "coverage": {
-      "/home/codio/workspace/hw-acceptance-unit-test-cycle/rottenpotatoes/app/helpers/application_helper.rb": {
+      "/home/codio/workspace/hw-acceptance-unit-test-cycle/Trapplar/app/helpers/application_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/home/codio/workspace/hw-acceptance-unit-test-cycle/rottenpotatoes/app/helpers/movies_helper.rb": {
+      "/home/codio/workspace/hw-acceptance-unit-test-cycle/Trapplar/app/helpers/movies_helper.rb": {
         "lines": [
           1,
           null,
@@ -117,7 +117,7 @@
           null
         ]
       },
-      "/home/codio/workspace/hw-acceptance-unit-test-cycle/rottenpotatoes/app/controllers/movies_controller.rb": {
+      "/home/codio/workspace/hw-acceptance-unit-test-cycle/Trapplar/app/controllers/movies_controller.rb": {
         "lines": [
           1,
           null,
@@ -177,7 +177,7 @@
           null
         ]
       },
-      "/home/codio/workspace/hw-acceptance-unit-test-cycle/rottenpotatoes/app/controllers/application_controller.rb": {
+      "/home/codio/workspace/hw-acceptance-unit-test-cycle/Trapplar/app/controllers/application_controller.rb": {
         "lines": [
           1,
           null,
@@ -186,7 +186,7 @@
           null
         ]
       },
-      "/home/codio/workspace/hw-acceptance-unit-test-cycle/rottenpotatoes/app/models/movie.rb": {
+      "/home/codio/workspace/hw-acceptance-unit-test-cycle/Trapplar/app/models/movie.rb": {
         "lines": [
           1,
           1,

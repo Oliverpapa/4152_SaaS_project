@@ -24,3 +24,6 @@ ActiveRecord::Schema.define(version: 20221023195940) do
   end
 
 end
+
+# run this command to generate migration
+$ bin/rails generate model Attraction name:string address:string city:string state:string latitude:float longitude:float recommended_time:int rating:float open_time:time close_time:time

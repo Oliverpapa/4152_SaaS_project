@@ -1,0 +1,18 @@
+<!--  This file is app/views/trapplar/index.html.erb -->
+<h2>Search For Your Traveling Plan</h2>
+
+<%= form_tag trapplar_path(@movie), :method => :put do %>
+  <%= label :travel_plan, :state, 'State', :class => 'col-form-label' %>
+  <%= select :travel_plan, :state, ["NY", "CA"], {}, {:class => 'form-control col-1'} %>
+  <%= label :travel_plan, :stop1, 'Stop', :class => 'col-form-label' %>
+  <%= select :travel_plan, :state, #{}, {}, {:class => 'form-control col-1'} %>
+  <%= label :movie, :director, 'Director', :class => 'col-form-label' %>
+  <%= text_field :movie, :director, :class => 'form-control' %>
+  <%= label :movie, :release_date, 'Released On', :class => 'col-form-label'  %>
+  <%= date_select :movie, :release_date, {}, :class => 'form-control col-2 d-inline' %>
+  <br/>
+  <%= submit_tag 'Search', :class => 'btn btn-primary' %>
+  <%= link_to 'Clear', trapplar_path, :class => 'btn btn-secondary' %>
+<% end %>
+
+

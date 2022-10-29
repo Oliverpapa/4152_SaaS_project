@@ -4,7 +4,7 @@
   [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
 Migrating to CreateMovies (20111119180638)
   [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
-DEPRECATION WARNING: `#timestamps` was called without specifying an option for `null`. In Rails 5, this behavior will change to `null: false`. You should manually specify `null: true` to prevent the behavior of your existing migrations from changing. (called from block in up at /home/codio/workspace/hw-acceptance-unit-test-cycle/rottenpotatoes/db/migrate/20111119180638_create_movies.rb:10)
+DEPRECATION WARNING: `#timestamps` was called without specifying an option for `null`. In Rails 5, this behavior will change to `null: false`. You should manually specify `null: true` to prevent the behavior of your existing migrations from changing. (called from block in up at /home/codio/workspace/hw-acceptance-unit-test-cycle/Trapplar/db/migrate/20111119180638_create_movies.rb:10)
   [1m[35m (0.4ms)[0m  CREATE TABLE "movies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "rating" varchar, "description" text, "release_date" datetime, "created_at" datetime, "updated_at" datetime) 
   [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20111119180638"]]
   [1m[35m (63.3ms)[0m  commit transaction
@@ -436,7 +436,7 @@ Completed 200 OK in 8ms (Views: 7.3ms | ActiveRecord: 0.1ms)
 
 Started GET "/movies" for 207.38.160.102 at 2022-10-26 05:38:56 +0000
 
-SyntaxError (/home/codio/workspace/hw-acceptance-unit-test-cycle/rottenpotatoes/app/controllers/movies_controller.rb:59: syntax error, unexpected end-of-input, expecting end):
+SyntaxError (/home/codio/workspace/hw-acceptance-unit-test-cycle/Trapplar/app/controllers/movies_controller.rb:59: syntax error, unexpected end-of-input, expecting end):
   app/controllers/movies_controller.rb:59: syntax error, unexpected end-of-input, expecting end
 
 
@@ -545,7 +545,7 @@ Processing by MoviesController#search_similar as HTML
 Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.1ms)
 
 ActionView::MissingTemplate (Missing template movies/search_similar, application/search_similar with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby]}. Searched in:
-  * "/home/codio/workspace/hw-acceptance-unit-test-cycle/rottenpotatoes/app/views"
+  * "/home/codio/workspace/hw-acceptance-unit-test-cycle/Trapplar/app/views"
 ):
   actionview (4.2.10) lib/action_view/path_set.rb:46:in `find'
   actionview (4.2.10) lib/action_view/lookup_context.rb:121:in `find'
@@ -664,7 +664,7 @@ Processing by MoviesController#search_similar as HTML
 Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.1ms)
 
 ActionView::MissingTemplate (Missing template movies/search_similar, application/search_similar with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby]}. Searched in:
-  * "/home/codio/workspace/hw-acceptance-unit-test-cycle/rottenpotatoes/app/views"
+  * "/home/codio/workspace/hw-acceptance-unit-test-cycle/Trapplar/app/views"
 ):
   actionview (4.2.10) lib/action_view/path_set.rb:46:in `find'
   actionview (4.2.10) lib/action_view/lookup_context.rb:121:in `find'

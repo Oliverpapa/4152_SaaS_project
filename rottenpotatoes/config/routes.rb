@@ -1,6 +1,8 @@
-Rottenpotatoes::Application.routes.draw do
-  resources :movies
-  # map '/' to be a redirect to '/movies'
-  root :to => redirect('/movies')
-  get 'similar_movies/:id' , to: 'movies#search_similar', as: "similar_movies"
+Trapplar::Application.routes.draw do
+  
+  root :to => redirect('/index')
+
+  get 'index', to: 'traveling_plans#search', as: search
+  get 'suggestion' , to: 'traveling_plans#suggestion', as: suggestion
+  
 end
