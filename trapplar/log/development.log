@@ -2521,3 +2521,532 @@ Processing by TravelingPlansController#search as HTML
   Rendered traveling_plans/index.html.erb within layouts/application (1.3ms)
   Rendered layouts/_flash.erb (0.1ms)
 Completed 200 OK in 9ms (Views: 7.8ms | ActiveRecord: 0.3ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "open_time", "close_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Empire State Building"], ["rating", 4.7], ["address", "20 W 34th St., New York, NY 10001"], ["city", "New York"], ["state", "NY"], ["latitude", 40.7484396], ["longitude", -73.9944193], ["recommended_time", 60], ["open_time", "2000-01-01 09:00:00.000000"], ["close_time", "2000-01-01 22:00:00.000000"], ["created_at", "2022-10-30 21:02:46.477268"], ["updated_at", "2022-10-30 21:02:46.477268"]]
+  [1m[35m (66.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "open_time", "close_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "The Met"], ["rating", 4.8], ["address", "1000 5th Ave, New York, NY 10028"], ["city", "New York"], ["state", "NY"], ["latitude", 40.7794366], ["longitude", -74.0950799], ["recommended_time", 180], ["open_time", "2000-01-01 10:00:00.000000"], ["close_time", "2000-01-01 21:00:00.000000"], ["created_at", "2022-10-30 21:02:46.546863"], ["updated_at", "2022-10-30 21:02:46.546863"]]
+  [1m[36m (61.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "open_time", "close_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "MoMA "], ["rating", 4.6], ["address", "11 W 53rd St, New York, NY 10019"], ["city", "New York"], ["state", "NY"], ["latitude", 40.7484714], ["longitude", -73.9944193], ["recommended_time", 180], ["open_time", "2000-01-01 10:30:00.000000"], ["close_time", "2000-01-01 17:30:00.000000"], ["created_at", "2022-10-30 21:02:46.610238"], ["updated_at", "2022-10-30 21:02:46.610238"]]
+  [1m[35m (61.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "open_time", "close_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "Statue of Liberty"], ["rating", 4.7], ["address", "Statue of Liberty, New York, NY 10004"], ["city", "New York"], ["state", "NY"], ["latitude", 40.6917572], ["longitude", -74.0429902], ["recommended_time", 180], ["open_time", "2000-01-01 08:30:00.000000"], ["close_time", "2000-01-01 16:00:00.000000"], ["created_at", "2022-10-30 21:02:46.674278"], ["updated_at", "2022-10-30 21:02:46.674278"]]
+  [1m[36m (62.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "open_time", "close_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Columbia University"], ["rating", 4.7], ["address", "Columbia University, New York, NY 10027"], ["city", "New York"], ["state", "NY"], ["latitude", 40.8075395], ["longitude", -73.9670574], ["recommended_time", 60], ["open_time", "2000-01-01 00:00:00.000000"], ["close_time", "2000-01-01 00:00:00.000000"], ["created_at", "2022-10-30 21:02:46.739414"], ["updated_at", "2022-10-30 21:02:46.739414"]]
+  [1m[35m (55.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "open_time", "close_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "The Metropolitan Museum of Art"], ["rating", 4.8], ["address", "1000 5th Ave, New York, NY 10028"], ["city", "New York"], ["state", "NY"], ["latitude", 40.7794366], ["longitude", -73.9654327], ["recommended_time", 120], ["open_time", "2000-01-01 10:00:00.000000"], ["close_time", "2000-01-01 17:00:00.000000"], ["created_at", "2022-10-30 21:02:46.797169"], ["updated_at", "2022-10-30 21:02:46.797169"]]
+  [1m[36m (64.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "open_time", "close_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Times Square"], ["rating", 4.7], ["address", "Manhattan, NY 10036"], ["city", "New York"], ["state", "NY"], ["latitude", 40.7576753], ["longitude", -73.9866887], ["recommended_time", 60], ["open_time", "2000-01-01 00:00:00.000000"], ["close_time", "2000-01-01 00:00:00.000000"], ["created_at", "2022-10-30 21:02:46.864122"], ["updated_at", "2022-10-30 21:02:46.864122"]]
+  [1m[35m (58.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "open_time", "close_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "Rockefeller Center"], ["rating", 4.7], ["address", "45 Rockefeller Plaza, New York, NY 10111"], ["city", "New York"], ["state", "NY"], ["latitude", 40.7587402], ["longitude", -73.9808623], ["recommended_time", 120], ["open_time", "2000-01-01 00:00:00.000000"], ["close_time", "2000-01-01 00:00:00.000000"], ["created_at", "2022-10-30 21:02:46.925376"], ["updated_at", "2022-10-30 21:02:46.925376"]]
+  [1m[36m (63.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "open_time", "close_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Kaaterskill Falls, Viewing Platform"], ["rating", 4.8], ["address", "Laurel House Rd, Palenville, NY 12463"], ["city", "Palenville"], ["state", "NY"], ["latitude", 42.6135313], ["longitude", -74.3227508], ["recommended_time", 180], ["open_time", "2000-01-01 08:00:00.000000"], ["close_time", "2000-01-01 18:00:00.000000"], ["created_at", "2022-10-30 21:02:46.990570"], ["updated_at", "2022-10-30 21:02:46.990570"]]
+  [1m[35m (65.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "open_time", "close_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "Howe Caverns"], ["rating", 4.6], ["address", "255 Discovery Dr, Howes Cave, NY 12092"], ["city", "Howes Cave"], ["state", "NY"], ["latitude", 42.6632755], ["longitude", -74.4488459], ["recommended_time", 180], ["open_time", "2000-01-01 10:00:00.000000"], ["close_time", "2000-01-01 15:00:00.000000"], ["created_at", "2022-10-30 21:02:47.057836"], ["updated_at", "2022-10-30 21:02:47.057836"]]
+  [1m[36m (67.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "open_time", "close_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Lake George Mystery Spot"], ["rating", 4.7], ["address", "1 Beach Rd, Lake George, NY 12845"], ["city", "Lake George"], ["state", "NY"], ["latitude", 43.4088805], ["longitude", -73.7685816], ["recommended_time", 180], ["open_time", "2000-01-01 00:00:00.000000"], ["close_time", "2000-01-01 00:00:00.000000"], ["created_at", "2022-10-30 21:02:47.127772"], ["updated_at", "2022-10-30 21:02:47.127772"]]
+  [1m[35m (62.5ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "open_time", "close_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "Golden Gate Bridge"], ["rating", 4.8], ["address", "Golden Gate Bridge, San Francisco, CA"], ["city", "San Francisco"], ["state", "CA"], ["latitude", 37.8139944], ["longitude", -122.4774193], ["recommended_time", 60], ["open_time", "2000-01-01 00:00:00.000000"], ["close_time", "2000-01-01 00:00:00.000000"], ["created_at", "2022-10-30 21:02:47.192353"], ["updated_at", "2022-10-30 21:02:47.192353"]]
+  [1m[36m (63.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "open_time", "close_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Six Flags Magic Mountain"], ["rating", 4.5], ["address", "26101 Magic Mountain Pkwy, Valencia, CA 91355"], ["city", "Valencia"], ["state", "CA"], ["latitude", 34.4253349], ["longitude", -118.5994078], ["recommended_time", 240], ["open_time", "2000-01-01 10:30:00.000000"], ["close_time", "2000-01-01 23:00:00.000000"], ["created_at", "2022-10-30 21:02:47.258257"], ["updated_at", "2022-10-30 21:02:47.258257"]]
+  [1m[35m (66.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "open_time", "close_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "Monterey Bay Aquarium"], ["rating", 4.7], ["address", "886 Cannery Row, Monterey, CA 93940"], ["city", "Monterey"], ["state", "CA"], ["latitude", 36.6182683], ["longitude", -121.9039806], ["recommended_time", 120], ["open_time", "2000-01-01 10:00:00.000000"], ["close_time", "2000-01-01 17:00:00.000000"], ["created_at", "2022-10-30 21:02:47.327189"], ["updated_at", "2022-10-30 21:02:47.327189"]]
+  [1m[36m (60.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "open_time", "close_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Disney California Adventure Park"], ["rating", 4.7], ["address", "1313 Disneyland Dr, Anaheim, CA 92802"], ["city", "Anaheim"], ["state", "CA"], ["latitude", 33.8061164], ["longitude", -117.9230477], ["recommended_time", 240], ["open_time", "2000-01-01 08:00:00.000000"], ["close_time", "2000-01-01 18:00:00.000000"], ["created_at", "2022-10-30 21:02:47.390090"], ["updated_at", "2022-10-30 21:02:47.390090"]]
+  [1m[35m (57.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "open_time", "close_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "Griffith Observatory"], ["rating", 4.7], ["address", "2800 E Observatory Rd, Los Angeles, CA 90027"], ["city", "Los Angeles"], ["state", "CA"], ["latitude", 34.1184385], ["longitude", -118.3025822], ["recommended_time", 60], ["open_time", "2000-01-01 10:00:00.000000"], ["close_time", "2000-01-01 22:00:00.000000"], ["created_at", "2022-10-30 21:02:47.449883"], ["updated_at", "2022-10-30 21:02:47.449883"]]
+  [1m[36m (62.3ms)[0m  [1mcommit transaction[0m
+  [1m[36m (62.7ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (69.7ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateAttractions (20221029192029)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "attractions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "address" varchar, "city" varchar, "state" varchar, "latitude" float, "longitude" float, "recommended_time" integer, "rating" float, "open_time" time, "close_time" time, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20221029192029"]]
+  [1m[35m (74.5ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "open_time", "close_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Empire State Building"], ["rating", 4.7], ["address", "20 W 34th St., New York, NY 10001"], ["city", "New York"], ["state", "NY"], ["latitude", 40.7484396], ["longitude", -73.9944193], ["recommended_time", 60], ["open_time", "2000-01-01 09:00:00.000000"], ["close_time", "2000-01-01 22:00:00.000000"], ["created_at", "2022-10-30 21:04:11.275537"], ["updated_at", "2022-10-30 21:04:11.275537"]]
+  [1m[35m (77.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "open_time", "close_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "The Met"], ["rating", 4.8], ["address", "1000 5th Ave, New York, NY 10028"], ["city", "New York"], ["state", "NY"], ["latitude", 40.7794366], ["longitude", -74.0950799], ["recommended_time", 180], ["open_time", "2000-01-01 10:00:00.000000"], ["close_time", "2000-01-01 21:00:00.000000"], ["created_at", "2022-10-30 21:04:11.356267"], ["updated_at", "2022-10-30 21:04:11.356267"]]
+  [1m[36m (78.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "open_time", "close_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "MoMA "], ["rating", 4.6], ["address", "11 W 53rd St, New York, NY 10019"], ["city", "New York"], ["state", "NY"], ["latitude", 40.7484714], ["longitude", -73.9944193], ["recommended_time", 180], ["open_time", "2000-01-01 10:30:00.000000"], ["close_time", "2000-01-01 17:30:00.000000"], ["created_at", "2022-10-30 21:04:11.438052"], ["updated_at", "2022-10-30 21:04:11.438052"]]
+  [1m[35m (74.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "open_time", "close_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "Statue of Liberty"], ["rating", 4.7], ["address", "Statue of Liberty, New York, NY 10004"], ["city", "New York"], ["state", "NY"], ["latitude", 40.6917572], ["longitude", -74.0429902], ["recommended_time", 180], ["open_time", "2000-01-01 08:30:00.000000"], ["close_time", "2000-01-01 16:00:00.000000"], ["created_at", "2022-10-30 21:04:11.514462"], ["updated_at", "2022-10-30 21:04:11.514462"]]
+  [1m[36m (72.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "open_time", "close_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Columbia University"], ["rating", 4.7], ["address", "Columbia University, New York, NY 10027"], ["city", "New York"], ["state", "NY"], ["latitude", 40.8075395], ["longitude", -73.9670574], ["recommended_time", 60], ["open_time", "2000-01-01 00:00:00.000000"], ["close_time", "2000-01-01 00:00:00.000000"], ["created_at", "2022-10-30 21:04:11.589820"], ["updated_at", "2022-10-30 21:04:11.589820"]]
+  [1m[35m (67.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "open_time", "close_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "The Metropolitan Museum of Art"], ["rating", 4.8], ["address", "1000 5th Ave, New York, NY 10028"], ["city", "New York"], ["state", "NY"], ["latitude", 40.7794366], ["longitude", -73.9654327], ["recommended_time", 120], ["open_time", "2000-01-01 10:00:00.000000"], ["close_time", "2000-01-01 17:00:00.000000"], ["created_at", "2022-10-30 21:04:11.659941"], ["updated_at", "2022-10-30 21:04:11.659941"]]
+  [1m[36m (73.2ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "open_time", "close_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Times Square"], ["rating", 4.7], ["address", "Manhattan, NY 10036"], ["city", "New York"], ["state", "NY"], ["latitude", 40.7576753], ["longitude", -73.9866887], ["recommended_time", 60], ["open_time", "2000-01-01 00:00:00.000000"], ["close_time", "2000-01-01 00:00:00.000000"], ["created_at", "2022-10-30 21:04:11.736409"], ["updated_at", "2022-10-30 21:04:11.736409"]]
+  [1m[35m (84.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "open_time", "close_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "Rockefeller Center"], ["rating", 4.7], ["address", "45 Rockefeller Plaza, New York, NY 10111"], ["city", "New York"], ["state", "NY"], ["latitude", 40.7587402], ["longitude", -73.9808623], ["recommended_time", 120], ["open_time", "2000-01-01 00:00:00.000000"], ["close_time", "2000-01-01 00:00:00.000000"], ["created_at", "2022-10-30 21:04:11.824490"], ["updated_at", "2022-10-30 21:04:11.824490"]]
+  [1m[36m (63.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "open_time", "close_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Kaaterskill Falls, Viewing Platform"], ["rating", 4.8], ["address", "Laurel House Rd, Palenville, NY 12463"], ["city", "Palenville"], ["state", "NY"], ["latitude", 42.6135313], ["longitude", -74.3227508], ["recommended_time", 180], ["open_time", "2000-01-01 08:00:00.000000"], ["close_time", "2000-01-01 18:00:00.000000"], ["created_at", "2022-10-30 21:04:11.890872"], ["updated_at", "2022-10-30 21:04:11.890872"]]
+  [1m[35m (67.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "open_time", "close_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "Howe Caverns"], ["rating", 4.6], ["address", "255 Discovery Dr, Howes Cave, NY 12092"], ["city", "Howes Cave"], ["state", "NY"], ["latitude", 42.6632755], ["longitude", -74.4488459], ["recommended_time", 180], ["open_time", "2000-01-01 10:00:00.000000"], ["close_time", "2000-01-01 15:00:00.000000"], ["created_at", "2022-10-30 21:04:11.960573"], ["updated_at", "2022-10-30 21:04:11.960573"]]
+  [1m[36m (66.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "open_time", "close_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Lake George Mystery Spot"], ["rating", 4.7], ["address", "1 Beach Rd, Lake George, NY 12845"], ["city", "Lake George"], ["state", "NY"], ["latitude", 43.4088805], ["longitude", -73.7685816], ["recommended_time", 180], ["open_time", "2000-01-01 00:00:00.000000"], ["close_time", "2000-01-01 00:00:00.000000"], ["created_at", "2022-10-30 21:04:12.029826"], ["updated_at", "2022-10-30 21:04:12.029826"]]
+  [1m[35m (67.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "open_time", "close_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "Golden Gate Bridge"], ["rating", 4.8], ["address", "Golden Gate Bridge, San Francisco, CA"], ["city", "San Francisco"], ["state", "CA"], ["latitude", 37.8139944], ["longitude", -122.4774193], ["recommended_time", 60], ["open_time", "2000-01-01 00:00:00.000000"], ["close_time", "2000-01-01 00:00:00.000000"], ["created_at", "2022-10-30 21:04:12.099889"], ["updated_at", "2022-10-30 21:04:12.099889"]]
+  [1m[36m (60.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "open_time", "close_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Six Flags Magic Mountain"], ["rating", 4.5], ["address", "26101 Magic Mountain Pkwy, Valencia, CA 91355"], ["city", "Valencia"], ["state", "CA"], ["latitude", 34.4253349], ["longitude", -118.5994078], ["recommended_time", 240], ["open_time", "2000-01-01 10:30:00.000000"], ["close_time", "2000-01-01 23:00:00.000000"], ["created_at", "2022-10-30 21:04:12.162914"], ["updated_at", "2022-10-30 21:04:12.162914"]]
+  [1m[35m (66.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "open_time", "close_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "Monterey Bay Aquarium"], ["rating", 4.7], ["address", "886 Cannery Row, Monterey, CA 93940"], ["city", "Monterey"], ["state", "CA"], ["latitude", 36.6182683], ["longitude", -121.9039806], ["recommended_time", 120], ["open_time", "2000-01-01 10:00:00.000000"], ["close_time", "2000-01-01 17:00:00.000000"], ["created_at", "2022-10-30 21:04:12.231427"], ["updated_at", "2022-10-30 21:04:12.231427"]]
+  [1m[36m (66.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "open_time", "close_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Disney California Adventure Park"], ["rating", 4.7], ["address", "1313 Disneyland Dr, Anaheim, CA 92802"], ["city", "Anaheim"], ["state", "CA"], ["latitude", 33.8061164], ["longitude", -117.9230477], ["recommended_time", 240], ["open_time", "2000-01-01 08:00:00.000000"], ["close_time", "2000-01-01 18:00:00.000000"], ["created_at", "2022-10-30 21:04:12.300890"], ["updated_at", "2022-10-30 21:04:12.300890"]]
+  [1m[35m (68.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "attractions" ("name", "rating", "address", "city", "state", "latitude", "longitude", "recommended_time", "open_time", "close_time", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)  [["name", "Griffith Observatory"], ["rating", 4.7], ["address", "2800 E Observatory Rd, Los Angeles, CA 90027"], ["city", "Los Angeles"], ["state", "CA"], ["latitude", 34.1184385], ["longitude", -118.3025822], ["recommended_time", 60], ["open_time", "2000-01-01 10:00:00.000000"], ["close_time", "2000-01-01 22:00:00.000000"], ["created_at", "2022-10-30 21:04:12.371325"], ["updated_at", "2022-10-30 21:04:12.371325"]]
+  [1m[36m (61.7ms)[0m  [1mcommit transaction[0m
+  [1m[36m (66.8ms)[0m  [1mCREATE TABLE "attractions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "address" varchar, "city" varchar, "state" varchar, "latitude" float, "longitude" float, "recommended_time" integer, "rating" float, "open_time" time, "close_time" time, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (69.7ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (61.6ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.2ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (68.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20221029192029')
+
+
+Started GET "/" for 207.38.160.102 at 2022-10-30 21:04:43 +0000
+
+
+Started GET "/index" for 207.38.160.102 at 2022-10-30 21:04:43 +0000
+Processing by TravelingPlansController#search as HTML
+Completed 500 Internal Server Error in 34ms (ActiveRecord: 0.0ms)
+
+NoMethodError (undefined method `states' for #<Class:0x00007f20846fcdf8>):
+  app/controllers/traveling_plans_controller.rb:5:in `search'
+
+
+  Rendered /home/codio/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.2ms)
+  Rendered /home/codio/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendered /home/codio/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (10.8ms)
+  Rendered /home/codio/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (28.8ms)
+
+
+Started GET "/index" for 207.38.160.102 at 2022-10-30 21:06:26 +0000
+Processing by TravelingPlansController#search as HTML
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.0ms)
+
+NoMethodError (undefined method `states' for #<Class:0x00007f208447f648>):
+  app/controllers/traveling_plans_controller.rb:5:in `search'
+
+
+  Rendered /home/codio/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.8ms)
+  Rendered /home/codio/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /home/codio/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /home/codio/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (17.8ms)
+
+
+Started GET "/index" for 207.38.160.102 at 2022-10-30 21:07:05 +0000
+Processing by TravelingPlansController#search as HTML
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms)
+
+NameError (undefined local variable or method `all' for #<TravelingPlansController:0x000055b92a307210>):
+  app/controllers/traveling_plans_controller.rb:5:in `search'
+
+
+  Rendered /home/codio/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.3ms)
+  Rendered /home/codio/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /home/codio/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /home/codio/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (17.0ms)
+
+
+Started GET "/index" for 207.38.160.102 at 2022-10-30 21:07:29 +0000
+Processing by TravelingPlansController#search as HTML
+  [1m[36mAttraction Load (0.5ms)[0m  [1mSELECT "attractions".* FROM "attractions"[0m
+Completed 500 Internal Server Error in 33ms (ActiveRecord: 0.9ms)
+
+NoMethodError (undefined method `cities_in_state_hash' for #<Class:0x00007f2084a45c58>):
+  app/controllers/traveling_plans_controller.rb:6:in `search'
+
+
+  Rendered /home/codio/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.9ms)
+  Rendered /home/codio/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /home/codio/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /home/codio/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (17.2ms)
+
+
+Started GET "/index" for 207.38.160.102 at 2022-10-30 21:08:25 +0000
+Processing by TravelingPlansController#search as HTML
+  [1m[35mAttraction Load (0.3ms)[0m  SELECT "attractions".* FROM "attractions"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "attractions".* FROM "attractions"[0m
+  Rendered traveling_plans/index.html.erb within layouts/application (18.2ms)
+  Rendered layouts/_flash.erb (0.4ms)
+Completed 200 OK in 281ms (Views: 271.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/suggestion?utf8=%E2%9C%93&travel_plan%5Bstate%5D=NY&travel_plan%5Bstop%5D%5B%5D=&travel_plan%5Bstop%5D%5B%5D=Palenville&travel_plan%5Bstop%5D%5B%5D=Howes+Cave&travel_plan%5Btraveling_days%5D=1&commit=Search" for 207.38.160.102 at 2022-10-30 21:08:35 +0000
+Processing by TravelingPlansController#suggestion as HTML
+  Parameters: {"utf8"=>"✓", "travel_plan"=>{"state"=>"NY", "stop"=>["", "Palenville", "Howes Cave"], "traveling_days"=>"1"}, "commit"=>"Search"}
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+LoadError (cannot load such file -- tod/core_extensions):
+  app/models/traveling_plan.rb:3:in `<class:TravelingPlan>'
+  app/models/traveling_plan.rb:1:in `<top (required)>'
+  app/controllers/traveling_plans_controller.rb:13:in `suggestion'
+
+
+  Rendered /home/codio/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.8ms)
+  Rendered /home/codio/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /home/codio/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /home/codio/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (15.6ms)
+
+
+Started GET "/suggestion?utf8=%E2%9C%93&travel_plan%5Bstate%5D=NY&travel_plan%5Bstop%5D%5B%5D=&travel_plan%5Bstop%5D%5B%5D=Palenville&travel_plan%5Bstop%5D%5B%5D=Howes+Cave&travel_plan%5Btraveling_days%5D=1&commit=Search" for 207.38.160.102 at 2022-10-30 21:09:21 +0000
+Processing by TravelingPlansController#suggestion as HTML
+  Parameters: {"utf8"=>"✓", "travel_plan"=>{"state"=>"NY", "stop"=>["", "Palenville", "Howes Cave"], "traveling_days"=>"1"}, "commit"=>"Search"}
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms)
+
+NoMethodError (undefined method `-' for nil:NilClass):
+  app/models/traveling_plan.rb:7:in `generate_plan'
+  app/controllers/traveling_plans_controller.rb:13:in `suggestion'
+
+
+  Rendered /home/codio/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.1ms)
+  Rendered /home/codio/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /home/codio/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /home/codio/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (14.2ms)
+
+
+Started GET "/index" for 207.38.160.102 at 2022-10-30 21:11:15 +0000
+Processing by TravelingPlansController#search as HTML
+  [1m[35mAttraction Load (0.4ms)[0m  SELECT "attractions".* FROM "attractions"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "attractions".* FROM "attractions"[0m
+  Rendered traveling_plans/index.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 19ms (Views: 10.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/suggestion?utf8=%E2%9C%93&travel_plan%5Bstate%5D=NY&travel_plan%5Bstop%5D%5B%5D=&travel_plan%5Bstop%5D%5B%5D=Palenville&travel_plan%5Bstop%5D%5B%5D=Howes+Cave&travel_plan%5Btraveling_days%5D=1&commit=Search" for 207.38.160.102 at 2022-10-30 21:11:22 +0000
+Processing by TravelingPlansController#suggestion as HTML
+  Parameters: {"utf8"=>"✓", "travel_plan"=>{"state"=>"NY", "stop"=>["", "Palenville", "Howes Cave"], "traveling_days"=>"1"}, "commit"=>"Search"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+NoMethodError (undefined method `-' for nil:NilClass):
+  app/models/traveling_plan.rb:7:in `generate_plan'
+  app/controllers/traveling_plans_controller.rb:13:in `suggestion'
+
+
+  Rendered /home/codio/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.0ms)
+  Rendered /home/codio/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendered /home/codio/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /home/codio/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (14.4ms)
+
+
+Started GET "/" for 207.38.160.102 at 2022-10-30 21:12:44 +0000
+
+
+Started GET "/index" for 207.38.160.102 at 2022-10-30 21:12:44 +0000
+Processing by TravelingPlansController#search as HTML
+  [1m[35mAttraction Load (0.4ms)[0m  SELECT "attractions".* FROM "attractions"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "attractions".* FROM "attractions"[0m
+  Rendered traveling_plans/index.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 22ms (Views: 11.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/suggestion?utf8=%E2%9C%93&travel_plan%5Bstate%5D=NY&travel_plan%5Bstop%5D%5B%5D=&travel_plan%5Bstop%5D%5B%5D=Palenville&travel_plan%5Bstop%5D%5B%5D=Howes+Cave&travel_plan%5Btraveling_days%5D=1&commit=Search" for 207.38.160.102 at 2022-10-30 21:12:48 +0000
+Processing by TravelingPlansController#suggestion as HTML
+  Parameters: {"utf8"=>"✓", "travel_plan"=>{"state"=>"NY", "stop"=>["", "Palenville", "Howes Cave"], "traveling_days"=>"1"}, "commit"=>"Search"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+NoMethodError (undefined method `-' for nil:NilClass):
+  app/models/traveling_plan.rb:7:in `generate_plan'
+  app/controllers/traveling_plans_controller.rb:13:in `suggestion'
+
+
+  Rendered /home/codio/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (17.6ms)
+  Rendered /home/codio/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.8ms)
+  Rendered /home/codio/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /home/codio/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (30.1ms)
+
+
+Started GET "/suggestion?utf8=%E2%9C%93&travel_plan%5Bstate%5D=NY&travel_plan%5Bstop%5D%5B%5D=&travel_plan%5Bstop%5D%5B%5D=Palenville&travel_plan%5Bstop%5D%5B%5D=Howes+Cave&travel_plan%5Btraveling_days%5D=1&commit=Search" for 207.38.160.102 at 2022-10-30 21:14:22 +0000
+Processing by TravelingPlansController#suggestion as HTML
+  Parameters: {"utf8"=>"✓", "travel_plan"=>{"state"=>"NY", "stop"=>["", "Palenville", "Howes Cave"], "traveling_days"=>"1"}, "commit"=>"Search"}
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms)
+
+NoMethodError (undefined method `-' for nil:NilClass):
+  app/models/traveling_plan.rb:8:in `generate_plan'
+  app/controllers/traveling_plans_controller.rb:13:in `suggestion'
+
+
+  Rendered /home/codio/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.3ms)
+  Rendered /home/codio/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered /home/codio/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /home/codio/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (15.1ms)
+
+
+Started GET "/suggestion?utf8=%E2%9C%93&travel_plan%5Bstate%5D=NY&travel_plan%5Bstop%5D%5B%5D=&travel_plan%5Bstop%5D%5B%5D=Palenville&travel_plan%5Bstop%5D%5B%5D=Howes+Cave&travel_plan%5Btraveling_days%5D=2&commit=Search" for 207.38.160.102 at 2022-10-30 21:16:54 +0000
+Processing by TravelingPlansController#suggestion as HTML
+  Parameters: {"utf8"=>"✓", "travel_plan"=>{"state"=>"NY", "stop"=>["", "Palenville", "Howes Cave"], "traveling_days"=>"2"}, "commit"=>"Search"}
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.4ms)
+
+NoMethodError (undefined method `-' for "2":String
+Did you mean?  -@):
+  app/models/traveling_plan.rb:8:in `generate_plan'
+  app/controllers/traveling_plans_controller.rb:14:in `suggestion'
+
+
+  Rendered /home/codio/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.1ms)
+  Rendered /home/codio/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendered /home/codio/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /home/codio/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (14.5ms)
+
+
+Started GET "/" for 207.38.160.102 at 2022-10-30 21:20:22 +0000
+
+
+Started GET "/index" for 207.38.160.102 at 2022-10-30 21:20:22 +0000
+Processing by TravelingPlansController#search as HTML
+  [1m[35mAttraction Load (0.4ms)[0m  SELECT "attractions".* FROM "attractions"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "attractions".* FROM "attractions"[0m
+  Rendered traveling_plans/index.html.erb within layouts/application (0.9ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 19ms (Views: 10.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/suggestion?utf8=%E2%9C%93&travel_plan%5Bstate%5D=NY&travel_plan%5Bstop%5D%5B%5D=&travel_plan%5Btraveling_days%5D=1&commit=Search" for 207.38.160.102 at 2022-10-30 21:21:03 +0000
+Processing by TravelingPlansController#suggestion as HTML
+  Parameters: {"utf8"=>"✓", "travel_plan"=>{"state"=>"NY", "stop"=>[""], "traveling_days"=>"1"}, "commit"=>"Search"}
+  [1m[35mAttraction Load (0.2ms)[0m  SELECT "attractions".* FROM "attractions" WHERE "attractions"."city" = ?  [["city", ""]]
+  [1m[36mAttraction Load (0.2ms)[0m  [1mSELECT "attractions".* FROM "attractions" WHERE "attractions"."state" = ?[0m  [["state", "NY"]]
+  Rendered traveling_plans/suggestion.html.erb within layouts/application (2.2ms)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.4ms)
+
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    41:     </tr>
+    42:   </thead>
+    43:   <tbody>
+    44:     <% @suggestions[1].each do |attraction| %>
+    45:       <tr>
+    46:         <td>
+    47:           <%= attraction.name %>
+  app/views/traveling_plans/suggestion.html.erb:44:in `_app_views_traveling_plans_suggestion_html_erb__3746987570859450457_69888831515000'
+  app/controllers/traveling_plans_controller.rb:15:in `suggestion'
+
+
+  Rendered /home/codio/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.3ms)
+  Rendered /home/codio/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendered /home/codio/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /home/codio/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (16.5ms)
+
+
+Started GET "/suggestion?utf8=%E2%9C%93&travel_plan%5Bstate%5D=&travel_plan%5Bstop%5D%5B%5D=&travel_plan%5Btraveling_days%5D=1&commit=Search" for 207.38.160.102 at 2022-10-30 21:21:25 +0000
+Processing by TravelingPlansController#suggestion as HTML
+  Parameters: {"utf8"=>"✓", "travel_plan"=>{"state"=>"", "stop"=>[""], "traveling_days"=>"1"}, "commit"=>"Search"}
+  [1m[35mAttraction Load (0.1ms)[0m  SELECT "attractions".* FROM "attractions" WHERE "attractions"."city" = ?  [["city", ""]]
+  [1m[36mAttraction Load (0.1ms)[0m  [1mSELECT "attractions".* FROM "attractions" WHERE "attractions"."state" = ?[0m  [["state", ""]]
+  Rendered traveling_plans/suggestion.html.erb within layouts/application (1.9ms)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.2ms)
+
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    41:     </tr>
+    42:   </thead>
+    43:   <tbody>
+    44:     <% @suggestions[1].each do |attraction| %>
+    45:       <tr>
+    46:         <td>
+    47:           <%= attraction.name %>
+  app/views/traveling_plans/suggestion.html.erb:44:in `_app_views_traveling_plans_suggestion_html_erb__3746987570859450457_69888831515000'
+  app/controllers/traveling_plans_controller.rb:15:in `suggestion'
+
+
+  Rendered /home/codio/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.4ms)
+  Rendered /home/codio/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (13.8ms)
+  Rendered /home/codio/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /home/codio/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (27.8ms)
+
+
+Started GET "/suggestion?utf8=%E2%9C%93&travel_plan%5Bstate%5D=&travel_plan%5Bstop%5D%5B%5D=&travel_plan%5Btraveling_days%5D=1&commit=Search" for 207.38.160.102 at 2022-10-30 21:21:45 +0000
+Processing by TravelingPlansController#suggestion as HTML
+  Parameters: {"utf8"=>"✓", "travel_plan"=>{"state"=>"", "stop"=>[""], "traveling_days"=>"1"}, "commit"=>"Search"}
+  [1m[35mAttraction Load (0.1ms)[0m  SELECT "attractions".* FROM "attractions" WHERE "attractions"."city" = ?  [["city", ""]]
+  [1m[36mAttraction Load (0.1ms)[0m  [1mSELECT "attractions".* FROM "attractions" WHERE "attractions"."state" = ?[0m  [["state", ""]]
+  Rendered traveling_plans/suggestion.html.erb within layouts/application (1.4ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.1ms)
+
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    41:     </tr>
+    42:   </thead>
+    43:   <tbody>
+    44:     <% @suggestions[1].each do |attraction| %>
+    45:       <tr>
+    46:         <td>
+    47:           <%= attraction.name %>
+  app/views/traveling_plans/suggestion.html.erb:44:in `_app_views_traveling_plans_suggestion_html_erb__3746987570859450457_69888831515000'
+  app/controllers/traveling_plans_controller.rb:15:in `suggestion'
+
+
+  Rendered /home/codio/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.9ms)
+  Rendered /home/codio/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendered /home/codio/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /home/codio/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (17.4ms)
+
+
+Started GET "/suggestion?utf8=%E2%9C%93&travel_plan%5Bstate%5D=NY&travel_plan%5Bstop%5D%5B%5D=&travel_plan%5Bstop%5D%5B%5D=Palenville&travel_plan%5Bstop%5D%5B%5D=Howes+Cave&travel_plan%5Btraveling_days%5D=1&commit=Search" for 207.38.160.102 at 2022-10-30 21:22:11 +0000
+Processing by TravelingPlansController#suggestion as HTML
+  Parameters: {"utf8"=>"✓", "travel_plan"=>{"state"=>"NY", "stop"=>["", "Palenville", "Howes Cave"], "traveling_days"=>"1"}, "commit"=>"Search"}
+  [1m[35mAttraction Load (0.1ms)[0m  SELECT "attractions".* FROM "attractions" WHERE "attractions"."city" = ?  [["city", ""]]
+  [1m[36mAttraction Load (0.2ms)[0m  [1mSELECT "attractions".* FROM "attractions" WHERE "attractions"."state" = ?[0m  [["state", "NY"]]
+  Rendered traveling_plans/suggestion.html.erb within layouts/application (2.0ms)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.3ms)
+
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+    41:     </tr>
+    42:   </thead>
+    43:   <tbody>
+    44:     <% @suggestions[1].each do |attraction| %>
+    45:       <tr>
+    46:         <td>
+    47:           <%= attraction.name %>
+  app/views/traveling_plans/suggestion.html.erb:44:in `_app_views_traveling_plans_suggestion_html_erb__3746987570859450457_69888831515000'
+  app/controllers/traveling_plans_controller.rb:15:in `suggestion'
+
+
+  Rendered /home/codio/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (6.1ms)
+  Rendered /home/codio/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.9ms)
+  Rendered /home/codio/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /home/codio/.rvm/gems/ruby-2.6.6/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (18.9ms)
+
+
+Started GET "/suggestion?utf8=%E2%9C%93&travel_plan%5Bstate%5D=CA&travel_plan%5Bstop%5D%5B%5D=&travel_plan%5Bstop%5D%5B%5D=Valencia&travel_plan%5Bstop%5D%5B%5D=Monterey&travel_plan%5Btraveling_days%5D=1&commit=Search" for 207.38.160.102 at 2022-10-30 21:27:08 +0000
+Processing by TravelingPlansController#suggestion as HTML
+  Parameters: {"utf8"=>"✓", "travel_plan"=>{"state"=>"CA", "stop"=>["", "Valencia", "Monterey"], "traveling_days"=>"1"}, "commit"=>"Search"}
+  [1m[35mAttraction Load (0.2ms)[0m  SELECT "attractions".* FROM "attractions" WHERE "attractions"."city" = ?  [["city", ""]]
+  [1m[36mAttraction Load (0.2ms)[0m  [1mSELECT "attractions".* FROM "attractions" WHERE "attractions"."state" = ?[0m  [["state", "CA"]]
+  Rendered traveling_plans/suggestion.html.erb within layouts/application (1.7ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 26ms (Views: 14.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/suggestion?utf8=%E2%9C%93&travel_plan%5Bstate%5D=NY&travel_plan%5Bstop%5D%5B%5D=&travel_plan%5Bstop%5D%5B%5D=New+York&travel_plan%5Btraveling_days%5D=1&commit=Search" for 207.38.160.102 at 2022-10-30 21:27:18 +0000
+Processing by TravelingPlansController#suggestion as HTML
+  Parameters: {"utf8"=>"✓", "travel_plan"=>{"state"=>"NY", "stop"=>["", "New York"], "traveling_days"=>"1"}, "commit"=>"Search"}
+  [1m[35mAttraction Load (0.1ms)[0m  SELECT "attractions".* FROM "attractions" WHERE "attractions"."city" = ?  [["city", ""]]
+  [1m[36mAttraction Load (0.1ms)[0m  [1mSELECT "attractions".* FROM "attractions" WHERE "attractions"."state" = ?[0m  [["state", "NY"]]
+  Rendered traveling_plans/suggestion.html.erb within layouts/application (0.4ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 10ms (Views: 8.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/suggestion?utf8=%E2%9C%93&travel_plan%5Bstate%5D=CA&travel_plan%5Bstop%5D%5B%5D=&travel_plan%5Bstop%5D%5B%5D=Valencia&travel_plan%5Btraveling_days%5D=1&commit=Search" for 207.38.160.102 at 2022-10-30 21:28:14 +0000
+Processing by TravelingPlansController#suggestion as HTML
+  Parameters: {"utf8"=>"✓", "travel_plan"=>{"state"=>"CA", "stop"=>["", "Valencia"], "traveling_days"=>"1"}, "commit"=>"Search"}
+  [1m[35mAttraction Load (0.1ms)[0m  SELECT "attractions".* FROM "attractions" WHERE "attractions"."city" = ?  [["city", ""]]
+  [1m[36mAttraction Load (0.2ms)[0m  [1mSELECT "attractions".* FROM "attractions" WHERE "attractions"."state" = ?[0m  [["state", "CA"]]
+  Rendered traveling_plans/suggestion.html.erb within layouts/application (0.5ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 20ms (Views: 10.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/suggestion?utf8=%E2%9C%93&travel_plan%5Bstate%5D=NY&travel_plan%5Bstop%5D%5B%5D=&travel_plan%5Bstop%5D%5B%5D=New+York&travel_plan%5Btraveling_days%5D=1&commit=Search" for 207.38.160.102 at 2022-10-30 22:03:15 +0000
+Processing by TravelingPlansController#suggestion as HTML
+  Parameters: {"utf8"=>"✓", "travel_plan"=>{"state"=>"NY", "stop"=>["", "New York"], "traveling_days"=>"1"}, "commit"=>"Search"}
+  [1m[35mAttraction Load (0.2ms)[0m  SELECT "attractions".* FROM "attractions" WHERE "attractions"."city" = ?  [["city", "New York"]]
+  [1m[36mAttraction Load (0.5ms)[0m  [1mSELECT "attractions".* FROM "attractions" WHERE "attractions"."state" = ?[0m  [["state", "NY"]]
+  Rendered traveling_plans/suggestion.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 50ms (Views: 19.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/index" for 207.38.160.102 at 2022-10-30 22:09:36 +0000
+Processing by TravelingPlansController#search as HTML
+  [1m[35mAttraction Load (0.3ms)[0m  SELECT "attractions".* FROM "attractions"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "attractions".* FROM "attractions"[0m
+  Rendered traveling_plans/index.html.erb within layouts/application (1.5ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 10ms (Views: 8.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/index" for 207.38.160.102 at 2022-10-30 22:09:39 +0000
+Processing by TravelingPlansController#search as HTML
+  [1m[35mAttraction Load (0.3ms)[0m  SELECT "attractions".* FROM "attractions"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "attractions".* FROM "attractions"[0m
+  Rendered traveling_plans/index.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 10ms (Views: 7.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/suggestion?utf8=%E2%9C%93&travel_plan%5Bstate%5D=NY&travel_plan%5Bstop%5D%5B%5D=&travel_plan%5Bstop%5D%5B%5D=New+York&travel_plan%5Btraveling_days%5D=1&commit=Search" for 207.38.160.102 at 2022-10-30 22:09:57 +0000
+Processing by TravelingPlansController#suggestion as HTML
+  Parameters: {"utf8"=>"✓", "travel_plan"=>{"state"=>"NY", "stop"=>["", "New York"], "traveling_days"=>"1"}, "commit"=>"Search"}
+  [1m[35mAttraction Load (0.1ms)[0m  SELECT "attractions".* FROM "attractions" WHERE "attractions"."city" = ?  [["city", "New York"]]
+  [1m[36mAttraction Load (0.1ms)[0m  [1mSELECT "attractions".* FROM "attractions" WHERE "attractions"."state" = ?[0m  [["state", "NY"]]
+  Rendered traveling_plans/suggestion.html.erb within layouts/application (0.5ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 10ms (Views: 7.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 207.38.160.102 at 2022-10-30 22:12:19 +0000
+
+
+Started GET "/index" for 207.38.160.102 at 2022-10-30 22:12:19 +0000
+Processing by TravelingPlansController#search as HTML
+  [1m[35mAttraction Load (0.3ms)[0m  SELECT "attractions".* FROM "attractions"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "attractions".* FROM "attractions"[0m
+  Rendered traveling_plans/index.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 11ms (Views: 8.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/index" for 207.38.160.102 at 2022-10-30 22:18:26 +0000
+Processing by TravelingPlansController#search as HTML
+  [1m[35mAttraction Load (0.3ms)[0m  SELECT "attractions".* FROM "attractions"
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "attractions".* FROM "attractions"[0m
+  Rendered traveling_plans/index.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 9ms (Views: 7.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/suggestion?utf8=%E2%9C%93&travel_plan%5Bstate%5D=CA&travel_plan%5Bstop%5D%5B%5D=&travel_plan%5Bstop%5D%5B%5D=Valencia&travel_plan%5Btraveling_days%5D=1&commit=Search" for 207.38.160.102 at 2022-10-30 22:18:32 +0000
+Processing by TravelingPlansController#suggestion as HTML
+  Parameters: {"utf8"=>"✓", "travel_plan"=>{"state"=>"CA", "stop"=>["", "Valencia"], "traveling_days"=>"1"}, "commit"=>"Search"}
+  [1m[35mAttraction Load (0.1ms)[0m  SELECT "attractions".* FROM "attractions" WHERE "attractions"."city" = ?  [["city", "Valencia"]]
+  [1m[36mAttraction Load (0.2ms)[0m  [1mSELECT "attractions".* FROM "attractions" WHERE "attractions"."state" = ?[0m  [["state", "CA"]]
+  Rendered traveling_plans/suggestion.html.erb within layouts/application (0.5ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 28ms (Views: 11.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/suggestion?utf8=%E2%9C%93&travel_plan%5Bstate%5D=CA&travel_plan%5Bstop%5D%5B%5D=&travel_plan%5Bstop%5D%5B%5D=San+Francisco&travel_plan%5Bstop%5D%5B%5D=Valencia&travel_plan%5Bstop%5D%5B%5D=Monterey&travel_plan%5Btraveling_days%5D=10&commit=Search" for 207.38.160.102 at 2022-10-30 22:18:57 +0000
+Processing by TravelingPlansController#suggestion as HTML
+  Parameters: {"utf8"=>"✓", "travel_plan"=>{"state"=>"CA", "stop"=>["", "San Francisco", "Valencia", "Monterey"], "traveling_days"=>"10"}, "commit"=>"Search"}
+  [1m[35mAttraction Load (0.1ms)[0m  SELECT "attractions".* FROM "attractions" WHERE "attractions"."city" = ?  [["city", "Monterey"]]
+  [1m[36mAttraction Load (0.1ms)[0m  [1mSELECT "attractions".* FROM "attractions" WHERE "attractions"."state" = ?[0m  [["state", "CA"]]
+  Rendered traveling_plans/suggestion.html.erb within layouts/application (0.8ms)
+  Rendered layouts/_flash.erb (0.1ms)
+Completed 200 OK in 14ms (Views: 9.8ms | ActiveRecord: 0.2ms)

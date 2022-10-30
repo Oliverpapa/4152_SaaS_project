@@ -11,18 +11,20 @@ Suggestion 1
     </tr>
   </thead>
   <tbody>
-    <% @suggestions[0].each do |attraction| %>
-      <tr>
-        <td>
-          <%= attraction.name %>
-        </td>
-        <td>
-          <%= attraction.city %>
-        </td>
-        <td>
-          <%= attraction.rating %>
-        </td>
-      </tr>
+    <% @suggestions[0].each do |day| %>
+      <% day.each do |time, attraction| %>
+        <tr>
+          <td>
+            <%= attraction.name %>
+          </td>
+          <td>
+            <%= attraction.city %>
+          </td>
+          <td>
+            <%= attraction.rating %>
+          </td>
+        </tr>
+      <% end %>
     <% end %>
   </tbody>
 </table>
@@ -41,18 +43,20 @@ Suggestion 2
     </tr>
   </thead>
   <tbody>
-    <% @suggestions[1].each do |attraction| %>
-      <tr>
-        <td>
-          <%= attraction.name %>
-        </td>
-        <td>
-          <%= attraction.city %>
-        </td>
-        <td>
-          <%= attraction.rating %>
-        </td>
-      </tr>
+    <% @suggestions[1].each do |day| %>
+      <% day.each do |time, attraction| %>
+        <tr>
+          <td>
+            <%= attraction.name %>
+          </td>
+          <td>
+            <%= attraction.city %>
+          </td>
+          <td>
+            <%= attraction.rating %>
+          </td>
+        </tr>
+      <% end %>
     <% end %>
   </tbody>
 </table>
