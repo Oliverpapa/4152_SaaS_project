@@ -16,4 +16,5 @@ bundle install --without production
 bundle exec rake db:migrate
 bundle exec rake db:seed
 bundle exec rake db:test:prepare
+rails server -b 0.0.0.0
 ```

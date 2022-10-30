@@ -17,6 +17,12 @@ attractions = [{:name => 'Empire State Building', :rating => 4.7, :address => '2
 			{:name => 'Kaaterskill Falls, Viewing Platform', :rating => 4.8, :address => 'Laurel House Rd, Palenville, NY 12463', :city => 'Palenville', :state => 'NY', :latitude => 42.6135313, :longitude => -74.3227508, :recommended_time => 180, :open_time=> "08:00:00", :close_time=> "18:00:00"},
 			{:name => 'Howe Caverns', :rating => 4.6, :address => '255 Discovery Dr, Howes Cave, NY 12092', :city => 'Howes Cave', :state => 'NY', :latitude => 42.6632755, :longitude => -74.4488459, :recommended_time => 180, :open_time=> "10:00:00", :close_time=> "15:00:00"},
 			{:name => 'Lake George Mystery Spot', :rating => 4.7, :address => '1 Beach Rd, Lake George, NY 12845', :city => 'Lake George', :state => 'NY', :latitude => 43.4088805, :longitude => -73.7685816, :recommended_time => 180, :open_time=> "00:00:00", :close_time=> "00:00:00"},
+			{:name => 'Golden Gate Bridge', :rating => 4.8, :address => 'Golden Gate Bridge, San Francisco, CA', :city => 'San Francisco', :state => 'CA', :latitude => 37.8139944, :longitude => -122.4774193, :recommended_time => 60, :open_time=> "00:00:00", :close_time=> "00:00:00"},
+			{:name => 'Six Flags Magic Mountain', :rating => 4.5, :address => '26101 Magic Mountain Pkwy, Valencia, CA 91355', :city => 'Valencia', :state => 'CA', :latitude => 34.4253349, :longitude => -118.5994078, :recommended_time => 240, :open_time=> "10:30:00", :close_time=> "23:00:00"},
+			{:name => 'Monterey Bay Aquarium', :rating => 4.7, :address => '886 Cannery Row, Monterey, CA 93940', :city => 'Monterey', :state => 'CA', :latitude => 36.6182683, :longitude => -121.9039806, :recommended_time => 120, :open_time=> "10:00:00", :close_time=> "17:00:00"},
+			{:name => 'Disney California Adventure Park', :rating => 4.7, :address => '1313 Disneyland Dr, Anaheim, CA 92802', :city => 'Anaheim', :state => 'CA', :latitude => 33.8061164, :longitude => -117.9230477, :recommended_time => 240, :open_time=> "08:00:00", :close_time=> "18:00:00"},
+			{:name => 'Griffith Observatory', :rating => 4.7, :address => '2800 E Observatory Rd, Los Angeles, CA 90027', :city => 'Los Angeles', :state => 'CA', :latitude => 34.1184385, :longitude => -118.3025822, :recommended_time => 60, :open_time=> "10:00:00", :close_time=> "22:00:00"},
+
 			]
 
 

@@ -1,22 +1,33 @@
 class TravelingPlan
+  require 'tod'
+  require 'tod/core_extensions'
+  include Tod
+  
   def self.generate_plan(state:, cities:, days:)
     # TODO: generate a plan based on state, cities, and days
-    # return a list of attractions
-    # fake data for now
-    [
-      [
-        Attraction.new(name: "Central Park", address: "Central Park West", city: "New York", state: "NY", latitude: 40.7829, longitude: -73.9654, recommended_time: 2, rating: 4, open_time: 8, close_time: 18),
-        Attraction.new(name: "Empire State Building", address: "350 5th Ave", city: "New York", state: "NY", latitude: 40.7484, longitude: -73.9857, recommended_time: 1, rating: 4, open_time: 8, close_time: 18),
-        Attraction.new(name: "Times Square", address: "Broadway", city: "New York", state: "NY", latitude: 40.7589, longitude: -73.9851, recommended_time: 1, rating: 4, open_time: 8, close_time: 18),
-        Attraction.new(name: "Statue of Liberty", address: "Liberty Island", city: "New York", state: "NY", latitude: 40.6892, longitude: -74.0445, recommended_time: 1, rating: 4, open_time: 8, close_time: 18),
-      ],
-      [
-        Attraction.new(name: "Brooklyn Bridge", address: "Brooklyn Bridge Park", city: "New York", state: "NY", latitude: 40.7061, longitude: -73.9969, recommended_time: 1, rating: 4, open_time: 8, close_time: 18),
-        Attraction.new(name: "Metropolitan Museum of Art", address: "1000 5th Ave", city: "New York", state: "NY", latitude: 40.7794, longitude: -73.9632, recommended_time: 2, rating: 4, open_time: 8, close_time: 18),
-        Attraction.new(name: "Grand Central Terminal", address: "89 E 42nd St", city: "New York", state: "NY", latitude: 40.7527, longitude: -73.9772, recommended_time: 1, rating: 4, open_time: 8, close_time: 18),
-        Attraction.new(name: "Museum of Modern Art", address: "11 W 53rd St", city: "New York", state: "NY", latitude: 40.7614, longitude: -73.9776, recommended_time: 2, rating: 4, open_time: 8, close_time: 18)
-      ]
-    ]
+    plan = []
+    attractions = Attraction.where(state: state)
+    for day in 0..(days-1)
+      candidates = day >= cities.length ? attractions : Attraction.where(city: cities[day])
+      schedule = generate_one_day_schedule(attractions: candidates)
+      plan = plan << schedule
+      attractions = attractions.difference(schedule.values)
+    end
+    return plan
+  end
+
+  def self.generate_one_day_schedule(attractions:)
+    clock = TimeOfDay.new(10)
+    gap_time = 2.hours
+    threshold = TimeOfDay.new(18)
+    schedule = {}
+    for attraction in attractions do
+      if clock + attraction.recommended_time.minutes < min(threshold, attraction.close_time.to_time_of_day)
+        schedule[clock.to_s] = attraction
+        clock += attraction.recommended_time.minutes + gap_time
+      end
+    end
+    return schedule
   end
 
   attr_accessor :id, :state, :stops_details, :number_of_days
