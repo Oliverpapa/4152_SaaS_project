@@ -34,10 +34,8 @@ Scenario: clear all fields after click "Clear" btn
 
 Scenario: search for traveling plan suggestions with adding stops
   Given I am on the home page
-  When I select "CA" from "State*" 
-  And  I select "NY" from "State*"
-  And  I select "2" from "Number of Traveling Days*"
-  And  I select "New York" from "Stop (select multiple using Ctrl and Shift)"
+  When  I select "2" from "Number of Traveling Days*"
+  And  I select "New York" from "Stop"
   And  I press "Search"
   Then I should be on the suggestion page
   Then I should see "Suggestion 1"

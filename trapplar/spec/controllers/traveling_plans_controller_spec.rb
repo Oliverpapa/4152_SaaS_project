@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe TravelingPlansController, type: :controller do
   before :all do
-    @params = {state: 'NY', cities: ['New York'], days: 2}
+    @params = {state: 'NY', cities: ['New York'], days: "2"}
     Attraction.delete_all
     @attraction1 = Attraction.create({:name => 'The Met', :rating => 4.8, :address => '1000 5th Ave, New York, NY 10028', :city => 'New York', :state => 'NY', :latitude => 40.7794366, :longitude => -74.0950799, :recommended_time => 180, :open_time=> "10:00:00", :close_time=> "21:00:00"})
     @attraction2 = Attraction.create({:name => 'MoMA ', :rating => 4.6, :address => '11 W 53rd St, New York, NY 10019', :city => 'New York', :state => 'NY', :latitude => 40.7484714, :longitude => -73.9944193, :recommended_time => 180, :open_time=> "10:30:00", :close_time=> "17:30:00"})
@@ -15,28 +15,20 @@ describe TravelingPlansController, type: :controller do
   end
 
   describe 'search ' do
-    #it 'should render the search page' do
-    #  get :search
-    #  expect(response).to render_template('index')
-    #end
-
     it 'should call Attractions.states and Attractions.cities_in_state_hash' do
-      expect_any_instance_of(TravelingPlansController).to receive(:search)
+      expect_any_instance_of(TravelingPlansController).to receive(:search).and_call_original
       get :search
-      expect(response.status).to eq(200)
-      expect(Attraction).to receive(:states)
-      expect(assigns(@states)).to eq(['NY', 'CA'])
-      expect(Attraction).to receive(:cities_in_state_hash)
-      expect(assigns(@cities_in_state_hash)).to eq({'NY' => ['New York'], 'CA' => ['Anaheim', 'Los Angeles']})
+      expect(assigns(:states)).to eq(['NY', 'CA'])
+      expect(assigns(:cities_in_state_hash)).to eq({'NY' => ['New York'], 'CA' => ['Anaheim', 'Los Angeles']})
       expect(response).to render_template('index')
     end
   end
 
   describe 'suggestion' do    
     it 'should call the controller method that performs a suggestion' do
-      expect_any_instance_of(TravelingPlansController).to receive(:suggestion).with(@params)
+      expect_any_instance_of(TravelingPlansController).to receive(:suggestion).and_call_original
       expect(TravelingPlan).to receive(:generate_plans).with(@params)
-      get :suggestion, params: {travel_plan: @params}
+      get :suggestion, travel_plan: @params
       expect(response).to render_template('suggestion')
     end
   end
