@@ -11,7 +11,7 @@ Suggestion 1
     </tr>
   </thead>
   <tbody>
-    <% @suggestions[0].each do |day| %>
+    <% @suggestions[0].schedule_by_day.each do |day| %>
       <% day.each do |time, attraction| %>
         <tr>
           <td>
@@ -43,7 +43,7 @@ Suggestion 2
     </tr>
   </thead>
   <tbody>
-    <% @suggestions[1].each do |day| %>
+    <% @suggestions[1].schedule_by_day.each do |day| %>
       <% day.each do |time, attraction| %>
         <tr>
           <td>

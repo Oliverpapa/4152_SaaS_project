@@ -11,7 +11,7 @@ class TravelingPlansController < ApplicationController
   def suggestion
     # second page, show our recommended plans
     travel_plan = params[:travel_plan]
-    @suggestions = TravelingPlan.generate_plan(state: travel_plan[:state], cities: travel_plan[:stop], days: travel_plan[:traveling_days])
+    @suggestions = TravelingPlan.generate_plans(state: travel_plan[:state], cities: travel_plan[:stop], days: travel_plan[:traveling_days])
     render "suggestion"
   end
 
