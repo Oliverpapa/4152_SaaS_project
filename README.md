@@ -28,3 +28,8 @@ cd trapplar/
 bundle exec rake cucumber
 bundle exec rake spec
 ```
+## Instruction to deploy
+```
+heroku run rake db:migrate
+heroku run rake db:seed
+```
