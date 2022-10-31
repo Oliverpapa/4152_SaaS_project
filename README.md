@@ -12,6 +12,7 @@ Yuerong Zhang,  yz4143
 
 ## Instruction to run
 ```
+cd trapplar/
 bundle install --without production
 bundle exec rake db:migrate
 bundle exec rake db:seed
@@ -22,6 +23,7 @@ rails server
 
 ## Instruction to test
 ```
+# Install Chrome for cucumber tests (https://www.google.com/chrome/)
 bundle exec rake cucumber
 bundle exec rake spec
 ```

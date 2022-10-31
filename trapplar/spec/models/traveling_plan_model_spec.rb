@@ -13,7 +13,7 @@ describe TravelingPlan, type: :model do
     @attraction8 = Attraction.create!({:name => 'Kaaterskill Falls, Viewing Platform', :rating => 4.8, :address => 'Laurel House Rd, Palenville, NY 12463', :city => 'Palenville', :state => 'NY', :latitude => 42.6135313, :longitude => -74.3227508, :recommended_time => 180, :open_time=> "08:00:00", :close_time=> "18:00:00"})
   end
 
-  shared_examples 'an one-day schedule' do |schedule|
+  shared_examples 'an one-day schedule' do
     it 'is not empty' do
       expect(schedule).to_not be_empty
     end
@@ -30,7 +30,7 @@ describe TravelingPlan, type: :model do
     end
   end
 
-  shared_examples 'a plan' do |plan|
+  shared_examples 'a plan' do
     it 'is a complete traveling plan' do
       expect(plan.id).to be_an(Integer)
       expect(plan.state).to be_a(String)
@@ -43,36 +43,43 @@ describe TravelingPlan, type: :model do
     it 'takes designated number of days' do
       expect(plan.schedule_by_day.length).to eq plan.number_of_days
     end
-
-    plan.schedule_by_day.each do |schedule|
-      context 'the schedule for each day' do
-        include_examples('an one-day schedule', schedule)
-      end
-    end
-
   end
 
   describe '.generate_plans' do
 
     context 'w/o cities' do
-      TravelingPlan.generate_plans(state: "NY", cities: [], days: 2).each do |plan|
-        context 'for each plan' do
-          include_examples('a plan', plan)
+      let(:plans) { TravelingPlan.generate_plans(state: "NY", cities: [], days: 2) }
+
+      context 'the first plan' do
+        let(:plan) { plans[0] }
+        include_examples 'a plan'
+
+        context 'the schdule of the first day' do
+          let(:schedule) { plan.schedule_by_day[0] }
+          include_examples 'an one-day schedule'
         end
       end
     end
 
     context 'with cities' do
-      TravelingPlan.generate_plans(state: "NY", cities: ["New York", "Palenville"], days: 2).each do |plan|
-        context 'for each plan' do
-          let(:cities) { ["New York", "Palenville"] }
-          include_examples('a plan', plan)
+      let(:cities) { ["New York", "Palenville"] }
+      let(:plans) { TravelingPlan.generate_plans(state: "NY", cities: cities, days: 2) }
 
-          it 'contains at least one attraction in each city' do
-            stops_in_plan = plan.schedule_by_day.reduce({}, :merge).values
-            cities.each do |city|
-              expect(stops_in_plan.any? { |stop| stop.city == city }).to be true
-            end
+      context 'the first plan' do
+        let(:plan) { plans[0] }
+        include_examples 'a plan'
+
+        context 'the schdule of the first day' do
+          let(:schedule) { plan.schedule_by_day[0] }
+          include_examples 'an one-day schedule'
+        end
+      end
+
+      it 'each plan contains at least one attraction in each city' do
+        plans.each do |plan|
+          stops_in_plan = plan.schedule_by_day.reduce({}, :merge).values
+          cities.each do |city|
+            expect(stops_in_plan.any? { |stop| stop.city == city }).to be true
           end
         end
       end
@@ -81,6 +88,7 @@ describe TravelingPlan, type: :model do
   end
 
   describe '.schedule_for_one_day' do
-    include_examples('an one-day schedule', TravelingPlan.schedule_for_one_day(attractions: Attraction.all))
+    let(:schedule) { TravelingPlan.schedule_for_one_day(attractions: Attraction.all) }
+    include_examples('an one-day schedule')
   end
 end

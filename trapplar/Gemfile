@@ -19,7 +19,9 @@ group :test do
   gem 'cucumber-rails', :require => false
   gem 'cucumber-rails-training-wheels'
   gem 'simplecov', :require => false
-  #gem 'capybara-webkit'
+  gem 'webdrivers'
+  gem 'selenium-webdriver'
+  gem 'capybara-selenium'
 end
 group :production do
   gem 'pg'

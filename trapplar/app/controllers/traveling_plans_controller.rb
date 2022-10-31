@@ -11,9 +11,16 @@ class TravelingPlansController < ApplicationController
 
   def suggestion
     # second page, show our recommended plans
-    @travel_plan = params[:travel_plan]
-    @suggestions = TravelingPlan.generate_plans(state: @travel_plan[:state], cities: @travel_plan[:cities], days: @travel_plan[:days])
-    render "suggestion"
+
+    # if state is not selected, we will redirect to the first page
+    if params[:travel_plan][:state].empty?
+      flash[:notice] = "You must select a state!"
+      redirect_to search_path
+    else
+      @travel_plan = params[:travel_plan]
+      @suggestions = TravelingPlan.generate_plans(state: @travel_plan[:state], cities: @travel_plan[:cities], days: @travel_plan[:days])
+      render "suggestion"
+    end
   end
 
   # def edit

@@ -22,6 +22,12 @@ describe TravelingPlansController, type: :controller do
       expect(assigns(:cities_in_state_hash)).to eq({'NY' => ['New York'], 'CA' => ['Anaheim', 'Los Angeles']})
       expect(response).to render_template('index')
     end
+
+    it 'should stay in the same page if state is not selected' do
+      get :suggestion, travel_plan: {state: '', cities: ['New York'], days: 2}
+      expect(flash[:notice]).to eq('You must select a state!')
+      expect(response).to redirect_to(search_path)
+    end
   end
 
   describe 'suggestion' do    

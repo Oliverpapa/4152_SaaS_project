@@ -1,5 +1,7 @@
 class TravelingPlan
 
+  attr_accessor :id, :state, :schedule_by_day, :number_of_days
+
   def initialize(state:, number_of_days:)
     @id = 0
     @state = state
@@ -8,20 +10,13 @@ class TravelingPlan
   end
   
   def self.generate_plans(state:, cities:, days:)
-    plan = TravelingPlan.new(state: state, number_of_days: days)
 
-    attractions = Attraction.where(state: state)
-    p state, Attraction.all[0]
     cities.select! { |city| not city.empty?}
 
-    for day in 0..(days.to_i - 1)
-      candidates = day >= cities.length ? attractions : Attraction.where(city: cities[day])
-      schedule = schedule_for_one_day(attractions: candidates)
-      plan.schedule_by_day = plan.schedule_by_day << schedule
-      attractions = attractions.difference(schedule.values)
-    end
+    attractions = Attraction.where(state: state)
 
-    return [plan, plan]
+    return [generate_plan(attractions, state, cities, days),
+            generate_plan(attractions.reverse, state, cities, days)]
   end
 
   def self.schedule_for_one_day(attractions:)
@@ -39,6 +34,16 @@ class TravelingPlan
     return schedule
   end
 
-  attr_accessor :id, :state, :schedule_by_day, :number_of_days
+  private
+  def self.generate_plan(attractions, state, cities, days)
+    plan = TravelingPlan.new(state: state, number_of_days: days)
+    for day in 0..(days.to_i - 1)
+      candidates = day >= cities.length ? attractions : Attraction.where(city: cities[day])
+      schedule = schedule_for_one_day(attractions: candidates)
+      plan.schedule_by_day = plan.schedule_by_day << schedule
+      attractions = attractions.difference(schedule.values)
+    end
+    return plan
+  end
 
 end

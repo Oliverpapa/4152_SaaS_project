@@ -1,124 +1,137 @@
 {
   "Cucumber Features": {
     "coverage": {
-      "/home/codio/workspace/4152_SaaS_project/trapplar/app/models/attraction.rb": {
+      "/home/hq/documents/Fall 2022/Engineering Software-as-a-Service/4152_SaaS_project/trapplar/app/models/attraction.rb": {
         "lines": [
           1,
           1,
-          4,
+          6,
           null,
           null,
           1,
-          12,
+          18,
           null,
           null
         ]
       },
-      "/home/codio/workspace/4152_SaaS_project/trapplar/app/controllers/traveling_plans_controller.rb": {
+      "/home/hq/documents/Fall 2022/Engineering Software-as-a-Service/4152_SaaS_project/trapplar/app/controllers/traveling_plans_controller.rb": {
         "lines": [
           1,
           null,
           1,
           null,
-          4,
-          4,
-          4,
-          4,
+          6,
+          6,
+          6,
+          6,
+          6,
           null,
           null,
           1,
           null,
-          1,
-          1,
-          1,
           null,
           null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null
-        ]
-      },
-      "/home/codio/workspace/4152_SaaS_project/trapplar/app/controllers/application_controller.rb": {
-        "lines": [
-          1,
-          null,
-          null,
-          1,
-          null
-        ]
-      },
-      "/home/codio/workspace/4152_SaaS_project/trapplar/app/helpers/application_helper.rb": {
-        "lines": [
-          1,
-          null
-        ]
-      },
-      "/home/codio/workspace/4152_SaaS_project/trapplar/app/models/traveling_plan.rb": {
-        "lines": [
-          1,
-          null,
-          1,
-          null,
-          1,
-          1,
-          null,
-          1,
-          1,
-          null,
-          0,
-          null,
-          null,
-          1,
-          2,
-          2,
-          2,
-          2,
-          null,
-          1,
-          1,
-          null,
-          null,
-          1,
-          2,
-          2,
-          2,
-          2,
-          2,
-          4,
-          null,
-          null,
-          2,
-          4,
           3,
-          3,
+          1,
+          1,
           null,
+          2,
+          2,
+          2,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/home/hq/documents/Fall 2022/Engineering Software-as-a-Service/4152_SaaS_project/trapplar/app/controllers/application_controller.rb": {
+        "lines": [
+          1,
+          null,
+          null,
+          1,
+          null
+        ]
+      },
+      "/home/hq/documents/Fall 2022/Engineering Software-as-a-Service/4152_SaaS_project/trapplar/app/helpers/application_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/home/hq/documents/Fall 2022/Engineering Software-as-a-Service/4152_SaaS_project/trapplar/app/models/traveling_plan.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          null,
+          1,
+          4,
+          4,
+          4,
+          4,
+          null,
+          null,
+          1,
+          null,
+          5,
+          null,
+          2,
           null,
           2,
           null,
           null,
+          null,
           1,
+          8,
+          8,
+          8,
+          8,
+          8,
+          48,
+          48,
+          14,
+          14,
+          null,
+          null,
+          8,
+          null,
+          null,
+          1,
+          1,
+          4,
+          4,
+          8,
+          8,
+          8,
+          8,
+          null,
+          4,
+          null,
           null,
           null
         ]
       }
     },
-    "timestamp": 1667168200
+    "timestamp": 1667251991
   },
   "RSpec": {
     "coverage": {
-      "/home/codio/workspace/4152_SaaS_project/trapplar/app/helpers/application_helper.rb": {
+      "/home/hq/documents/Fall 2022/Engineering Software-as-a-Service/4152_SaaS_project/trapplar/app/helpers/application_helper.rb": {
         "lines": [
           1,
           null
         ]
       },
-      "/home/codio/workspace/4152_SaaS_project/trapplar/app/controllers/traveling_plans_controller.rb": {
+      "/home/hq/documents/Fall 2022/Engineering Software-as-a-Service/4152_SaaS_project/trapplar/app/controllers/traveling_plans_controller.rb": {
         "lines": [
           1,
           null,
@@ -128,13 +141,21 @@
           1,
           1,
           1,
+          1,
           null,
           null,
           1,
           null,
+          null,
+          null,
+          2,
           1,
           1,
-          0,
+          null,
+          1,
+          1,
+          1,
+          null,
           null,
           null,
           null,
@@ -148,7 +169,7 @@
           null
         ]
       },
-      "/home/codio/workspace/4152_SaaS_project/trapplar/app/controllers/application_controller.rb": {
+      "/home/hq/documents/Fall 2022/Engineering Software-as-a-Service/4152_SaaS_project/trapplar/app/controllers/application_controller.rb": {
         "lines": [
           1,
           null,
@@ -157,11 +178,11 @@
           null
         ]
       },
-      "/home/codio/workspace/4152_SaaS_project/trapplar/app/models/attraction.rb": {
+      "/home/hq/documents/Fall 2022/Engineering Software-as-a-Service/4152_SaaS_project/trapplar/app/models/attraction.rb": {
         "lines": [
           1,
           1,
-          1,
+          2,
           null,
           null,
           1,
@@ -170,45 +191,60 @@
           null
         ]
       },
-      "/home/codio/workspace/4152_SaaS_project/trapplar/app/models/traveling_plan.rb": {
+      "/home/hq/documents/Fall 2022/Engineering Software-as-a-Service/4152_SaaS_project/trapplar/app/models/traveling_plan.rb": {
         "lines": [
           1,
           null,
           1,
           null,
-          7,
-          7,
-          7,
-          7,
-          7,
-          7,
-          0,
-          0,
-          null,
-          0,
-          0,
+          1,
+          22,
+          22,
+          22,
+          22,
           null,
           null,
           1,
-          9,
-          9,
-          9,
-          9,
-          9,
-          9,
-          0,
-          0,
           null,
+          23,
           null,
-          0,
+          11,
+          null,
+          11,
+          null,
           null,
           null,
           1,
+          47,
+          47,
+          47,
+          47,
+          47,
+          260,
+          260,
+          82,
+          82,
+          null,
+          null,
+          47,
+          null,
+          null,
+          1,
+          1,
+          22,
+          22,
+          44,
+          44,
+          44,
+          44,
+          null,
+          22,
+          null,
           null,
           null
         ]
       }
     },
-    "timestamp": 1667165970
+    "timestamp": 1667251997
   }
 }
