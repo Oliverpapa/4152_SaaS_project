@@ -24,6 +24,7 @@ rails server
 ## Instruction to test
 ```
 # Install Chrome for cucumber tests (https://www.google.com/chrome/)
+cd trapplar/
 bundle exec rake cucumber
 bundle exec rake spec
 ```
