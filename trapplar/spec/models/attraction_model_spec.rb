@@ -1,7 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe Attraction, type: :model do
-  before do
+  before :all do
+    Attraction.delete_all
     @attraction1 = Attraction.create({:name => 'The Met', :rating => 4.8, :address => '1000 5th Ave, New York, NY 10028', :city => 'New York', :state => 'NY', :latitude => 40.7794366, :longitude => -74.0950799, :recommended_time => 180, :open_time=> "10:00:00", :close_time=> "21:00:00"})
     @attraction2 = Attraction.create({:name => 'MoMA ', :rating => 4.6, :address => '11 W 53rd St, New York, NY 10019', :city => 'New York', :state => 'NY', :latitude => 40.7484714, :longitude => -73.9944193, :recommended_time => 180, :open_time=> "10:30:00", :close_time=> "17:30:00"})
     @attraction3 = Attraction.create({:name => 'Statue of Liberty', :rating => 4.7, :address => 'Statue of Liberty, New York, NY 10004', :city => 'New York', :state => 'NY', :latitude => 40.6917572, :longitude => -74.0429902, :recommended_time => 180, :open_time=> "08:30:00", :close_time=> "16:00:00"})
@@ -14,7 +15,7 @@ RSpec.describe Attraction, type: :model do
 
   describe '.states' do
     it 'returns an array of unique states in db' do
-      expect(Attraction.state()).to eq(["NY", "CA"])
+      expect(Attraction.states()).to eq(["NY", "CA"])
     end
   end
 
