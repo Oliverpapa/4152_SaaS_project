@@ -102,7 +102,7 @@ GEM
     multi_test (0.1.2)
     nokogiri (1.8.4)
       mini_portile2 (~> 2.3.0)
-    pg (1.2.3)
+    pg (0.21.0)
     rack (1.6.10)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -201,7 +201,7 @@ DEPENDENCIES
   database_cleaner (= 1.4.1)
   jquery-rails
   launchy
-  pg
+  pg (~> 0.18)
   rails (= 4.2.10)
   rspec-rails (= 3.7.2)
   sass-rails (~> 5.0.3)
