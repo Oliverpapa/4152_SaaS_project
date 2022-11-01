@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 ruby '2.6.6'
 gem 'rails', '4.2.10'
+gem 'tod', '1.4.0'
 
 # for Heroku deployment 
 group :development, :test do
@@ -12,7 +13,6 @@ group :development, :test do
   gem 'launchy'
   gem 'rspec-rails', '3.7.2'
   gem 'ZenTest', '4.11.2'
-  gem 'tod', '1.4.0'
 end
 
 group :test do
