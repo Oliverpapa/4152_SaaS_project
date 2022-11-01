@@ -10,9 +10,16 @@ Shengqi Cao,	sc5124
 Yuerong Zhang,  yz4143 
 
 
+## Environment
+
+OS: MAC 10.14 or Ubuntu 22.04
+
+Ruby: 2.6.6
+
+Branch for iter1: iter1
+
 ## Instruction to run
 ```
-cd trapplar/
 bundle install --without production
 bundle exec rake db:migrate
 bundle exec rake db:seed
@@ -24,12 +31,14 @@ rails server
 ## Instruction to test
 ```
 # Install Chrome for cucumber tests (https://www.google.com/chrome/)
-cd trapplar/
 bundle exec rake cucumber
 bundle exec rake spec
 ```
 ## Instruction to deploy
 ```
-heroku run rake db:migrate
-heroku run rake db:seed
+heroku create trapplar --stack heroku-20
+git push heroku main
+# Add postgresql DB on heroku and set Config Vars: [DB_NAME, DB_USERNAME, DB_PASSWORD, DB_PORT, DB_URL]
+heroku run bundle exec rake db:migrate --app trapplar
+heroku run bundle exec rake db:seed --app trapplar
 ```
