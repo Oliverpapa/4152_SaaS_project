@@ -42,3 +42,13 @@ git push heroku main
 heroku run bundle exec rake db:migrate --app trapplar
 heroku run bundle exec rake db:seed --app trapplar
 ```
+
+## Links
+### Github
+```
+https://github.com/Oliverpapa/4152_SaaS_project
+```
+### Heroku
+```
+https://trapplar.herokuapp.com/
+```
