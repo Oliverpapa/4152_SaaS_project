@@ -16,7 +16,7 @@ OS: MAC 10.14 or Ubuntu 22.04
 
 Ruby: 2.6.6
 
-Branch for iter1: iter1
+Branch for iter1: proj_iter1
 
 ## Instruction to run
 ```
