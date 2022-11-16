@@ -37,5 +37,39 @@ describe TravelingPlansController, type: :controller do
       get :suggestion, travel_plan: @params
       expect(response).to render_template('suggestion')
     end
+
+    it 'should return to the search page if no session data is found and no params are passed' do
+      get :suggestion
+      expect(response).to redirect_to(search_path)
+    end
+
+    it 'should restore the session data if no params are passed' do
+      get :suggestion, travel_plan: @params
+      get :suggestion
+      expect assigns(:travel_plan["state"]) == 'NY'
+      expect assigns(:travel_plan["cities"]) == ['New York']
+      expect assigns(:travel_plan["days"]) == 2
+    end
+  end
+
+  describe 'customize' do
+    it 'should call the controller method that performs a customization with session data' do
+      expect_any_instance_of(TravelingPlansController).to receive(:customize).and_call_original
+      session[:travel_plan] = @params
+      get :customize, {suggestion_type: 0}
+      expect(response).to render_template('customize')
+    end
+
+    it 'should return to the suggestion page if session data is not available' do
+      get :customize, {suggestion_type: 0}
+      expect(response).to redirect_to(search_path)
+    end
+
+    it 'should return to the suggestion page if suggestion_type is not available' do
+      session[:travel_plan] = @params
+      get :customize, {suggestion_type: ''}
+      expect(response).to redirect_to(suggestion_path)
+    end
+      
   end
 end

@@ -36,55 +36,6 @@ class TravelingPlan
     return schedule
   end
 
-
-  def self.generate_chill_plan(attractions:, state:, cities:, days:)
-    # generate a plan that is not too busy
-    plan = TravelingPlan.new(state: state, number_of_days: days)
-    for day in 1..days do
-      schedule = schedule_for_one_day(attractions: attractions)
-      plan.schedule_by_day[day] = schedule
-      attractions = attractions - schedule.values
-    end
-    return plan
-  end
-
-  def self.generate_hustle_plan(attractions:, state:, cities:, days:)
-    # generate a plan that is very busy
-    plan = TravelingPlan.new(state: state, number_of_days: days)
-    for day in 1..days do
-      schedule = schedule_for_one_day(attractions: attractions)
-      plan.schedule_by_day[day] = schedule
-      attractions = attractions - schedule.values
-    end
-    return plan
-  end
-
-
-
-def self.add_attraction_to_schedule(schedule, attraction, start_time)
-    schedule[start_time] = attraction
-    return schedule
-  end
-
-def self.remove_attraction_from_schedule(schedule, attraction)
-  schedule.delete_if { |time, a| a == attraction }
-  return schedule
-end
-
-def self.edit_attraction_in_schedule(schedule, attraction, start_time)
-  schedule = remove_attraction_from_schedule(schedule, attraction)
-  schedule = add_attraction_to_schedule(schedule, attraction, start_time)
-  return schedule
-end
-
-def self.edit_attraction_recommended_time(schedule, attraction, recommended_time)
-  schedule = remove_attraction_from_schedule(schedule, attraction)
-  attraction.recommended_time = recommended_time
-  schedule = add_attraction_to_schedule(schedule, attraction, start_time)
-  return schedule
-end
-
-
   private
   def self.generate_plan(attractions, state, cities, days)
     plan = TravelingPlan.new(state: state, number_of_days: days)

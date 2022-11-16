@@ -23,24 +23,26 @@ Scenario: User could go to correct traveling detailed page after they picked fro
   Then I should be on the suggestion page
   Then I should see "Suggestion: Chill"
   Then I should see "Suggestion: Hustle"
-  Then I press "Customize" for "Suggestion: Chill"
+  Then I press "Customize" for "chill suggestion"
   Then I should be on the customize page for the chill suggestion 
   Then I should see "Day 1"
   Then I should see "Day 2"
   Then I should see "Empire State Building"
   Then I should see "The Met"
   Then I should see "MoMA"
-  Then I should see "Add Stop"
-  Then I should see "Remove Stop"
   Then I should see "Back to Suggestions"
 
 @javascript
 Scenario: User should be able to add a stop to the traveling plan
-    Given I am on the customize page for the chill suggestion 
-    When I press "Add Stop"
+    Given I am on the home page
+    When I select "NY" from "travel_plan_state"
+    And  I select "2" from "travel_plan_days"
+    And  I press "Search"
+    And  I press "Customize" for "chill suggestion"
+    When I press "Add Attraction"
     Then I should see "Statue of Liberty"
     Then I should see "Columbia University"
-    When I press "Add to Plan" for "Statue of Liberty"
+    When I click "Statue of Liberty"
     Then I should see "Empire State Building"
     Then I should see "The Met"
     Then I should see "MoMA"
@@ -53,7 +55,7 @@ Scenario: User should be able to remove a stop from the traveling plan
     Then I should see "The Met"
     Then I should see "MoMA"
     Then I should not see "Empire State Building"
-    When I press "Remove from Plan" for "The Met"
+    When I close "The Met"
     Then I should not see "The Met"
     Then I should see "MoMA"
     Then I should see "Empire State Building"

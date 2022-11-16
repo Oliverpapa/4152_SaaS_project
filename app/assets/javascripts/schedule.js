@@ -6,11 +6,6 @@ const startingTime = moment({ hour: startingHour })
 const hourPerBlock = 0.5
 const blockHeight = scheduleHeight / ((endingHour - startingHour) / hourPerBlock)
 const blockOffset = 60
-const location_info = {
-  "Columbia University": { lat: 37.772, lng: -122.214 },
-  "The MAT": { lat: 21.291, lng: -157.821 },
-  "Central Park": { lat: 21.555, lng: -178.431 },
-};
 
 function durationToHeight(duration) {
   return duration.asHours() / hourPerBlock * blockHeight
@@ -70,7 +65,6 @@ class ScheduleGroup {
       }).appendTo(dropdownMenu)
     })
 
-    // updateMap(location_info, this.sortedNamesByStartingTime());
   }
   addAttraction(attraction) {
     let time = attraction.open_time
@@ -155,6 +149,7 @@ class ScheduledAttraction {
     let closeBtn = $('<button></button>', {
       class: 'close',
       text: 'x',
+      id: this.attraction.name+'-close',
       click: () => this.remove(this)
     }).appendTo(block)
 
@@ -247,7 +242,6 @@ class ScheduledAttraction {
     delete event.target.dataset.x
     delete event.target.dataset.y
     console.log(this.group.sortedNamesByStartingTime())
-    updateMap(location_info, this.group.sortedNamesByStartingTime());
   }
 
   initInteraction() {
@@ -302,33 +296,6 @@ class ScheduledAttraction {
     return moment.range(this.scheduledTime, moment(this.scheduledTime).add(this.scheduledDuration))
   }
 }
-
-console.log(blockHeight)
-
-let attractionA = {
-  name: "Columbia University",
-  recommended_time: 180,
-  open_time: "10:00:00",
-  close_time: "18:00:00",
-}
-let attractionB = {
-  name: "The MAT",
-  recommended_time: 60,
-  open_time: "12:00:00",
-  close_time: "20:00:00",
-}
-let attractionC = {
-  name: "Central Park",
-  recommended_time: 60,
-  open_time: "12:00:00",
-  close_time: "20:00:00",
-}
-let oneDaySchedule = {
-  "11:00": attractionA,
-  "15:00": attractionB
-}
-let plan = [oneDaySchedule, oneDaySchedule]
-let allAttractions = [attractionA, attractionB, attractionC]
 
 let groups = []
 

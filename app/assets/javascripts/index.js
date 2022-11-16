@@ -1,9 +1,8 @@
 //= require jquery
 //= require jquery_ujs
-
 function change_stops() {
     var state = document.getElementById("travel_plan_state").value;
-    // var cities = <%= raw(@cities_in_state_hash.to_json) %>[state];
+    let cities = cities_in_state_hash[state];
     console.log(cities)
     var stops = document.getElementById("travel_plan_cities");
     stops.innerHTML = "";

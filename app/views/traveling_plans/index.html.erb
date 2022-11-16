@@ -1,6 +1,6 @@
 <%= javascript_include_tag 'index' %>
 <script>
-var cities = <%= raw(@cities_in_state_hash.to_json) %>[state];
+var cities_in_state_hash = <%= raw(@cities_in_state_hash.to_json) %>;
 </script>
 
 <h2>Search For Your Traveling Plan</h2>

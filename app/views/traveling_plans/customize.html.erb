@@ -1,9 +1,5 @@
 
 <title>Customization</title>
-<script>
-var plan = <%= raw(@customize_plan.to_json) %>;
-var allAttractions = <%= raw(@addable_attractions.to_json) %>;
-</script>
 <script
 src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAQih1NUVrzEhgERFLhYprIEqD21HIO89w&callback=initMap&v=weekly"
 defer></script>
@@ -26,6 +22,8 @@ crossorigin="anonymous"></script>
 <%= javascript_include_tag 'schedule' %>
 
 <script type="module">
+  let plan = <%= raw(@customize_plan.to_json) %>;
+  let allAttractions = <%= raw(@addable_attractions.to_json) %>;
   const location_info = <%= raw(@attraction_location_hash.to_json) %>
   window.initMap = initMap;
 
@@ -34,7 +32,7 @@ crossorigin="anonymous"></script>
 
 <h2>Customize Your Traveling Plan:</h2>
 
-<% @customize_plan.each_with_index do |one_day_schedule, day| %>
+<% @customize_plan.schedule_by_day.each_with_index do |one_day_schedule, day| %>
   <div class="one-day-schedule">
     <h2> 
       Day <% day + 1 %>:

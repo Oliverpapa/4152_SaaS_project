@@ -25,9 +25,15 @@ end
 
 Then /I press "(.*)" for "(.*)"/ do |button, suggestion|
   # ensure that the button is pressed for the designated suggestion
-  find("#suggestion1").should have_content(suggestion)
-  find("#suggestion1").click_button(button)
+  if suggestion == "chill suggestion"
+    find("#suggestion_0_#{button}").click_button(button)
+  else
+    find("#suggestion_1_#{button}").click_button(button)
+  end
 end
+
+Then /I close "(.*)"/ do |attraction|
+  find("##{attraction}-close").click_button("x")
 
 # https://github.com/mattheworiordan/jquery.simulate.drag-sortable.js/blob/master/README.md
 When /^I drag "(.*)" (up|down) (\d+) positions?$/ do |post_title, direction, distance|
