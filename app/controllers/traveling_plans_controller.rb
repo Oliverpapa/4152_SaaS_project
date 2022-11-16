@@ -13,25 +13,42 @@ class TravelingPlansController < ApplicationController
     # second page, show our recommended plans
 
     # if state is not selected, we will redirect to the first page
-    if params[:travel_plan][:state].empty?
-      flash[:notice] = "You must select a state!"
-      redirect_to search_path
+    if params[:travel_plan] == nil
+      if session[:travel_plan] == nil
+        redirect_to search_path
+      else
+        @travel_plan = session[:travel_plan]
+      end
     else
-      @travel_plan = params[:travel_plan]
-      @suggestions = TravelingPlan.generate_plans(state: @travel_plan[:state], cities: @travel_plan[:cities], days: @travel_plan[:days])
-      # store the suggestions in session, so we can show them later when we back to the this page
-      session[:suggestions] = @suggestions
-      render "suggestion"
+      if params[:travel_plan][:state].empty?
+        flash[:notice] = "You must select a state!"
+        redirect_to search_path
+      else
+        @travel_plan = params[:travel_plan]
+        session[:travel_plan] = @travel_plan
+      end
     end
+    @suggestions = TravelingPlan.generate_plans(state: @travel_plan[:state], cities: @travel_plan[:cities], days: @travel_plan[:days])
+    render "suggestion"
   end
 
   def customize
-     # third page, customize the selected traveling plan
-     @customize_plan = TravelingPlan.find(params[:id])
-     @state = @customize_plan.state
-     @addable_attractions = Attraction.where(state: @state)
-     @attraction_location_hash = Attraction.attraction_location_hash(state: @state)
-     render "customize"
+    if session[:travel_plan] == nil
+      redirect_to search_path
+    end
+    @travel_plan = session[:travel_plan]
+    @suggestions = TravelingPlan.generate_plans(state: @travel_plan[:state], cities: @travel_plan[:cities], days: @travel_plan[:days])
+    
+    if params[:suggestion_type] == nil
+      redirect_to suggestion_path
+    else
+      @customize_plan = @suggestions[params[:suggestion_type]]
+    end
+    # third page, customize the selected traveling plan
+    @state = @travel_plan[:state]
+    @addable_attractions = Attraction.where(state: @state)
+    @attraction_location_hash = Attraction.attraction_location_hash(state: @state)
+    render "customize"
   end
       
   # def show

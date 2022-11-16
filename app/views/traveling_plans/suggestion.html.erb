@@ -26,7 +26,7 @@ Suggestion: Chill
     <% end %>
   </tbody>
 </table>
-<!-- <%= link_to 'Customize', :class => 'btn btn-primary' %> -->
+<%= link_to 'Customize', customize_path({:suggestion_type => 0}), :id => "suggestion_0", :class => 'btn btn-primary' %>
 <br/>
 
 <br/>
@@ -58,7 +58,7 @@ Suggestion: Hustle
     <% end %>
   </tbody>
 </table>
-<!-- <%= link_to 'Customize', :class => 'btn btn-primary' %> -->
+<%= link_to 'Customize', customize_path({:suggestion_type => 1}), :id => "suggestion_1", :class => 'btn btn-primary' %>
 
 <div class="row">
   <!-- <%= link_to 'Regenerate travel plans', suggestion_path, :class => 'btn btn-primary col-4' %> -->
