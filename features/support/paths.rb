@@ -18,7 +18,13 @@ module NavigationHelpers
     when /^the suggestion page$/ then '/suggestion' # covered by line 34
 
     # the customize page of the suggestion
-    when /^the customize page$/ then '/customize'
+    when /^the customize page for "(.+)"$/ 
+      suggestion_type = $1
+      if suggestion_type == "Hustle"
+        '/customize?suggestion_type=1'
+      else
+        '/customize?suggestion_type=0'
+      end
 
     # when /^the details page for "(.+)"$/
     #   movie = Movie.find_by_title($1)
