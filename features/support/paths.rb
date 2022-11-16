@@ -17,6 +17,9 @@ module NavigationHelpers
 
     when /^the suggestion page$/ then '/suggestion' # covered by line 34
 
+    # the customize page of the suggestion
+    when /^the customize page$/ then '/customize'
+
     # when /^the details page for "(.+)"$/
     #   movie = Movie.find_by_title($1)
     #   movie_path(movie)

@@ -19,14 +19,21 @@ class TravelingPlansController < ApplicationController
     else
       @travel_plan = params[:travel_plan]
       @suggestions = TravelingPlan.generate_plans(state: @travel_plan[:state], cities: @travel_plan[:cities], days: @travel_plan[:days])
+      # store the suggestions in session, so we can show them later when we back to the this page
+      session[:suggestions] = @suggestions
       render "suggestion"
     end
   end
 
-  # def edit
-  #   # detail/edit page, where users can customize
-  # end
-
+  def customize
+     # third page, customize the selected traveling plan
+     @customize_plan = TravelingPlan.find(params[:id])
+     @state = @customize_plan.state
+     @addable_attractions = Attraction.where(state: @state)
+     @attraction_location_hash = Attraction.attraction_location_hash(state: @state)
+     render "customize"
+  end
+      
   # def show
   #   # redirect to google map?
   # end

@@ -91,4 +91,58 @@ describe TravelingPlan, type: :model do
     let(:schedule) { TravelingPlan.schedule_for_one_day(attractions: Attraction.all) }
     include_examples('an one-day schedule')
   end
+
+  describe 'chill plan' do
+    let(:plan) { TravelingPlan.chill_plan(state: "NY", cities: ["New York"], days: 2) }
+    include_examples 'a plan'
+  end
+
+  describe 'hustle plan' do
+    let(:plan) { TravelingPlan.hustle_plan(state: "NY", cities: ["New York"], days: 2) }
+    include_examples 'a plan'
+  end
+  
+  describe 'edit plan' do
+    context 'add a new attraction' do
+      let(:plan) { TravelingPlan.generate_plans(state: "NY", cities: [], days: 2)[0] }
+      let(:new_attraction) { Attraction.create!({:name => 'New Attraction', :rating => 4.7, :address => 'New Attraction, New York, NY 10004', :city => 'New York', :state => 'NY', :latitude => 40.6917572, :longitude => -74.0429902, :recommended_time => 180, :open_time=> "08:30:00", :close_time=> "16:00:00"}) }
+      let(:new_plan) { plan.add_attraction(new_attraction) }
+
+      it 'should add the new attraction to the plan' do
+        expect(new_plan.schedule_by_day[0].values).to include(new_attraction)
+      end
+    end
+
+    context 'remove an attraction' do
+      let(:plan) { TravelingPlan.generate_plans(state: "NY", cities: [], days: 2)[0] }
+      let(:attraction_to_remove) { plan.schedule_by_day[0].values[0] }
+      let(:new_plan) { plan.remove_attraction(attraction_to_remove) }
+
+      it 'should remove the attraction from the plan' do
+        expect(new_plan.schedule_by_day[0].values).to_not include(attraction_to_remove)
+      end
+    end
+  
+    context 'edit the duration time of an attraction' do
+      let(:plan) { TravelingPlan.generate_plans(state: "NY", cities: [], days: 2)[0] }
+      let(:attraction_to_edit) { plan.schedule_by_day[0].values[0] }
+      let(:new_plan) { plan.edit_attraction(attraction_to_edit, duration: 120) }
+
+      it 'should change the duration time of the attraction' do
+        expect(new_plan.schedule_by_day[0].values[0].recommended_time).to eq 120
+      end
+    end
+
+    context 'edit the start time of an attraction' do
+      let(:plan) { TravelingPlan.generate_plans(state: "NY", cities: [], days: 2)[0] }
+      let(:attraction_to_edit) { plan.schedule_by_day[0].values[0] }
+      let(:new_plan) { plan.edit_attraction(attraction_to_edit, start_time: "10:00:00") }
+
+      it 'should change the start time of the attraction' do
+        expect(new_plan.schedule_by_day[0].keys[0]).to eq "10:00:00"
+      end
+    end
+  
+  end
+
 end

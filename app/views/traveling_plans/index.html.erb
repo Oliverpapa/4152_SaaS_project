@@ -1,6 +1,8 @@
-<!--  This file is app/views/trapplar/index.html.erb -->
+<%= javascript_include_tag 'index' %>
+<script>
+var cities = <%= raw(@cities_in_state_hash.to_json) %>[state];
+</script>
 
-<h1>Trapplar</h1>
 <h2>Search For Your Traveling Plan</h2>
 
 <%= form_tag suggestion_path(), :method => :get do %>
