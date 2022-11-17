@@ -18,7 +18,16 @@ Ruby: 2.6.6
 
 Branch for iter1: proj_iter1
 
+Branch for iter2: proj_iter2
+
 ## Instruction to run
+
+Step 1: 
+
+Replace the google map API key (in Courseworks submitted README file) to enable google map embedding:
+in file app\views\traveling_plans\customize.html.erb (line 4)
+
+Step 2:
 ```
 bundle install --without production
 bundle exec rake db:migrate
