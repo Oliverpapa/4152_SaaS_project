@@ -26,24 +26,32 @@ end
 Then /I press "(.*)" for "(.*)"/ do |button, suggestion|
   # ensure that the button is pressed for the designated suggestion
   if suggestion == "chill suggestion"
-    find("#suggestion_0_#{button}").click_button(button)
+    find("#suggestion_0_#{button}").click
   else
-    find("#suggestion_1_#{button}").click_button(button)
+    find("#suggestion_1_#{button}").click
   end
 end
 
 Then /I close "(.*)"/ do |attraction|
-  find("##{attraction}-close").click_button("x")
+  find("##{attraction.gsub(' ', '-')}-close").click
+end
 
 # https://github.com/mattheworiordan/jquery.simulate.drag-sortable.js/blob/master/README.md
-When /^I drag "(.*)" (up|down) (\d+) positions?$/ do |post_title, direction, distance|
-  post = Post.find_by_title(post_title)
-  distance = distance.to_i * -1 if direction == 'up'
-  page.execute_script %{
-    $.getScript("http://your.bucket.s3.amazonaws.com/jquery.simulate.drag-sortable.js", function()
-    {
-      $("li#post_#{post.id}").simulateDragSortable({ move: #{distance.to_i}});
-    });
-  }
-  sleep 1 # Hack to ensure ajax finishes running (tweak/remove as needed for your suite)
+When /^I drag "(.*)" to "(.*)"$/ do |block, destination|
+  # byebug
+  # post = Post.find_by_title(post_title)
+  block_id = block.gsub(' ', '-') + '-main-body'
+  dest_id = destination.gsub(' ', '-') + '-main-body'
+
+  find("##{block_id}").drag_to find("##{dest_id}")
+end
+
+Given /^I am at the customize page for the chill suggestion$/ do
+  steps %(
+    Given I am on the home page
+    When I select "NY" from "travel_plan_state"
+    And  I select "2" from "travel_plan_days"
+    And  I press "Search"
+    Then I press "Customize" for "chill suggestion"
+    )
 end

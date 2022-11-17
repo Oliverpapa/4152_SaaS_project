@@ -102,6 +102,15 @@ When /^(?:|I )attach the file "([^"]*)" to "([^"]*)"$/ do |path, field|
   attach_file(field, File.expand_path(path))
 end
 
+Then /^(?:|I )should see "([^"]*)" in "([^"]*)"$/ do |text, id|
+  dropdown = find('#'+id, visible: :all)
+  if dropdown.respond_to? :should
+    dropdown.should have_content(text)
+  else
+    assert dropdown.has_content?(text)
+  end
+end
+
 Then /^(?:|I )should see "([^"]*)"$/ do |text|
   if page.respond_to? :should
     page.should have_content(text)

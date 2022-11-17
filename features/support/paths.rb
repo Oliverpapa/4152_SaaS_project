@@ -15,15 +15,17 @@ module NavigationHelpers
 
     when /^the home\s?page$/ then '/index'
 
-    when /^the suggestion page$/ then '/suggestion' # covered by line 34
+    when /^the suggestion page$/ then '/suggestion'
+
+    when /^the customize\s?page$/ then '/customize/0'
 
     # the customize page of the suggestion
     when /^the customize page for "(.+)"$/ 
       suggestion_type = $1
       if suggestion_type == "Hustle"
-        '/customize?suggestion_type=1'
+        customize_path({:suggestion_type => 1})
       else
-        '/customize?suggestion_type=0'
+        customize_path({:suggestion_type => 0})
       end
 
     # when /^the details page for "(.+)"$/

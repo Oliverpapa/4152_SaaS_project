@@ -51,16 +51,18 @@ class ScheduleGroup {
 
     dropdownMenu.empty()
 
-    let existingAttractions = groups.flatMap(group => group.attractions)
-      .map(scheduledAttraction => scheduledAttraction.attraction)
-    let selectableAttractions = allAttractions.filter(attraction => !existingAttractions.includes(attraction))
+    let existingAttractionIDs = groups.flatMap(group => group.attractions)
+                                      .map(scheduledAttraction => scheduledAttraction.attraction.id)
+    
+    let selectableAttractions = allAttractions.filter(attraction => !existingAttractionIDs.includes(attraction.id))
 
-    console.log(existingAttractions, selectableAttractions)
+    console.log(existingAttractionIDs, selectableAttractions)
 
     selectableAttractions.forEach(attraction => {
       $('<a/>', {
         text: attraction.name,
         class: 'dropdown-item',
+        href: "#",
         click: () => this.addAttraction(attraction)
       }).appendTo(dropdownMenu)
     })
@@ -129,8 +131,17 @@ class ScheduledAttraction {
     this.attraction = attraction
     this.canvas = canvas
 
-    this.openTime = moment(attraction.open_time, ["HH:mm:ss"])
-    this.closeTime = moment(attraction.close_time, ["HH:mm:ss"])
+    let timeFromDBStr = function(str) {
+      let time = moment(str).utc()
+      return moment({
+        hour: time.hour(),
+        minute: time.minute()
+      })
+    }
+
+    this.openTime = timeFromDBStr(attraction.open_time)
+    this.closeTime = timeFromDBStr(attraction.close_time)
+    console.log(attraction, this.openTime, this.closeTime)
 
     if (moment.isMoment(time))
       this.scheduledTime = time
@@ -140,16 +151,19 @@ class ScheduledAttraction {
   }
 
   generateScheduleBlock() {
+    let baseID = this.attraction.name.replaceAll(' ', '-')
+    
     let block = $('<div></div>', {
       class: 'schedule-block',
       text: this.attraction.name,
+      id: baseID + '-main-body'
     }).appendTo(this.canvas.parent())
 
     // add a close botton to the bolck
     let closeBtn = $('<button></button>', {
       class: 'close',
       text: 'x',
-      id: this.attraction.name+'-close',
+      id: baseID + '-close',
       click: () => this.remove(this)
     }).appendTo(block)
 
@@ -252,6 +266,8 @@ class ScheduledAttraction {
       left: 0,
       right: 0
     }
+    console.log(this.openTime.format('HH:mm'), this.closeTime.format('HH:mm'))
+    console.log(this.canvas.offset(), timeToHeight(this.openTime), timeToHeight(this.closeTime))
     console.log(region)
 
     let businessTimeDragConstraint =

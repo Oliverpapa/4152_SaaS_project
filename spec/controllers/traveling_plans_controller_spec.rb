@@ -64,12 +64,6 @@ describe TravelingPlansController, type: :controller do
       get :customize, {suggestion_type: 0}
       expect(response).to redirect_to(search_path)
     end
-
-    it 'should return to the suggestion page if suggestion_type is not available' do
-      session[:travel_plan] = @params
-      get :customize, {suggestion_type: ''}
-      expect(response).to redirect_to(suggestion_path)
-    end
       
   end
 end

@@ -24,37 +24,35 @@ Scenario: User could go to correct traveling detailed page after they picked fro
   Then I should see "Suggestion: Chill"
   Then I should see "Suggestion: Hustle"
   Then I press "Customize" for "chill suggestion"
-  Then I should be on the customize page for the chill suggestion 
+  Then I should be on the customize page for "Chill"
   Then I should see "Day 1"
   Then I should see "Day 2"
   Then I should see "Empire State Building"
   Then I should see "The Met"
   Then I should see "MoMA"
-  Then I should see "Back to Suggestions"
+  Then I should see "Back to suggestion"
 
 @javascript
 Scenario: User should be able to add a stop to the traveling plan
     Given I am on the home page
     When I select "NY" from "travel_plan_state"
-    And  I select "2" from "travel_plan_days"
+    And  I select "1" from "travel_plan_days"
     And  I press "Search"
     And  I press "Customize" for "chill suggestion"
-    When I press "Add Attraction"
-    Then I should see "Statue of Liberty"
-    Then I should see "Columbia University"
-    When I click "Statue of Liberty"
+    Then I should see "Add Attraction"
+    When I press "add_attraction_0"
+    Then I should see "MoMA" in "dropdown_menu_0"
+    And  I follow "MoMA"
     Then I should see "Empire State Building"
     Then I should see "The Met"
     Then I should see "MoMA"
-    Then I should see "Statue of Liberty"
 
 @javascript
 Scenario: User should be able to remove a stop from the traveling plan
-    Given I am on the customize page for the chill suggestion 
-    When I press "Remove Stop"
+    Given I am at the customize page for the chill suggestion
     Then I should see "The Met"
     Then I should see "MoMA"
-    Then I should not see "Empire State Building"
+    Then I should see "Empire State Building"
     When I close "The Met"
     Then I should not see "The Met"
     Then I should see "MoMA"
@@ -62,23 +60,22 @@ Scenario: User should be able to remove a stop from the traveling plan
 
 @javascript
 Scenario: User should be able to go back to the suggestion page
-    Given I am on the customize page for the chill suggestion 
-    When I press "Back to Suggestions"
+    Given I am at the customize page for the chill suggestion
+    When I follow "Back to suggestion"
     Then I should be on the suggestion page
 
 @javascript
 Scenario: User should be able to drag attractions to change the order
-    Given I am on the customize page for the chill suggestion 
-    When I drag "Empire State Building" down 3 positions
+    Given I am at the customize page for the chill suggestion
+    When I drag "Empire State Building" to "The Met"
     Then I should see "The Met" before "Empire State Building"
     Then I should see "Empire State Building" before "MoMA"
 
 @javascript
 Scenario: User should be able to change the attraction's duration
-    Given I am on the customize page for the chill suggestion 
+    # TODO: very difficult to implement resizing with capybara
 
-
-
-
-
-
+@javascript
+Scenario: When the user directly go to the customization page, they will be redirect to the home page
+    Given I am on the customize page
+    Then I should be on the home page

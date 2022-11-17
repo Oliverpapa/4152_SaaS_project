@@ -40,17 +40,13 @@ class TravelingPlansController < ApplicationController
     end
     @travel_plan = session[:travel_plan]
     @suggestions = TravelingPlan.generate_plans(state: @travel_plan[:state], cities: @travel_plan[:cities], days: @travel_plan[:days])
-    
-    if params[:suggestion_type].empty?
-      redirect_to suggestion_path
-      return
-    else
-      @customize_plan = @suggestions[params[:suggestion_type].to_i]
-    end
+
+    @customize_plan = @suggestions[params[:suggestion_type].to_i]
     # third page, customize the selected traveling plan
     @state = @travel_plan[:state]
     @addable_attractions = Attraction.where(state: @state)
     @attraction_location_hash = Attraction.attraction_location_hash(state: @state)
+    # p @customize_plan.schedule_by_day, @addable_attractions
     render "customize"
   end
       
