@@ -40,9 +40,13 @@ rails server
 ## Instruction to test
 ```
 # Install Chrome for cucumber tests (https://www.google.com/chrome/)
+# Note: In very rare case, cucumber test needs to be reruned to be fully passed 
+#       due to the unstable response speed of Selenium::WebDriver.
 bundle exec rake cucumber
 bundle exec rake spec
 ```
+
+
 ## Instruction to deploy
 ```
 heroku create trapplar --stack heroku-20
