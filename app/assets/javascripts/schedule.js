@@ -27,12 +27,13 @@ function roundToBlockGrid(x) {
 }
 
 class ScheduleGroup {
-  constructor(oneDaySchedule, canvas) {
+  constructor(oneDaySchedule, canvas, day) {
     this.attractions = Object.entries(oneDaySchedule).map(([timeStr, attraction]) => {
       let time = moment(timeStr, ["HH:mm:ss"])
       return this.makeScheduleBlock(attraction, time, canvas)
     })
     this.canvas = canvas
+    this.day = day
     this.attractions.forEach((attraction) => attraction.group = this)
   }
 
@@ -43,7 +44,7 @@ class ScheduleGroup {
     this.columnSolve(this.attractions.filter(attraction => {
       return this.countConflict(this.attractions, attraction) <= 1
     }))
-    updateMap(location_info, this.sortedNamesByStartingTime());
+    updateMap(this.day, location_info, this.sortedNamesByStartingTime());
   }
   onclickAddAttraction(element) {
     let button = $(element)
@@ -69,7 +70,7 @@ class ScheduleGroup {
 
   }
   addAttraction(attraction) {
-    let time = attraction.open_time
+    let time = timeFromDBStr(attraction.open_time)
     let scheduledAttraction = this.makeScheduleBlock(attraction, time, this.canvas)
 
     this.attractions.push(scheduledAttraction)
@@ -131,14 +132,6 @@ class ScheduledAttraction {
     this.attraction = attraction
     this.canvas = canvas
 
-    let timeFromDBStr = function(str) {
-      let time = moment(str).utc()
-      return moment({
-        hour: time.hour(),
-        minute: time.minute()
-      })
-    }
-
     this.openTime = timeFromDBStr(attraction.open_time)
     this.closeTime = timeFromDBStr(attraction.close_time)
     console.log(attraction, this.openTime, this.closeTime)
@@ -171,7 +164,7 @@ class ScheduledAttraction {
     let detailLink = $('<a></a>', {
       text: 'detail',
       color: 'white',
-      href: "https://www.google.com/maps/search/"+this.attraction.name+", NY"
+      href: "https://www.google.com/maps/search/"+this.attraction.name+", "+this.attraction.state
     }).appendTo(block)
 
     // let deleteButton = $('<button/>', {
@@ -321,7 +314,7 @@ $(function () {
     let canvas = $(`.schedule-canvas:eq(${day})`)
     drawCanvas(canvas)
 
-    let group = new ScheduleGroup(plan[day], canvas)
+    let group = new ScheduleGroup(plan[day], canvas, day)
     group.refreshScheduleUI()
 
     groups.push(group)
@@ -339,4 +332,12 @@ function drawCanvas(canvas) {
     ctx.fillText(time.format('HH:mm'), x, y)
     ctx.fillRect(x, y, canvas.width(), 1)
   }
+}
+
+function timeFromDBStr(str) {
+  let time = moment(str).utc()
+  return moment({
+    hour: time.hour(),
+    minute: time.minute()
+  })
 }

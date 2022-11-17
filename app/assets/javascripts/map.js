@@ -1,14 +1,21 @@
 // Initialize and add the map
 
 let markers = [];
-let map;
-let travelPath;
+let maps = [];
+let travelPaths = [0];
 
 function initMap() {
-  map = new google.maps.Map(document.getElementById("map"), {
-    zoom: 4,
-    center: { lat: 0, lng: 0 },
-  });
+  for (let i = 0; i < 10; i++) {
+    let map_div = document.getElementById(`map_${i}`);
+    if (map_div) {
+      let map = new google.maps.Map(map_div, {
+        zoom: 4,
+        center: {lat: 0, lng: 0}
+      });
+      maps.push(map);
+      travelPaths.push(0);
+    };
+  };
 }
 
 // add a marker to the map and push to the array
@@ -51,7 +58,7 @@ function deleteMarkers() {
   markers = [];
 }
 
-function updateMap(location_info, path_info) {
+function updateMap(map_idx, location_info, path_info) {
   deleteMarkers();
   console.log("UPDATE MAP");
   var bounds = new google.maps.LatLngBounds();
@@ -59,13 +66,14 @@ function updateMap(location_info, path_info) {
   for (const attraction of path_info) {
     value = location_info[attraction]
     bounds.extend(value);
-    addMarkers(value, attraction, counter.toString(), map);
+    addMarkers(value, attraction, counter.toString(), maps[map_idx]);
     counter++;
   }
-  map.fitBounds(bounds);
+  maps[map_idx].fitBounds(bounds);
 
 
   pathLocations = path_info.map((attraction) => location_info[attraction]);
+  travelPath = travelPaths[map_idx];
   if (travelPath) {
     travelPath.setMap(null);
   }
@@ -77,7 +85,6 @@ function updateMap(location_info, path_info) {
     strokeWeight: 2,
   });
 
-  travelPath.setMap(map);
+  travelPath.setMap(maps[map_idx]);
   
 }
-

@@ -33,6 +33,7 @@ Then /I press "(.*)" for "(.*)"/ do |button, suggestion|
 end
 
 Then /I close "(.*)"/ do |attraction|
+  sleep 3
   find("##{attraction.gsub(' ', '-')}-close").click
 end
 
