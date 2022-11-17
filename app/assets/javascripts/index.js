@@ -2,7 +2,7 @@
 //= require jquery_ujs
 function change_stops() {
     var state = document.getElementById("travel_plan_state").value;
-    let cities = cities_in_state_hash[state];
+    var cities = cities_in_state_hash[state];
     console.log(cities)
     var stops = document.getElementById("travel_plan_cities");
     stops.innerHTML = "";

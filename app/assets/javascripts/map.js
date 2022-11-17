@@ -2,7 +2,7 @@
 
 let markers = [];
 let maps = [];
-let travelPaths = [0];
+let travelPaths = [];
 
 function initMap() {
   for (let i = 0; i < 10; i++) {
@@ -14,12 +14,13 @@ function initMap() {
       });
       maps.push(map);
       travelPaths.push(0);
+      markers.push([]);
     };
   };
 }
 
 // add a marker to the map and push to the array
-function addMarkers(loaction, name, lable, map) {
+function addMarkers(map_idx, loaction, name, lable, map) {
   const marker = new google.maps.Marker({
     position: loaction,
     map: map,
@@ -44,29 +45,29 @@ function addMarkers(loaction, name, lable, map) {
     });
   });
 
-  markers.push(marker);
+  markers[map_idx].push(marker);
 }
 
-function setMapOnAll(map) {
-  for (let i = 0; i < markers.length; i++) {
-    markers[i].setMap(map);
+function setMapOnAll(map_idx, map) {
+  for (let i = 0; i < markers[map_idx].length; i++) {
+    markers[map_idx][i].setMap(map);
   }
 }
 
-function deleteMarkers() {
-  setMapOnAll(null);
-  markers = [];
+function deleteMarkers(map_idx) {
+  setMapOnAll(map_idx, null);
+  markers[map_idx] = [];
 }
 
 function updateMap(map_idx, location_info, path_info) {
-  deleteMarkers();
+  deleteMarkers(map_idx);
   console.log("UPDATE MAP");
   var bounds = new google.maps.LatLngBounds();
   var counter = 1;
   for (const attraction of path_info) {
     value = location_info[attraction]
     bounds.extend(value);
-    addMarkers(value, attraction, counter.toString(), maps[map_idx]);
+    addMarkers(map_idx, value, attraction, counter.toString(), maps[map_idx]);
     counter++;
   }
   maps[map_idx].fitBounds(bounds);
@@ -77,7 +78,7 @@ function updateMap(map_idx, location_info, path_info) {
   if (travelPath) {
     travelPath.setMap(null);
   }
-  travelPath = new google.maps.Polyline({
+  travelPaths[map_idx] = new google.maps.Polyline({
     path: Object.values(pathLocations),
     geodesic: true,
     strokeColor: "#FF0000",
@@ -85,6 +86,6 @@ function updateMap(map_idx, location_info, path_info) {
     strokeWeight: 2,
   });
 
-  travelPath.setMap(maps[map_idx]);
+  travelPaths[map_idx].setMap(maps[map_idx]);
   
 }
