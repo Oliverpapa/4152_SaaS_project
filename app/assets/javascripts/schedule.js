@@ -27,12 +27,15 @@ function roundToBlockGrid(x) {
 }
 
 class ScheduleGroup {
-  constructor(oneDaySchedule, canvas, day) {
+  constructor(oneDaySchedule, canvas, dropdown, day) {
     this.attractions = Object.entries(oneDaySchedule).map(([timeStr, attraction]) => {
       let time = moment(timeStr, ["HH:mm:ss"])
       return this.makeScheduleBlock(attraction, time, canvas)
     })
     this.canvas = canvas
+    this.dropdown = dropdown
+    console.log(this.dropdown.parent())
+    this.dropdown.parent().on('show.bs.dropdown', () => this.refreshAddableAttractions())
     this.day = day
     this.attractions.forEach((attraction) => attraction.group = this)
   }
@@ -46,9 +49,8 @@ class ScheduleGroup {
     }))
     updateMap(this.day, location_info, this.sortedNamesByStartingTime());
   }
-  onclickAddAttraction(element) {
-    let button = $(element)
-    let dropdownMenu = button.siblings('.dropdown-menu')
+  refreshAddableAttractions() {
+    let dropdownMenu = this.dropdown.siblings('.dropdown-menu')
 
     dropdownMenu.empty()
 
@@ -57,15 +59,19 @@ class ScheduleGroup {
     
     let selectableAttractions = allAttractions.filter(attraction => !existingAttractionIDs.includes(attraction.id))
 
-    console.log(existingAttractionIDs, selectableAttractions)
+    // console.log(existingAttractionIDs, selectableAttractions)
 
     selectableAttractions.forEach(attraction => {
-      $('<a/>', {
-        text: attraction.name,
-        class: 'dropdown-item',
-        href: "#",
-        click: () => this.addAttraction(attraction)
-      }).appendTo(dropdownMenu)
+      $('<li/>').append(
+        $('<a/>', {
+          text: attraction.name,
+          class: 'dropdown-item',
+          href: '#' + dropdownMenu.closest('.one-day-schedule').prop('id'),
+          click: () => {
+            this.addAttraction(attraction)
+          }
+        })
+      ).appendTo(dropdownMenu)
     })
 
   }
@@ -143,37 +149,70 @@ class ScheduledAttraction {
     this.scheduledDuration = moment.duration(this.attraction.recommended_time, 'minutes')
   }
 
-  generateScheduleBlock() {
+  generateCard() {
     let baseID = this.attraction.name.replaceAll(' ', '-')
-    
+
     let block = $('<div></div>', {
-      class: 'schedule-block',
-      text: this.attraction.name,
+      class: 'card text-dark bg-gradient overflow-auto schedule-block',
+      // text: this.attraction.name,
       id: baseID + '-main-body'
     }).appendTo(this.canvas.parent())
 
-    // add a close botton to the bolck
-    let closeBtn = $('<button></button>', {
-      class: 'close',
-      text: 'x',
-      id: baseID + '-close',
-      click: () => this.remove(this)
+    let body = $('<div/>', {
+      class: 'card-body'
     }).appendTo(block)
 
-    // add a detail link to the bolck
+    this.block = block
+    this.cardBody = body
+  }
+
+  fillAttractionInfo() {
+    let baseID = this.attraction.name.replaceAll(' ', '-')
+
+    let body = this.cardBody
+
+    // add a close botton to the block
+    let closeBtn = $('<button></button>', {
+      type: 'button',
+      class: 'btn-close position-absolute top-0 end-0 m-1',
+      'aria-label': 'Close',
+      id: baseID + '-close',
+      click: () => this.remove()
+    }).appendTo(body)
+
+    let title = $('<h5/>', {
+      class: 'card-title',
+      text: this.attraction.name
+    }).appendTo(body)
+
+    let address = $('<h6/>', {
+      class: 'card-subtitle text-muted',
+      text: this.attraction.city + ', ' + this.attraction.state
+    }).appendTo(body)
+
+    let text = $('<div/>').appendTo(body)
+
+    text.raty({
+      readOnly: true,
+      score: this.attraction.rating,
+      path: 'https://cdnjs.cloudflare.com/ajax/libs/raty/2.9.0/images'
+    })
+
+    // add a detail link to the block
     let detailLink = $('<a></a>', {
       text: 'detail',
       color: 'white',
       href: "https://www.google.com/maps/search/"+this.attraction.name+", "+this.attraction.state
-    }).appendTo(block)
+    }).appendTo(body)
 
-    // let deleteButton = $('<button/>', {
-    //   text: 'delete',
-    //   class: 'close-button',
-    //   click: () => this.remove()
-    // }).appendTo(block)
 
-    this.block = block
+  }
+
+  generateScheduleBlock() {
+    
+    this.generateCard()
+    this.fillAttractionInfo()
+
   }
 
   initUI() {
@@ -200,7 +239,6 @@ class ScheduledAttraction {
   reschedule(top, height = this.block.height()) {
     this.scheduledTime = heightToTime(top)
     this.scheduledDuration = heightToDuration(height)
-    console.log("newScheduledTime, newDuration =", this.scheduledTime.format('HH:mm'), this.scheduledDuration.asHours())
 
     if (this.group)
       this.group.refreshScheduleUI()
@@ -248,7 +286,6 @@ class ScheduledAttraction {
   moveEndListener = function (event) {
     delete event.target.dataset.x
     delete event.target.dataset.y
-    console.log(this.group.sortedNamesByStartingTime())
   }
 
   initInteraction() {
@@ -261,7 +298,6 @@ class ScheduledAttraction {
     }
     console.log(this.openTime.format('HH:mm'), this.closeTime.format('HH:mm'))
     console.log(this.canvas.offset(), timeToHeight(this.openTime), timeToHeight(this.closeTime))
-    console.log(region)
 
     let businessTimeDragConstraint =
       interact.modifiers.restrictRect({ restriction: region })
@@ -312,9 +348,10 @@ $(function () {
 
   for (let day = 0; day < plan.length; ++day) {
     let canvas = $(`.schedule-canvas:eq(${day})`)
+    let dropdown = $(`.dropdown-toggle:eq(${day})`)
     drawCanvas(canvas)
 
-    let group = new ScheduleGroup(plan[day], canvas, day)
+    let group = new ScheduleGroup(plan[day], canvas, dropdown, day)
     group.refreshScheduleUI()
 
     groups.push(group)

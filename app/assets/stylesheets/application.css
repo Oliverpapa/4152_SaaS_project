@@ -13,7 +13,7 @@
  *= require_tree .
  *= require_self
  */
- #map {
+#map {
     height: 400px;
     /* The height is 400 pixels */
     /* width: 50%;
@@ -30,16 +30,8 @@
   height: 810px;
 }
 .schedule-block {
-  border-radius: 4px;
-  padding: 5;
-  border: 1px solid black;
-  margin: 0;
-  background-color: #29e;
-  color: #fff;
-  font-size: 1.2em;
-  touch-action: none;
-  box-sizing: border-box;
-  position: absolute;
+  background-color: #B7D9FF !important;
+  position: absolute !important;
 }
 
 /* a:link, a:visited {
