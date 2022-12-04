@@ -28,24 +28,44 @@ function roundToBlockGrid(x) {
 
 
 function encodeDictToString(dict) {
-  return Object.keys(dict).map(key => `${key}=${dict[key]}`).join('&')
+  return JSON.stringify(dict)
 }
 
 function decodeStringToDict(str) {
-  return str.split('&').reduce((dict, pair) => {
-    const [key, value] = pair.split('=') 
-    dict[key] = value
-    return dict
-  }, {})
+  return JSON.parse(str)
 }
+
+function setCookie(cname, cvalue, exdays) {
+  const d = new Date();
+  d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+  let expires = "expires="+d.toUTCString();
+  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/customize/" + suggestion_type;
+}
+
+
+function getCookie(cname) {
+  let name = cname + "=";
+  let ca = document.cookie.split(';');
+  for(let i = 0; i < ca.length; i++) {
+    let c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
+
 
 function updatePlanInCookie() {
   let dict = getCurrentPlanToDict()
-  Cookies.set('plan', encodeDictToString(dict))
+  setCookie('plan', encodeDictToString(dict), 365)
 }
 
 function loadPlanFromCookie() {
-  return decodeStringToDict(Cookies.get('plan'))
+  return decodeStringToDict(getCookie('plan'))
 }
 
 function getCurrentPlanToDict() {
@@ -70,8 +90,8 @@ class ScheduleGroup {
   toRawPlan() {
     plan = {}
     this.attractions.forEach((scheduledAttraction) => {
+      scheduledAttraction.attraction.recommended_time = scheduledAttraction.scheduledDuration.asMinutes()
       plan[scheduledAttraction.scheduledTime.format("HH:mm:ss")] = scheduledAttraction.attraction
-      scheduledAttraction.attraction.recommended_time = scheduledAttraction.scheduledDuration.minute()
     })
     return plan
   }
@@ -93,7 +113,7 @@ class ScheduleGroup {
 
     let existingAttractionIDs = groups.flatMap(group => group.attractions)
                                       .map(scheduledAttraction => scheduledAttraction.attraction.id)
-    
+
     let selectableAttractions = allAttractions.filter(attraction => !existingAttractionIDs.includes(attraction.id))
 
     // console.log(existingAttractionIDs, selectableAttractions)
@@ -246,7 +266,7 @@ class ScheduledAttraction {
   }
 
   generateScheduleBlock() {
-    
+
     this.generateCard()
     this.fillAttractionInfo()
 
@@ -383,8 +403,8 @@ let groups = []
 
 $(function () {
 
-  if (isNewPlan == false) {
-    plan = decodeStringToDict(loadPlanFromCookie())
+  if (isNewPlan == false && getCookie('plan') != '') {
+    plan = loadPlanFromCookie()
     console.log(plan)
   }
   for (let day = 0; day < plan.length; ++day) {
@@ -397,6 +417,8 @@ $(function () {
 
     groups.push(group)
   }
+
+  updatePlanInCookie()
 
 })
 

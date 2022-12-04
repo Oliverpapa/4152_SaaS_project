@@ -17,7 +17,7 @@ class TravelingPlansController < ApplicationController
         return
       else
         @travel_plan = session[:travel_plan]
-        session[new_plan] = false
+        session[:new_plan] = false
       end
     else
       # if state is not selected, we will redirect to the first page
@@ -42,6 +42,7 @@ class TravelingPlansController < ApplicationController
     end
     @travel_plan = session[:travel_plan]
     @suggestions = TravelingPlan.generate_plans(state: @travel_plan[:state], cities: @travel_plan[:cities], days: @travel_plan[:days])
+    @suggestion_type = params[:suggestion_type]
 
     @customize_plan = @suggestions[params[:suggestion_type].to_i]
     # third page, customize the selected traveling plan
