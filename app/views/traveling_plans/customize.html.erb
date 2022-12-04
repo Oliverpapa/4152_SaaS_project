@@ -20,6 +20,7 @@ defer></script>
 <script>
   let plan = <%= raw(@customize_plan.schedule_by_day.to_json) %>;
   let allAttractions = <%= raw(@addable_attractions.to_json) %>;
+  let isNewPlan = <%= raw(session[:new_plan].to_json) %>;
   const location_info = <%= raw(@attraction_location_hash.to_json) %>;
   window.initMap = initMap;
 

@@ -49,3 +49,12 @@ class TravelingPlan
   end
 
 end
+
+
+newtype Plan = Object {
+  id: Int,
+  state: String,
+  schedule_by_day: [OneDaySchedule],
+  number_of_days: Int
+}
+newtype OneDaySchedule = Map<String, Attraction> # key means time ("8:00")

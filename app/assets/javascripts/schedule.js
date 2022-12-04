@@ -26,6 +26,33 @@ function roundToBlockGrid(x) {
   return Math.round(x / blockHeight) * blockHeight
 }
 
+
+function encodeDictToString(dict) {
+  return Object.keys(dict).map(key => `${key}=${dict[key]}`).join('&')
+}
+
+function decodeStringToDict(str) {
+  return str.split('&').reduce((dict, pair) => {
+    const [key, value] = pair.split('=') 
+    dict[key] = value
+    return dict
+  }, {})
+}
+
+function updatePlanInCookie() {
+  let dict = getCurrentPlanToDict()
+  Cookies.set('plan', encodeDictToString(dict))
+}
+
+function loadPlanFromCookie() {
+  return decodeStringToDict(Cookies.get('plan'))
+}
+
+function getCurrentPlanToDict() {
+  let dict = groups.map((scheduleGroup) => scheduleGroup.toRawPlan())
+  return dict
+}
+
 class ScheduleGroup {
   constructor(oneDaySchedule, canvas, dropdown, day) {
     this.attractions = Object.entries(oneDaySchedule).map(([timeStr, attraction]) => {
@@ -37,7 +64,16 @@ class ScheduleGroup {
     console.log(this.dropdown.parent())
     this.dropdown.parent().on('show.bs.dropdown', () => this.refreshAddableAttractions())
     this.day = day
-    this.attractions.forEach((attraction) => attraction.group = this)
+    this.attractions.forEach((scheduledAttraction) => scheduledAttraction.group = this)
+  }
+
+  toRawPlan() {
+    plan = {}
+    this.attractions.forEach((scheduledAttraction) => {
+      plan[scheduledAttraction.scheduledTime.format("HH:mm:ss")] = scheduledAttraction.attraction
+      scheduledAttraction.attraction.recommended_time = scheduledAttraction.scheduledDuration.minute()
+    })
+    return plan
   }
 
   refreshScheduleUI() {
@@ -48,6 +84,7 @@ class ScheduleGroup {
       return this.countConflict(this.attractions, attraction) <= 1
     }))
     updateMap(this.day, location_info, this.sortedNamesByStartingTime());
+    updatePlanInCookie()
   }
   refreshAddableAttractions() {
     let dropdownMenu = this.dropdown.siblings('.dropdown-menu')
@@ -346,6 +383,10 @@ let groups = []
 
 $(function () {
 
+  if (isNewPlan == false) {
+    plan = decodeStringToDict(loadPlanFromCookie())
+    console.log(plan)
+  }
   for (let day = 0; day < plan.length; ++day) {
     let canvas = $(`.schedule-canvas:eq(${day})`)
     let dropdown = $(`.dropdown-toggle:eq(${day})`)
