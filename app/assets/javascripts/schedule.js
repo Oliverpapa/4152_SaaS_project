@@ -68,6 +68,11 @@ function loadPlanFromCookie() {
   return decodeStringToDict(getCookie('plan'))
 }
 
+// export function getCurrentPlanToDict() {
+//   let dict = groups.map((scheduleGroup) => scheduleGroup.toRawPlan())
+//   return dict
+// }
+
 function getCurrentPlanToDict() {
   let dict = groups.map((scheduleGroup) => scheduleGroup.toRawPlan())
   return dict
@@ -88,12 +93,12 @@ class ScheduleGroup {
   }
 
   toRawPlan() {
-    plan = {}
+    let rawPlan = {}
     this.attractions.forEach((scheduledAttraction) => {
       scheduledAttraction.attraction.recommended_time = scheduledAttraction.scheduledDuration.asMinutes()
-      plan[scheduledAttraction.scheduledTime.format("HH:mm:ss")] = scheduledAttraction.attraction
+      rawPlan[scheduledAttraction.scheduledTime.format("HH:mm:ss")] = scheduledAttraction.attraction
     })
-    return plan
+    return rawPlan
   }
 
   refreshScheduleUI() {
@@ -440,4 +445,58 @@ function timeFromDBStr(str) {
     hour: time.hour(),
     minute: time.minute()
   })
+}
+
+function generatePDF() {
+  var pdf = new jsPDF({
+      orientation: 'p',
+      unit: 'mm',
+      format: 'a4',
+      putOnlyUsedFonts:true
+  });
+  pdf.text("Your Traveling Plan:", 10, 20);
+
+  // get current plan in dict 
+  curr_plan = getCurrentPlanToDict()
+
+  //count the y position
+  let finalY = 30
+
+  // make multiple pdf tables of contents
+  for (var i = 0; i < curr_plan.length; i++) {
+    var body = [];
+    day_schedule = curr_plan[i]
+    // iter through the time keys in the day
+    for (var time in day_schedule) {
+      open_time = new Date(day_schedule[time]["open_time"])
+      open_time = open_time.getUTCHours(); 
+      close_time = new Date(day_schedule[time]["close_time"])
+      close_time = close_time.getUTCHours();
+      open_time = open_time + ":00"
+      close_time = close_time + ":00"
+      body.push([time.substring(0, time.length - 3), 
+                day_schedule[time]["name"], 
+                day_schedule[time]["address"], 
+                day_schedule[time]["recommended_time"], 
+                day_schedule[time]["rating"], open_time, close_time]);
+    }
+    if(i == 0){
+      pdf.text("Day " + (i+1) + ":", 10, finalY);
+      finalY = finalY + 10;
+    }
+    else{
+      pdf.text("Day " + (i+1) + ":", 10, pdf.lastAutoTable.finalY + 20);
+      finalY = pdf.lastAutoTable.finalY + 30;
+    }
+    pdf.autoTable({
+      head: [['Scheduled Time', 'Attraction', 'Address', 
+      'Recommended Duration (mins)', 'Rating', 'Open Time', 'Close Time']],
+      body: body,
+      startY: finalY,
+      theme: 'grid',
+      styles: {overflow: 'linebreak'},
+      columnStyles: {text: {cellWidth: 'wrap'}}
+    });
+  }
+  pdf.save('Traveling_Plan.pdf');
 }
