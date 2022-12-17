@@ -460,34 +460,40 @@ function generatePDF() {
   curr_plan = getCurrentPlanToDict()
 
   //count the y position
-  let finalY = 30
+  let finalY = 35
 
   // make multiple pdf tables of contents
   for (var i = 0; i < curr_plan.length; i++) {
     var body = [];
     day_schedule = curr_plan[i]
-    // iter through the time keys in the day
-    for (var time in day_schedule) {
-      open_time = new Date(day_schedule[time]["open_time"])
-      open_time = open_time.getUTCHours(); 
-      close_time = new Date(day_schedule[time]["close_time"])
+    // convert day_schedule to a list of lists and sort by time
+    day_schedule = Object.keys(day_schedule).sort().map(function(key) {
+      return [key, day_schedule[key]];
+    });
+
+    // iter through day schedule
+    for (var j = 0; j < day_schedule.length; j++) {
+      // get the time key and the schedule
+      time = day_schedule[j][0]
+      schedule = day_schedule[j][1]
+      // get the open and close time
+      open_time = new Date(schedule["open_time"])
+      open_time = open_time.getUTCHours();
+      close_time = new Date(schedule["close_time"])
       close_time = close_time.getUTCHours();
       open_time = open_time + ":00"
       close_time = close_time + ":00"
-      body.push([time.substring(0, time.length - 3), 
-                day_schedule[time]["name"], 
-                day_schedule[time]["address"], 
-                day_schedule[time]["recommended_time"], 
-                day_schedule[time]["rating"], open_time, close_time]);
+      // add to the body
+      body.push([time.substring(0, time.length - 3),
+                schedule["name"],
+                schedule["address"],
+                schedule["recommended_time"],
+                schedule["rating"], open_time, close_time]);
     }
-    if(i == 0){
-      pdf.text("Day " + (i+1) + ":", 10, finalY);
-      finalY = finalY + 10;
-    }
-    else{
-      pdf.text("Day " + (i+1) + ":", 10, pdf.lastAutoTable.finalY + 20);
-      finalY = pdf.lastAutoTable.finalY + 30;
-    }
+    // add the day to the pdf
+    pdf.text("Day " + (i + 1) + ":", 10, finalY);
+    finalY += 5;
+    // add the table to the pdf
     pdf.autoTable({
       head: [['Scheduled Time', 'Attraction', 'Address', 
       'Recommended Duration (mins)', 'Rating', 'Open Time', 'Close Time']],
@@ -495,8 +501,9 @@ function generatePDF() {
       startY: finalY,
       theme: 'grid',
       styles: {overflow: 'linebreak'},
-      columnStyles: {text: {cellWidth: 'wrap'}}
+      columnStyles: {text: {columnWidth: 'wrap'}}
     });
+    finalY = pdf.lastAutoTable.finalY + 15;
   }
-  pdf.save('Traveling_Plan.pdf');
+  pdf.save('traveling_plan.pdf');
 }
