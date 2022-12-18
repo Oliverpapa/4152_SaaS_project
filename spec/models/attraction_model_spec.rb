@@ -24,6 +24,15 @@ RSpec.describe Attraction, type: :model do
       expect(Attraction.cities_in_state_hash()).to eq({"NY"=>["New York"], "CA"=>["Anaheim", "Los Angeles"]})
     end
   end
+
+  describe '.attraction_location_hash' do
+    it 'returns a hash of attraction to lat/lng location' do
+      expect(Attraction.attraction_location_hash(state: 'CA')).to eq({
+                                                                'Disney California Adventure Park' => {'lat' => 33.8061164, 'lng' => -117.9230477},
+                                                                'Griffith Observatory' => {'lat' => 34.1184385, 'lng' => -118.3025822}
+                                                              })
+    end
+  end
 end
 
   

@@ -51,7 +51,7 @@ Given /^I am at the customize page for the chill suggestion$/ do
   steps %(
     Given I am on the home page
     When I select "NY" from "travel_plan_state"
-    And  I select "2" from "travel_plan_days"
+    And  I select "1" from "travel_plan_days"
     And  I press "Search"
     Then I press "Customize" for "chill suggestion"
     )

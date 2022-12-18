@@ -17,6 +17,9 @@ describe TravelingPlan, type: :model do
     it 'is not empty' do
       expect(schedule).to_not be_empty
     end
+    it 'is not over 5 stops' do
+      expect(schedule.length).to be <= 5
+    end
     it 'contains schedule details as (Time, Attraction) pairs' do
       schedule.each do |time, stop|
         expect(time).to be_a(TimeOfDay)
@@ -27,6 +30,13 @@ describe TravelingPlan, type: :model do
       schedule.each do |time, stop|
         expect(time).to be_between(stop.open_time.to_time_of_day, stop.close_time.to_time_of_day)
       end
+    end
+    it 'has at lease 30 mins of gap between attractions' do
+      times = []
+      schedule.each do |time, stop|
+        times << time << time + stop.recommended_time.minutes + 30.minutes
+      end
+      expect(times).to eq times.sort
     end
   end
 
@@ -43,6 +53,39 @@ describe TravelingPlan, type: :model do
     it 'takes designated number of days' do
       expect(plan.schedule_by_day.length).to eq plan.number_of_days
     end
+
+    it 'has no duplicated attractions' do
+      attractions = plan.schedule_by_day.reduce({}, :merge).values
+      expect(attractions).to eq attractions.uniq
+    end
+
+    context 'the schdule of the first day' do
+      let(:schedule) { plan.schedule_by_day[0] }
+      include_examples 'an one-day schedule'
+    end
+  end
+
+  shared_examples 'a suggestion' do
+
+    it 'contains exactly two plans' do
+      expect(plans.length).to eq 2
+    end
+
+    context 'the chill plan' do
+      let(:plan) { plans[0] }
+      include_examples 'a plan'
+    end
+
+    context 'the hustle plan' do
+      let(:plan) { plans[1] }
+      include_examples 'a plan'
+    end
+
+    it 'the chill plan is shorter than the hustle plan' do
+      chill_plan_length = plans[0].schedule_by_day.reduce({}, :merge).length
+      hustle_plan_length = plans[1].schedule_by_day.reduce({}, :merge).length
+      expect(chill_plan_length).to be <= hustle_plan_length
+    end
   end
 
   describe '.generate_plans' do
@@ -50,30 +93,14 @@ describe TravelingPlan, type: :model do
     context 'w/o cities' do
       let(:plans) { TravelingPlan.generate_plans(state: "NY", cities: [], days: 2) }
 
-      context 'the first plan' do
-        let(:plan) { plans[0] }
-        include_examples 'a plan'
-
-        context 'the schdule of the first day' do
-          let(:schedule) { plan.schedule_by_day[0] }
-          include_examples 'an one-day schedule'
-        end
-      end
+      include_examples 'a suggestion'
     end
 
     context 'with cities' do
       let(:cities) { ["New York", "Palenville"] }
       let(:plans) { TravelingPlan.generate_plans(state: "NY", cities: cities, days: 2) }
 
-      context 'the first plan' do
-        let(:plan) { plans[0] }
-        include_examples 'a plan'
-
-        context 'the schdule of the first day' do
-          let(:schedule) { plan.schedule_by_day[0] }
-          include_examples 'an one-day schedule'
-        end
-      end
+      include_examples 'a suggestion'
 
       it 'each plan contains at least one attraction in each city' do
         plans.each do |plan|

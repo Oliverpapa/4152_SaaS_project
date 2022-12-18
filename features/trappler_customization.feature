@@ -51,11 +51,9 @@ Scenario: User should be able to add a stop to the traveling plan
 Scenario: User should be able to remove a stop from the traveling plan
     Given I am at the customize page for the chill suggestion
     Then I should see "The Met"
-    Then I should see "MoMA"
     Then I should see "Empire State Building"
     When I close "The Met"
     Then I should not see "The Met"
-    Then I should see "MoMA"
     Then I should see "Empire State Building"
 
 @javascript
@@ -79,3 +77,12 @@ Scenario: User should be able to change the attraction's duration
 Scenario: When the user directly go to the customization page, they will be redirect to the home page
     Given I am on the customize page
     Then I should be on the home page
+
+@javascript
+Scenario: Save customization when user leave the page
+    Given I am at the customize page for the chill suggestion
+    When I press "add_attraction_0"
+    And  I follow "MoMA"
+    Then I follow "Back to suggestion"
+    Then I press "Customize" for "chill suggestion"
+    Then I should see "MoMA"
