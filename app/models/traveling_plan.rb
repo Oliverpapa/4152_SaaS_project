@@ -52,51 +52,26 @@ class TravelingPlan
     for attraction in attractions do
       graph.add_node(attraction)
     end
-    # add edges to the graph
     for attraction in attractions do
       for other_attraction in attractions do
         if attraction != other_attraction
-          # find node of attraction
           node = graph.find_node(attraction)
-          # find node of other_attraction
           other_node = graph.find_node(other_attraction)
-          # add edge
           node.add_edge_1(other_node, distance_to(attraction, other_attraction))
         end
       end
     end
     
-    # rank attractions by their ratings from high to low
-    attractions = attractions.sort_by { |attraction| attraction.rating }.reverse
+    # use greedy algorithm to generate schedules
+    # less gap time and more max attractions for more_attractions
+    gap_time = more_attractions ? 1.hours : 2.hours
+    max_attractions = more_attractions ? 5 : 2
+    schedules, total_ratings = graph.greedy(gap_time, max_attractions)
 
-    # find the shortest path
-    node_0 = graph.find_node(attractions[0])
-    node_1 = graph.find_node(attractions[-1])
-    shortest_path = graph.shortest_path(node_0, node_1)
+    # select the schedule with the highest total rating
+    max_index = total_ratings.each_with_index.max[1]
+    schedule = schedules[max_index]
 
-    # create a schedule
-    schedule = {}
-    clock = TimeOfDay.new(10)
-    # less gap time for more attractions
-    #gap_time = more_attractions ? 0 : 2.hours
-    #gap_time = more_attractions ? hour : 2.hours
-    gap_time = 2.hours
-    threshold = TimeOfDay.new(18)
-    for node in shortest_path do
-      attraction = node.attraction
-      clock = [clock, attraction.open_time.to_time_of_day].max
-      if clock + attraction.recommended_time.minutes < [threshold, attraction.close_time.to_time_of_day].min
-        schedule[clock] = attraction
-        clock += attraction.recommended_time.minutes + gap_time
-      end
-    end
-
-    # print the schedule
-    # for time in schedule.keys.sort do
-    #   puts time.to_s + " " + schedule[time].name
-    # end
-    # puts "-----------------"
-    
     return schedule
   end
 
@@ -200,43 +175,45 @@ class Graph
   def add_edge(node1, node2, weight)
     node1.add_edge_1(node2, weight)
   end
-  
-  def shortest_path(node1, node2)  
-    # initialize
-    for node in @nodes do
-      node.distance = Float::INFINITY
-      node.previous = nil
-    end
-    node1.distance = 0
-  
-    # create a priority queue
-    queue = PriorityQueue.new
-    for node in @nodes do
-      queue.add(node)
-    end
 
-    # find the shortest path
-    while not queue.empty?
-      node = queue.extract_min
-      for edge in node.edges do
-        if edge.node.distance > node.distance + edge.weight
-          edge.node.distance = node.distance + edge.weight
-          edge.node.previous = node
-          queue.update(edge.node)
+  def greedy(gap_time, max_attractions)
+    # use greedy algorithm to generate all possible schedules, at most max_attractions attractions
+    schedules = []
+    total_ratings = []
+    for node in @nodes do
+      schedule = {}
+      total_rating = 0
+      num_of_attractions = 0
+      clock = TimeOfDay.new(10)
+      threshold = TimeOfDay.new(18)
+      attraction = node.attraction
+      clock = [clock, attraction.open_time.to_time_of_day].max
+      # greedy algorithm to find the next nearest attraction to visit
+      while clock + attraction.recommended_time.minutes < [threshold, attraction.close_time.to_time_of_day].min and num_of_attractions < max_attractions do
+        schedule[clock] = attraction
+        total_rating += attraction.rating
+        clock += attraction.recommended_time.minutes + gap_time
+        min_distance = Float::INFINITY
+        next_attraction = nil
+        for edge in node.edges do
+          if edge.node.attraction.open_time.to_time_of_day <= clock and edge.node.attraction.close_time.to_time_of_day >= clock + edge.node.attraction.recommended_time.minutes and edge.weight < min_distance and not schedule.values.include? edge.node.attraction
+            min_distance = edge.weight
+            next_attraction = edge.node.attraction
+          end
+        end
+        if next_attraction == nil
+          break
+        else
+          attraction = next_attraction
         end
       end
+      schedules << schedule
+      total_ratings << total_rating
     end
 
-    # create the shortest path
-    path = []
-    node = node2
-    while node != nil
-      path << node
-      node = node.previous
-    end
-    return path.reverse
+    return schedules, total_ratings
   end
-
+  
 end
 
 
