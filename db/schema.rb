@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20221029192029) do
+ActiveRecord::Schema.define(version: 20221219052625) do
 
   create_table "attractions", force: :cascade do |t|
     t.string   "name"
@@ -26,6 +26,8 @@ ActiveRecord::Schema.define(version: 20221029192029) do
     t.time     "close_time"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
+    t.string   "website"
+    t.string   "map_url"
   end
 
 end

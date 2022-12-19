@@ -262,10 +262,20 @@ class ScheduledAttraction {
 
     // add a detail link to the block
     let detailLink = $('<a></a>', {
-      text: 'detail',
+      text: 'go to Google Map',
       color: 'white',
-      href: "https://www.google.com/maps/search/"+this.attraction.name+", "+this.attraction.state
+      href: this.attraction.map_url
     }).appendTo(body)
+
+    $('<br>').appendTo(body)
+
+    if (this.attraction.website) {
+      let websiteLink = $('<a></a>', {
+        text: 'official website',
+        color: 'white',
+        href: this.attraction.website
+      }).appendTo(body)
+    }
 
 
   }

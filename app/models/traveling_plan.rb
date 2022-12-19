@@ -52,20 +52,17 @@ class TravelingPlan
     for attraction in attractions do
       graph.add_node(attraction)
     end
-    for attraction in attractions do
-      for other_attraction in attractions do
-        if attraction != other_attraction
-          node = graph.find_node(attraction)
-          other_node = graph.find_node(other_attraction)
-          node.add_edge(other_node, distance_to(attraction, other_attraction))
-        end
-      end
+    for node1 in graph.nodes do
+      node1.add_edges(
+        graph.nodes.select { |node| node != node1 },
+        graph.nodes.select { |node| node != node1 }.map { |node| distance_to(node1.attraction, node.attraction) }
+      )
     end
-    
+
     # use greedy algorithm to generate schedules
     # less gap time and more max attractions for more_attractions
     gap_time = more_attractions ? 1.hours : 2.hours
-    max_attractions = more_attractions ? 5 : 2
+    max_attractions = more_attractions ? 3 : 2
     schedules, total_ratings = graph.greedy(gap_time, max_attractions)
 
     # select the schedule with the highest total rating
@@ -96,9 +93,9 @@ class Node
   def initialize
     @edges = []
   end
-  
-  def add_edge(node, weight)
-    @edges << Edge.new(node, weight)
+
+  def add_edges(nodes, weights)
+    @edges += nodes.zip(weights).map { |node, weight| Edge.new(node, weight) }
   end
 end
   
@@ -126,14 +123,6 @@ class Graph
     @nodes << node
   end
 
-  def find_node(attraction)
-    for node in @nodes do
-      if node.attraction == attraction
-        return node
-      end
-    end
-  end
-
   def greedy(gap_time, max_attractions)
     # use greedy algorithm to generate all possible schedules, at most max_attractions attractions
     schedules = []
@@ -148,13 +137,17 @@ class Graph
       clock = [clock, attraction.open_time.to_time_of_day].max
       # greedy algorithm to find the next nearest attraction to visit
       while clock + attraction.recommended_time.minutes < [threshold, attraction.close_time.to_time_of_day].min and num_of_attractions < max_attractions do
+        num_of_attractions += 1
         schedule[clock] = attraction
         total_rating += attraction.rating
         clock += attraction.recommended_time.minutes + gap_time
         min_distance = Float::INFINITY
         next_attraction = nil
         for edge in node.edges do
-          if edge.node.attraction.open_time.to_time_of_day <= clock and edge.node.attraction.close_time.to_time_of_day >= clock + edge.node.attraction.recommended_time.minutes and edge.weight < min_distance and not schedule.values.include? edge.node.attraction
+          if edge.node.attraction.open_time.to_time_of_day <= clock and
+            edge.node.attraction.close_time.to_time_of_day >= clock + edge.node.attraction.recommended_time.minutes and
+            edge.weight < min_distance and
+            not schedule.values.include? edge.node.attraction
             min_distance = edge.weight
             next_attraction = edge.node.attraction
           end
