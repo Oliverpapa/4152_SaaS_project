@@ -65,7 +65,15 @@ function updatePlanInCookie() {
 }
 
 function loadPlanFromCookie() {
-  return decodeStringToDict(getCookie('plan'))
+  let rawPlan = decodeStringToDict(getCookie('plan'))
+  return rawPlan.map ( oneDaySchedule => {
+    let plan = {}
+    for ([timeStr, val] of Object.entries(oneDaySchedule)) {
+      plan[timeStr] = allAttractions.find(attraction => attraction.id == val[0])
+      plan[timeStr].recommended_time = val[1]
+    }
+    return plan
+  })
 }
 
 // export function getCurrentPlanToDict() {
@@ -95,8 +103,8 @@ class ScheduleGroup {
   toRawPlan() {
     let rawPlan = {}
     this.attractions.forEach((scheduledAttraction) => {
-      scheduledAttraction.attraction.recommended_time = scheduledAttraction.scheduledDuration.asMinutes()
-      rawPlan[scheduledAttraction.scheduledTime.format("HH:mm:ss")] = scheduledAttraction.attraction
+      // scheduledAttraction.attraction.recommended_time = scheduledAttraction.scheduledDuration.asMinutes()
+      rawPlan[scheduledAttraction.scheduledTime.format("HH:mm:ss")] = [scheduledAttraction.attraction.id, scheduledAttraction.scheduledDuration.asMinutes()]
     })
     return rawPlan
   }
@@ -466,7 +474,7 @@ function generatePDF() {
   });
   pdf.text("Your Traveling Plan:", 10, 20);
 
-  // get current plan in dict 
+  // get current plan in dict
   curr_plan = getCurrentPlanToDict()
 
   //count the y position
@@ -505,7 +513,7 @@ function generatePDF() {
     finalY += 5;
     // add the table to the pdf
     pdf.autoTable({
-      head: [['Scheduled Time', 'Attraction', 'Address', 
+      head: [['Scheduled Time', 'Attraction', 'Address',
       'Recommended Duration (mins)', 'Rating', 'Open Time', 'Close Time']],
       body: body,
       startY: finalY,

@@ -34,7 +34,7 @@ def get_html(headers, url):
     if response.status_code == 200:
         data = response.text
 
-        # 2. 解析数据
+        # parsing the data
         html = etree.HTML(data)
         return html
     else:
@@ -54,10 +54,12 @@ def get_attributes(url_list, headers):
         recommend_time = html.xpath(
             # bad way but dont know other way except last()-1
             '//div[@class="basic-info border-gap"]/div[last()-1]/div/span[2]/text()')
-
+        # rating = html.xpath(
+        #     '//span[@class="gl-poi-detail-rating"]/span[1]/text()')
         print("name", attribute_name, "time", recommend_time)
         real_name = '' if attribute_name == [] else attribute_name[0]
         real_time = '' if recommend_time == [] else recommend_time[0]
+        # real_rating = '' if rating == [] else rating[0]
         minute_type_time = time_processing(real_time)
         # the attr_name and time are both list,pick them up
         attribute_list.append([real_name, str(minute_type_time)])
@@ -67,49 +69,38 @@ def get_attributes(url_list, headers):
 
 
 def main():
-    # 1. 发出请求，获取响应数据
+    # 1. send the request
     headers = {
         "User-Agent": "User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36"
     }
     # basic_url = 'https://www.trip.com/travel-guide/attraction/new-york-248/tourist-attractions/'
-    basic_url = 'https://us.trip.com/travel-guide/attraction/california-21636/tourist-attractions/'
+    # basic_url = 'https://us.trip.com/travel-guide/attraction/california-21636/tourist-attractions/'
+    # basic_url = 'https://www.trip.com/travel-guide/attraction/los-angeles-120518/tourist-attractions/'
+    basic_url = 'https://us.trip.com/travel-guide/attraction/tacoma-41634/tourist-attractions/'
 
-    # 初始化导出文件
+    # initialize the csv
     csv_header = ['name', 'recommend_time']
-    with open('california_information.csv', 'w', encoding='utf-8', newline='') as fp:
-        # 写
+    with open('Tacoma_information.csv', 'w', encoding='utf-8', newline='') as fp:
+        # write
         writer = csv.writer(fp)
-        # 设置第一行标题头
+        # set the header of csv
         writer.writerow(csv_header)
 
-    for i in range(1, 6):
+    for i in range(1, 2):
         url = basic_url+str(i)+".html/"
 
         html = get_html(headers, url)
-        # 获取每个景点的url
+        # get url of each attribute
         url_list = html.xpath(
             '//ul[@class="poi-list-card"]/li/a/@href')
 
-        # # 处理times中的\n和空格
-        # # 准备一个列表times1存放处理好的数据
-        # times1 = []
-        # for t in range(1, len(times), 4):
-        #     ti = re.sub(r'\s+', '', times[t])
-        #     times1.append(ti)
-        #     print(ti)
-        # # 3. 存储数据
-        # titles = zip(titles, times1)
-        # with open('tongcheng.csv', mode='w', newline='', encoding='utf-8') as f:
-        #     w_file = csv.writer(f)
-        #     w_file.writerows(titles)
-
         print(url_list)
-        # 获取景点信息
+        # get attributes info
         attribute_info = get_attributes(url_list, headers)
-        with open('california_information.csv', 'a', encoding='utf-8', newline='') as fp:
-            # 写
+        with open('Tacoma_information.csv', 'a', encoding='utf-8', newline='') as fp:
+            # write
             writer = csv.writer(fp)
-        # 将数据写入
+        # write the data into csv
             writer.writerows(attribute_info)
 
 
