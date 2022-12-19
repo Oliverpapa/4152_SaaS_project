@@ -16,11 +16,17 @@ OS: MAC 10.14 or Ubuntu 22.04
 
 Ruby: 2.6.6
 
+Python: 3.9
+
 Branch for iter1: proj_iter1
 
 Branch for iter2: proj_iter2
 
+Branch for launch: proj_launch
+
 ## Instruction to run
+
+### The Application
 
 Step 1: 
 
@@ -36,6 +42,28 @@ bundle exec rake db:test:prepare
 rails server 
 # Open a regular browser window to localhost:3000/
 ```
+
+### The Crawler & Places API Request
+
+Relative scripts and data are stored in crawler folder under root dir
+
+Step 1: gathering data from websites
+```
+cd crawler
+python attractionspider.py
+```
+
+Step 2: using API request get attraction information
+```
+cd place_detail
+```
+Add your Google Maps API key in the file: api_key.txt
+```
+pip install python-google-places 
+python get_loc_info.py
+```
+The new generated seeds.rb is the new seed file you could use in /db dir
+
 
 ## Instruction to test
 ```
