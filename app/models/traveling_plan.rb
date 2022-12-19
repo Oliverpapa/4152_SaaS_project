@@ -57,7 +57,7 @@ class TravelingPlan
         if attraction != other_attraction
           node = graph.find_node(attraction)
           other_node = graph.find_node(other_attraction)
-          node.add_edge_1(other_node, distance_to(attraction, other_attraction))
+          node.add_edge(other_node, distance_to(attraction, other_attraction))
         end
       end
     end
@@ -97,12 +97,8 @@ class Node
     @edges = []
   end
   
-  def add_edge_1(node, weight)
+  def add_edge(node, weight)
     @edges << Edge.new(node, weight)
-  end
-  
-  def to_s
-    return "Node: " + self.object_id.to_s
   end
 end
   
@@ -114,42 +110,8 @@ class Edge
     @node = node
     @weight = weight
   end
-  
-  def to_s
-    return "Edge: " + self.node.object_id.to_s + " " + self.weight.to_s
-  end
 end
   
-class PriorityQueue
-
-  def initialize
-    @nodes = []
-  end
-  
-  def add(node)
-    @nodes << node
-  end
-  
-  def empty?
-    return @nodes.empty?
-  end
-  
-  def extract_min
-    min = @nodes[0]
-    for node in @nodes do
-      if node.distance < min.distance
-        min = node
-      end
-    end
-    @nodes.delete(min)
-    return min
-  end
-  
-  def update(node)
-    # do nothing
-  end
-end
-
 class Graph
 
   attr_accessor :nodes
@@ -170,10 +132,6 @@ class Graph
         return node
       end
     end
-  end
-
-  def add_edge(node1, node2, weight)
-    node1.add_edge_1(node2, weight)
   end
 
   def greedy(gap_time, max_attractions)
