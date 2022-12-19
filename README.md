@@ -28,6 +28,9 @@ Branch for launch: proj_launch
 
 ### The Application
 
+NOTE: Our application will use cookies. Please allow cookies usage in your browser.
+P.S. If strange things happen on customize page, please clear your cookies and rerun.
+
 Step 1: 
 
 Replace the google map API key (in Courseworks submitted README file) to enable google map embedding:
