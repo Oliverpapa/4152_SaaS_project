@@ -475,7 +475,7 @@ function generatePDF() {
   pdf.text("Your Traveling Plan:", 10, 20);
 
   // get current plan in dict
-  curr_plan = getCurrentPlanToDict()
+  curr_plan = loadPlanFromCookie()
 
   //count the y position
   let finalY = 35
